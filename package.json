@@ -1,0 +1,27 @@
+{
+  "name": "ichurch-backend",
+  "version": "1.0.0",
+  "description": "Backend REST API for managing church members, attendees, and visitors.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js"
+  },
+  "keywords": [
+    "church",
+    "backend",
+    "API",
+    "express",
+    "mysql"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mysql2": "^3.12.0",
+    "sequelize": "^6.37.5"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}

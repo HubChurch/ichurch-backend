@@ -36,7 +36,5 @@ const CellPerson = sequelize.define('CellPerson', {
 });
 
 // Associações
-Cell.belongsToMany(People, { through: CellPerson, foreignKey: 'cell_id', as: 'members' });
-People.belongsToMany(Cell, { through: CellPerson, foreignKey: 'person_id', as: 'cells' });
 
 module.exports = CellPerson;

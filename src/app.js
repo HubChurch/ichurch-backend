@@ -1,4 +1,5 @@
 const express = require('express');
+const cors = require('cors');
 const peopleRoutes = require('./routes/peopleRoutes');
 const membersRoutes = require('./routes/membersRoutes');
 const regularAttendeesRoutes = require('./routes/regularAttendeesRoutes');
@@ -11,6 +12,7 @@ const leadershipRoutes = require('./routes/leadershipRoutes');
 const cellRoutes = require('./routes/cellRoutes');
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 
 // Rotas

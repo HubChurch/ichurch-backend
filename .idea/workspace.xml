@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="Ajuste para agenda">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/attendanceController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/attendanceController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/attendanceRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/attendanceRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/peopleController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/peopleController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/People.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/People.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,11 +75,24 @@
       <workItem from="1739298885715" duration="1187000" />
       <workItem from="1739462585485" duration="4000" />
       <workItem from="1739470464777" duration="14000" />
-      <workItem from="1739483479189" duration="660000" />
+      <workItem from="1739483479189" duration="2450000" />
     </task>
+    <task id="LOCAL-00001" summary="Ajuste para agenda">
+      <option name="closed" value="true" />
+      <created>1739484351906</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1739484351906</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Ajuste para agenda" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajuste para agenda" />
   </component>
 </project>

@@ -5,21 +5,25 @@ const Visitors = require('../models/Visitors');
 
 exports.getAllPeople = async (req, res) => {
     try {
-        const people = await People.findAll();
+        const people = await People.findAll({
+            where: { status: true } // Filtra apenas os ativos
+        });
         res.json(people);
     } catch (err) {
-        res.status(500).json({ error: 'Erro ao buscar pessoas.' + err });
+        console.error('Erro ao listar pessoas:', err);
+        res.status(500).json({ error: 'Erro ao listar pessoas.' });
     }
 };
 
+
 exports.getPersonById = async (req, res) => {
-    const { id } = req.params;
+    const {id} = req.params;
     try {
         const person = await People.findByPk(id);
-        if (!person) return res.status(404).json({ message: 'Pessoa não encontrada.' });
+        if (!person) return res.status(404).json({message: 'Pessoa não encontrada.'});
         res.json(person);
     } catch (err) {
-        res.status(500).json({ error: 'Erro ao buscar pessoa.' });
+        res.status(500).json({error: 'Erro ao buscar pessoa.'});
     }
 };
 
@@ -75,30 +79,38 @@ exports.createPerson = async (req, res) => {
         });
     } catch (err) {
         console.error('Erro ao criar pessoa:', err);
-        res.status(500).json({ error: 'Erro ao criar pessoa.' });
+        res.status(500).json({error: 'Erro ao criar pessoa.'});
     }
 };
 
 exports.updatePerson = async (req, res) => {
-    const { id } = req.params;
+    const {id} = req.params;
     try {
         const person = await People.findByPk(id);
-        if (!person) return res.status(404).json({ message: 'Pessoa não encontrada.' });
+        if (!person) return res.status(404).json({message: 'Pessoa não encontrada.'});
         await person.update(req.body);
         res.json(person);
     } catch (err) {
-        res.status(500).json({ error: 'Erro ao atualizar pessoa.' });
+        res.status(500).json({error: 'Erro ao atualizar pessoa.'});
     }
 };
 
 exports.deletePerson = async (req, res) => {
-    const { id } = req.params;
+    const {id} = req.params;
+
     try {
         const person = await People.findByPk(id);
-        if (!person) return res.status(404).json({ message: 'Pessoa não encontrada.' });
-        await person.destroy();
-        res.json({ message: 'Pessoa excluída com sucesso.' });
+        if (!person) {
+            return res.status(404).json({message: 'Pessoa não encontrada.'});
+        }
+
+        // Atualiza o status para false (desativado)
+        await person.update({status: false});
+
+        res.json({message: 'Pessoa desativada com sucesso.'});
+
     } catch (err) {
-        res.status(500).json({ error: 'Erro ao excluir pessoa.' });
+        console.error('Erro ao desativar pessoa:', err);
+        res.status(500).json({error: 'Erro ao desativar pessoa.'});
     }
 };

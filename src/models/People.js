@@ -20,6 +20,11 @@ const People = sequelize.define('People', {
         type: DataTypes.ENUM('visitor', 'regular_attendee', 'member'),
         allowNull: false,
     },
+    status: {
+        type: DataTypes.BOOLEAN,
+        allowNull: false,
+        defaultValue: true,
+    },
 }, {
     tableName: 'people',
     timestamps: true, 

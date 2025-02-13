@@ -3,7 +3,7 @@ name: Deploy to VPS via SCP
 on:
   push:
     branches:
-      - main  # Executa o deploy quando há um push na branch main
+      - main  # Executa o deploy sempre que há um push na branch main
 
 jobs:
   deploy:
@@ -12,22 +12,31 @@ jobs:
       - name: Checkout do código
         uses: actions/checkout@v3
 
+      - name: Configurar Chave SSH
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+          ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+
       - name: Copiar arquivos para o VPS via SCP
         uses: appleboy/scp-action@v0.1.7
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT }}
           source: "./"
           target: "/var/www/ichurch-backend/"
+
       - name: Conectar ao VPS e reiniciar a API
         uses: appleboy/ssh-action@v0.1.10
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USER }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: ${{ secrets.SSH_PORT }}
           script: |
             cd /var/www/ichurch-backend
             yarn install
             pm2 restart ichurch-backend
-          

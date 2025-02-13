@@ -1,26 +1,33 @@
-name: 🚀 Deploy website on push
-on: 
+name: Deploy to VPS via SCP
+
+on:
   push:
     branches:
-      - main
+      - main  # Executa o deploy quando há um push na branch main
+
 jobs:
-  web-deploy:
-    name: 🎉 Deploy
+  deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: 🚚 Get latest code
-      uses: actions/checkout@v4
-    - name: copy file via ssh password
-      uses: appleboy/scp-action@v0.1.7
-      with:
-        host: ${{ secrets.HOST }}
-        username: ${{ secrets.USERNAME }}
-        key: ${{ secrets.PASSWORD }}
-        source: "."
-        target: "/var/www/ichurch-backend"
-    - name: executing remote ssh commands using password
-      uses: appleboy/ssh-action@v1.2.0
-      with:
-        host: ${{ secrets.HOST }}
-        username: root
-        key: ${{ secrets.PASSWORD }}
+      - name: Checkout do código
+        uses: actions/checkout@v3
+
+      - name: Copiar arquivos para o VPS via SCP
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: "./"
+          target: "/var/www/ichurch-backend/"
+      - name: Conectar ao VPS e reiniciar a API
+        uses: appleboy/ssh-action@v0.1.10
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            cd /var/www/ichurch-backend
+            yarn install
+            pm2 restart ichurch-backend
+          

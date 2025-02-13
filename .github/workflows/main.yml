@@ -1,33 +1,19 @@
-name: Deploy to VPS via FTP
-
-on:
+on: 
   push:
     branches:
-      - main  # Executa o deploy sempre que um push for feito na main
-
+      - main
+name: 🚀 Deploy website on push
 jobs:
-  ftp-deploy:
+  web-deploy:
+    name: 🎉 Deploy
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout do Código
-        uses: actions/checkout@v3
-
-      - name: Deploy via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4
-        with:
-          server: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: "/var/www/ichurch-backend/" # Pasta no VPS onde a API será enviada
-          local-dir: "./" # Diretório local a ser enviado
-
-      - name: Conectar ao VPS via SSH e Reiniciar API
-        uses: appleboy/ssh-action@v0.1.10
-        with:
-          host: ${{ secrets.FTP_HOST }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          script: |
-            cd /var/www/ichurch-backend
-            yarn install
-            pm2 restart ichurch-backend
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v4
+    
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      with:
+        server: ${{ secrets.ftp_host }}
+        username: ${{ secrets.ftp_user }}
+        password: ${{ secrets.ftp_password }}

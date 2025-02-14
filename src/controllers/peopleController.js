@@ -6,12 +6,12 @@ const Visitors = require('../models/Visitors');
 exports.getAllPeople = async (req, res) => {
     try {
         const people = await People.findAll({
-            where: { status: true } // Filtra apenas os ativos
+            where: {status: true} // Filtra apenas os ativos
         });
         res.json(people);
     } catch (err) {
         console.error('Erro ao listar pessoas:', err);
-        res.status(500).json({ error: 'Erro ao listar pessoas.' });
+        res.status(500).json({error: 'Erro ao listar pessoas.'});
     }
 };
 
@@ -114,27 +114,28 @@ exports.deletePerson = async (req, res) => {
         res.status(500).json({error: 'Erro ao desativar pessoa.'});
     }
 
-    const { People } = require("../models");
+    const {People} = require("../models");
+
+
+};
 
 // Inativar ou ativar uma pessoa
-    exports.togglePersonStatus = async (req, res) => {
-        const { id } = req.params;
+exports.togglePersonStatus = async (req, res) => {
+    const {id} = req.params;
 
-        try {
-            const person = await People.findByPk(id);
-            if (!person) {
-                return res.status(404).json({ message: "Pessoa não encontrada." });
-            }
-
-            // Alterna o status entre ativo e inativo
-            person.is_active = !person.is_active;
-            await person.save();
-
-            res.json({ message: `Pessoa ${person.is_active ? "ativada" : "inativada"} com sucesso.`, person });
-        } catch (error) {
-            console.error("Erro ao atualizar status da pessoa:", error);
-            res.status(500).json({ error: "Erro ao atualizar status da pessoa." });
+    try {
+        const person = await People.findByPk(id);
+        if (!person) {
+            return res.status(404).json({message: "Pessoa não encontrada."});
         }
-    };
 
+        // Alterna o status entre ativo e inativo
+        person.is_active = !person.is_active;
+        await person.save();
+
+        res.json({message: `Pessoa ${person.is_active ? "ativada" : "inativada"} com sucesso.`, person});
+    } catch (error) {
+        console.error("Erro ao atualizar status da pessoa:", error);
+        res.status(500).json({error: "Erro ao atualizar status da pessoa."});
+    }
 };

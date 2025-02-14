@@ -113,4 +113,28 @@ exports.deletePerson = async (req, res) => {
         console.error('Erro ao desativar pessoa:', err);
         res.status(500).json({error: 'Erro ao desativar pessoa.'});
     }
+
+    const { People } = require("../models");
+
+// Inativar ou ativar uma pessoa
+    exports.togglePersonStatus = async (req, res) => {
+        const { id } = req.params;
+
+        try {
+            const person = await People.findByPk(id);
+            if (!person) {
+                return res.status(404).json({ message: "Pessoa não encontrada." });
+            }
+
+            // Alterna o status entre ativo e inativo
+            person.is_active = !person.is_active;
+            await person.save();
+
+            res.json({ message: `Pessoa ${person.is_active ? "ativada" : "inativada"} com sucesso.`, person });
+        } catch (error) {
+            console.error("Erro ao atualizar status da pessoa:", error);
+            res.status(500).json({ error: "Erro ao atualizar status da pessoa." });
+        }
+    };
+
 };

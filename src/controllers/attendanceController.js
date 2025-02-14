@@ -47,18 +47,20 @@ exports.getAttendanceByPerson = async (req, res) => {
     }
 };
 
-// Listar todas as pessoas e indicar presença no evento
+// Listar todas as pessoas ativas e indicar presença no evento
 exports.getEventWithAttendance = async (req, res) => {
     const { event_id } = req.params;
 
     try {
         const event = await Events.findByPk(event_id);
         if (!event) {
-            return res.status(404).json({ message: 'Evento não encontrado.' });
+            return res.status(404).json({ message: "Evento não encontrado." });
         }
 
-        // Buscar todas as pessoas cadastradas
-        const people = await People.findAll();
+        // Buscar todas as pessoas ativas
+        const people = await People.findAll({
+            where: { is_active: true } // Filtra apenas as pessoas ativas
+        });
 
         // Buscar todas as presenças registradas para o evento
         const attendanceRecords = await Attendance.findAll({
@@ -68,7 +70,7 @@ exports.getEventWithAttendance = async (req, res) => {
         // Criar um mapa de IDs das pessoas que marcaram presença
         const presentPeopleIds = attendanceRecords.map(record => record.person_id);
 
-        // Mapear a lista de pessoas com status de presença
+        // Mapear a lista de pessoas ativas com status de presença
         const peopleWithAttendance = people.map(person => ({
             id: person.id,
             name: person.name,
@@ -87,10 +89,11 @@ exports.getEventWithAttendance = async (req, res) => {
         });
 
     } catch (err) {
-        console.error('Erro ao buscar lista de presença do evento:', err);
-        res.status(500).json({ error: 'Erro ao buscar lista de presença do evento.' });
+        console.error("Erro ao buscar lista de presença do evento:", err);
+        res.status(500).json({ error: "Erro ao buscar lista de presença do evento." });
     }
 };
+
 
 
 // Marcar presença para múltiplas pessoas no evento

@@ -5,15 +5,23 @@ const Visitors = require('../models/Visitors');
 
 exports.getAllPeople = async (req, res) => {
     try {
-        const people = await People.findAll({
-            where: {status: true} // Filtra apenas os ativos
-        });
+        const { status } = req.query; // Obtém o parâmetro da query string
+
+        let whereCondition = {};
+        if (status !== undefined) {
+            // Converte "true"/"false" da string para booleano
+            whereCondition.is_active = status === "true";
+        }
+
+        const people = await People.findAll({ where: whereCondition });
+
         res.json(people);
     } catch (err) {
-        console.error('Erro ao listar pessoas:', err);
-        res.status(500).json({error: 'Erro ao listar pessoas.'});
+        console.error("Erro ao listar pessoas:", err);
+        res.status(500).json({ error: "Erro ao listar pessoas." });
     }
 };
+
 
 
 exports.getPersonById = async (req, res) => {

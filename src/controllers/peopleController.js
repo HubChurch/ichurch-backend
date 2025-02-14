@@ -10,7 +10,7 @@ exports.getAllPeople = async (req, res) => {
         let whereCondition = {};
         if (status !== undefined) {
             // Converte "true"/"false" da string para booleano
-            whereCondition.is_active = status === "true";
+            whereCondition.status = status === "true";
         }
 
         const people = await People.findAll({ where: whereCondition });
@@ -138,10 +138,10 @@ exports.togglePersonStatus = async (req, res) => {
         }
 
         // Alterna o status entre ativo e inativo
-        person.is_active = !person.is_active;
+        person.status = !person.status;
         await person.save();
 
-        res.json({message: `Pessoa ${person.is_active ? "ativada" : "inativada"} com sucesso.`, person});
+        res.json({message: `Pessoa ${person.status ? "ativada" : "inativada"} com sucesso.`, person});
     } catch (error) {
         console.error("Erro ao atualizar status da pessoa:", error);
         res.status(500).json({error: "Erro ao atualizar status da pessoa."});

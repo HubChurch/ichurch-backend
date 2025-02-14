@@ -59,7 +59,7 @@ exports.getEventWithAttendance = async (req, res) => {
 
         // Buscar todas as pessoas ativas
         const people = await People.findAll({
-            where: { is_active: true } // Filtra apenas as pessoas ativas
+            where: { status: true } // Filtra apenas as pessoas ativas
         });
 
         // Buscar todas as presenças registradas para o evento

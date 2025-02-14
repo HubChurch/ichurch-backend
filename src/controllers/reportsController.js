@@ -2,7 +2,8 @@ const Attendance = require('../models/Attendance');
 const People = require('../models/People');
 const Events = require('../models/Events');
 const Visitors = require('../models/Visitors');
-const { Op } = require('sequelize');
+const { Op, Sequelize} = require("sequelize");
+
 
 // Estatísticas gerais de pessoas
 exports.getPeopleStats = async (req, res) => {
@@ -88,26 +89,33 @@ exports.getVisitorVisitsReport = async (req, res) => {
 exports.getBirthdaysThisWeek = async (req, res) => {
     try {
         const today = new Date();
-        const startOfWeek = new Date(today.setDate(today.getDate() - today.getDay())); // Domingo
-        const endOfWeek = new Date(today.setDate(startOfWeek.getDate() + 6)); // Sábado
+        const startDate = new Date();
+        startDate.setDate(today.getDate() - 6); // 🔥 6 dias atrás
+
+        const endDate = new Date();
+        endDate.setDate(today.getDate() + 6); // 🔥 6 dias à frente
+
+        // 🔥 Formata MÊS-DIA para facilitar comparação sem o ano
+        const startMonthDay = `${String(startDate.getMonth() + 1).padStart(2, "0")}-${String(startDate.getDate()).padStart(2, "0")}`;
+        const endMonthDay = `${String(endDate.getMonth() + 1).padStart(2, "0")}-${String(endDate.getDate()).padStart(2, "0")}`;
 
         const birthdays = await People.findAll({
             where: {
-                birth_date: {
-                    [Op.between]: [
-                        `${startOfWeek.getMonth() + 1}-${startOfWeek.getDate()}`,
-                        `${endOfWeek.getMonth() + 1}-${endOfWeek.getDate()}`,
-                    ],
-                },
+                status: true, // 🔥 Filtra apenas pessoas ativas
+                [Op.and]: [
+                    Sequelize.literal(`DATE_FORMAT(birth_date, '%m-%d') BETWEEN '${startMonthDay}' AND '${endMonthDay}'`)
+                ]
             },
+            order: [[Sequelize.literal(`DATE_FORMAT(birth_date, '%m-%d')`), 'ASC']], // 🔥 Ordena por data de nascimento
         });
 
         res.json(birthdays);
     } catch (err) {
-        console.error('Erro ao buscar aniversariantes da semana:', err);
-        res.status(500).json({ error: 'Erro ao buscar aniversariantes da semana.' });
+        console.error("Erro ao buscar aniversariantes da semana:", err);
+        res.status(500).json({ error: "Erro ao buscar aniversariantes da semana." });
     }
 };
+
 
 exports.getAbsentMembers = async (req, res) => {
     try {

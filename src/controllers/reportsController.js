@@ -159,7 +159,7 @@ exports.getEventStats = async (req, res) => {
 
     try {
         // Buscar todas as pessoas ativas no sistema
-        const totalPeople = await People.count({ where: { is_active: true } });
+        const totalPeople = await People.count({ where: { status: true } });
 
         // Buscar todas as presenças registradas para o evento
         const presentPeople = await Attendance.count({ where: { event_id } });
@@ -168,25 +168,26 @@ exports.getEventStats = async (req, res) => {
         const attendanceRecords = await Attendance.findAll({ where: { event_id } });
         const presentPeopleIds = attendanceRecords.map(record => record.person_id);
 
+
         // Contar quantas pessoas estavam ausentes no evento
         const absentPeople = await People.count({
             where: {
-                is_active: true,
+                status: true,
                 id: { [Op.notIn]: presentPeopleIds } // Quem NÃO está na lista de presença
             }
         });
 
         // Contar tipos de pessoas presentes no evento
         const totalVisitorsInEvent = await People.count({
-            where: { type: "visitor", is_active: true, id: { [Op.in]: presentPeopleIds } }
+            where: { type: "visitor", status: true, id: { [Op.in]: presentPeopleIds } }
         });
 
         const totalRegularAttendeesInEvent = await People.count({
-            where: { type: "regular_attendee", is_active: true, id: { [Op.in]: presentPeopleIds } }
+            where: { type: "regular_attendee", status: true, id: { [Op.in]: presentPeopleIds } }
         });
 
         const totalMembersInEvent = await People.count({
-            where: { type: "member", is_active: true, id: { [Op.in]: presentPeopleIds } }
+            where: { type: "member", status: true, id: { [Op.in]: presentPeopleIds } }
         });
 
         res.json({

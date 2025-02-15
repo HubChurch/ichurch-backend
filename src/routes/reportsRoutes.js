@@ -18,4 +18,6 @@ router.get('/birthdays-this-week', reportsController.getBirthdaysThisWeek);
 // Membros ausentes nos dois últimos eventos
 router.get('/absent-members', reportsController.getAbsentMembers);
 
+router.get("/event-stats/:event_id", reportsController.getEventStats);
+
 module.exports = router;

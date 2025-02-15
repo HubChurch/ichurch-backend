@@ -152,3 +152,55 @@ exports.getAbsentMembers = async (req, res) => {
         res.status(500).json({ error: 'Erro ao verificar membros ausentes.' });
     }
 };
+
+// Estatísticas de presença por evento
+exports.getEventStats = async (req, res) => {
+    const { event_id } = req.params;
+
+    try {
+        // Buscar todas as pessoas ativas no sistema
+        const totalPeople = await People.count({ where: { is_active: true } });
+
+        // Buscar todas as presenças registradas para o evento
+        const presentPeople = await Attendance.count({ where: { event_id } });
+
+        // Buscar IDs das pessoas que marcaram presença no evento
+        const attendanceRecords = await Attendance.findAll({ where: { event_id } });
+        const presentPeopleIds = attendanceRecords.map(record => record.person_id);
+
+        // Contar quantas pessoas estavam ausentes no evento
+        const absentPeople = await People.count({
+            where: {
+                is_active: true,
+                id: { [Op.notIn]: presentPeopleIds } // Quem NÃO está na lista de presença
+            }
+        });
+
+        // Contar tipos de pessoas presentes no evento
+        const totalVisitorsInEvent = await People.count({
+            where: { type: "visitor", is_active: true, id: { [Op.in]: presentPeopleIds } }
+        });
+
+        const totalRegularAttendeesInEvent = await People.count({
+            where: { type: "regular_attendee", is_active: true, id: { [Op.in]: presentPeopleIds } }
+        });
+
+        const totalMembersInEvent = await People.count({
+            where: { type: "member", is_active: true, id: { [Op.in]: presentPeopleIds } }
+        });
+
+        res.json({
+            totalPeople,
+            presentPeople,
+            absentPeople,
+            totalVisitorsInEvent,
+            totalRegularAttendeesInEvent,
+            totalMembersInEvent
+        });
+
+    } catch (err) {
+        console.error("Erro ao gerar estatísticas do evento:", err);
+        res.status(500).json({ error: "Erro ao gerar estatísticas do evento." });
+    }
+};
+

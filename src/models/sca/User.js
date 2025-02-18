@@ -1,7 +1,8 @@
 const {DataTypes} = require('sequelize');
 const {scaDB} = require('../../config/db');
+const {Companies} = require("./index");
 
-const User = scaDB.define('user', {
+const Users = scaDB.define('user', {
     id: {
         type: DataTypes.UUID,
         defaultValue: DataTypes.UUIDV4,
@@ -9,7 +10,13 @@ const User = scaDB.define('user', {
     },
     company_id: {
         type: DataTypes.UUID,
-        allowNull: false
+        allowNull: false,
+        references: { // 🔹 Define a referência explícita no banco
+            model: Companies,
+            key: 'id',
+        },
+        onDelete: 'CASCADE',
+        onUpdate: 'CASCADE',
     },
     name: {
         type: DataTypes.STRING,
@@ -38,4 +45,5 @@ const User = scaDB.define('user', {
 }, {
     timestamps: true,
 });
-module.exports = User;
+
+module.exports = Users;

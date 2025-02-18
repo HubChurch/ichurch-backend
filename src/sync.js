@@ -1,8 +1,8 @@
-const { gestorDB, scaDB, worshipDB,communityDB } = require("../src/models");
+const { sequelize, scaDB, worshipDB,communityDB } = require("../src/models");
 
 async function syncDatabases() {
     try {
-        await gestorDB.sync({ alter: true });
+        await sequelize.sync({ alter: true });
         console.log("✅ Banco 'gestor' sincronizado!");
 
         await scaDB.sync({ alter: true });

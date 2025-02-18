@@ -7,14 +7,14 @@ const Permission = scaDB.define('permission', {
         defaultValue: DataTypes.UUIDV4,
         primaryKey: true
     },
-    module_id: {
-        type: DataTypes.UUID,
-        allowNull: false
-    },
     name: {
         type: DataTypes.STRING,
         allowNull: false,
         unique: true
+    },
+    token: {
+        type: DataTypes.STRING,
+        allowNull: false,
     },
     description: {
         type: DataTypes.TEXT

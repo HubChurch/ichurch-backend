@@ -2,6 +2,7 @@ const People = require('../models/People');
 const Members = require('../models/Members');
 const RegularAttendees = require('../models/RegularAttendees');
 const Visitors = require('../models/Visitors');
+const {Logger} = require('../service/logService');
 const express = require("express");
 const multer = require("multer");
 const XLSX = require("xlsx");
@@ -20,6 +21,7 @@ exports.getAllPeople = async (req, res) => {
 
         const people = await People.findAll({where: whereCondition});
 
+        await Logger(1, "LIST", "/people", 200);
         res.json(people);
     } catch (err) {
         console.error("Erro ao listar pessoas:", err);

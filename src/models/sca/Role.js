@@ -1,5 +1,5 @@
 const { DataTypes } = require('sequelize');
-const {scaDB} = require('../../config/db');
+const { scaDB } = require('../../config/db');
 
 const Role = scaDB.define('role', {
     id: {
@@ -21,7 +21,5 @@ const Role = scaDB.define('role', {
 }, {
     timestamps: true,
 });
-
-// Cell.belongsToMany(require('./People'), { through: CellPerson, foreignKey: 'cell_id', as: 'members' });
 
 module.exports = Role;

@@ -1,5 +1,6 @@
 const Cell = require('../models/Cell');
 const Leader = require('../models/Leader');
+const {People} = require("../models/community");
 
 // Criar célula
 exports.createCell = async (req, res) => {

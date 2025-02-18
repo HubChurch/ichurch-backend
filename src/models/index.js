@@ -1,6 +1,4 @@
-const {gestorDB, worshipDB, scaDB,communityDB} = require("../config/db");
-const {Sequelize} = require("sequelize");
-const People = require("../models/People");
+const {sequelize, worshipDB, scaDB,communityDB} = require("../config/db");
 const Sca = require("../models/sca")
 const community = require("../models/community")
-module.exports = { gestorDB,worshipDB,scaDB,...Sca,communityDB,...community };
+module.exports = { sequelize,worshipDB,scaDB,...Sca,communityDB,...community };

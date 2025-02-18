@@ -1,31 +1,31 @@
-const User = require("./User");
-const Module = require("./Module");
-const Role = require("./Role");
-const UserRole = require("./UserRole");
-const Permission = require("./Permission");
-const RolePermission = require("./RolePermission");
-const Company = require("./Company");
+const Users = require("./User");
+const Modules = require("./Module");
+const Roles = require("./Role");
+const UserRoles = require("./UserRole");
+const Permissions = require("./Permission");
+const RolePermissions = require("./RolePermission");
+const Companies = require("./Company");
+const Log = require("./Log");
 
-// Uma empresa tem muitos usuários
-Company.hasMany(User, { foreignKey: "company_id", as: "users" });
-User.belongsTo(Company, { foreignKey: "company_id", as: "company" });
+// 🔹 Uma empresa pode ter vários usuários
+Companies.hasMany(Users, { foreignKey: "company_id", as: "users" });  // ✅ Corrigido para plural
+Users.belongsTo(Companies, { foreignKey: "company_id", as: "company" });
 
-// O dono da empresa é um usuário específico
-Company.belongsTo(User, { foreignKey: "owner_id", as: "owner" });
+// 🔹 Um módulo pode ter várias roles e permissões
+Modules.hasMany(Roles, { foreignKey: "module_id", as: "roles" });
+Roles.belongsTo(Modules, { foreignKey: "module_id", as: "module" });
 
-// Um módulo pode ter várias roles e permissões
-Module.hasMany(Role, { foreignKey: "module_id", as: "roles" });
-Role.belongsTo(Module, { foreignKey: "module_id", as: "module" });
+// 🔹 Relacionamento Many-to-Many entre Roles e Permissões
+Roles.belongsToMany(Permissions, { through: RolePermissions, foreignKey: "role_id", as: "permissions" });
+Permissions.belongsToMany(Roles, { through: RolePermissions, foreignKey: "permission_id", as: "roles" });
 
-Module.hasMany(Permission, { foreignKey: "module_id", as: "permissions" });
-Permission.belongsTo(Module, { foreignKey: "module_id", as: "module" });
+// 🔹 Relacionamento Many-to-Many entre Usuários e Roles
+Users.belongsToMany(Roles, { through: UserRoles, foreignKey: "user_id", otherKey: "role_id", as: "roles" });
+Roles.belongsToMany(Users, { through: UserRoles, foreignKey: "role_id", otherKey: "user_id", as: "users" });
 
-// Relacionamento Many-to-Many entre Roles e Permissões
-Role.belongsToMany(Permission, { through: RolePermission, foreignKey: "role_id", as: "permissions" });
-Permission.belongsToMany(Role, { through: RolePermission, foreignKey: "permission_id", as: "roles" });
+// 🔹 Relacionamento entre Logs e User (FORA DO MODELO)
+Users.hasMany(Log, { foreignKey: "user_id", as: "logs" });
+Log.belongsTo(Users, { foreignKey: "user_id", as: "user" });
 
-// Relacionamento Many-to-Many entre Usuários e Roles
-User.belongsToMany(Role, { through: UserRole, foreignKey: "user_id", as: "roles" });
-Role.belongsToMany(User, { through: UserRole, foreignKey: "role_id", as: "users" });
-
-module.exports = {User, Module, Role, UserRole, Permission, RolePermission,Company};
+// Exportação dos modelos
+module.exports = { Users, Modules, Roles, UserRoles, Permissions, RolePermissions, Companies, Log };

@@ -1,25 +1,27 @@
 const {DataTypes} = require('sequelize');
 const {scaDB} = require('../../config/db');
+const Role = require("./Role");
+const Users = require("./User");
 
 const UserRole = scaDB.define('userRole', {
-    id: {
-        type: DataTypes.UUID,
-        defaultValue: DataTypes.UUIDV4,
-        primaryKey: true
-    },
-    user_id: {
-        type: DataTypes.UUID,
-        allowNull: false
-    },
-    role_id: {
-        type: DataTypes.UUID,
-        allowNull: false
-    }
+
 }, {
     timestamps: true,
     underscored: true
 });
-
-
+UserRole.associations= (models) => {
+    models.User.belongsToMany(models.Role, {
+        as: 'roles',
+        through: UserRole,
+        foreignKey: 'user_id',
+        otherKey: 'role_id',
+    });
+    models.Role.belongsToMany(models.User, {
+        as: 'users',
+        through: UserRole,
+        foreignKey: 'role_id',
+        otherKey: 'user_id',
+    });
+}
 module.exports = UserRole;
 

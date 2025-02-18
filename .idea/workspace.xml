@@ -4,11 +4,48 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="Estatistica do evento" />
+    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="Estatistica do evento - ajuste de bug">
+      <change afterPath="$PROJECT_DIR$/src/controllers/community/attendanceController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controllers/community/eventsController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controllers/community/peopleController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/community/Attendance.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/community/Events.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/community/People.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/community/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/sca/Company.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/sca/Module.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/sca/Permission.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/sca/Role.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/sca/RolePermission.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/sca/User.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/sca/UserRole.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/sca/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/db.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/attendanceController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/attendanceController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Attendance.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Attendance.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Cell.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Cell.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/CellPerson.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/CellPerson.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Events.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Events.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Leader.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Leader.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Members.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Members.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/People.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/People.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/RegularAttendees.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/RegularAttendees.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Visitors.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/Visitors.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sync.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sync.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -34,24 +71,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Node.js.reportsRoutes.js.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/projetos/ichurch-backend&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.3.2.2\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Node.js.reportsRoutes.js.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/projetos/ichurch-backend/src/models/community",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.new.ui",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.3.2.2\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\projetos\ichurch-backend\src\models\community" />
+      <recent name="C:\projetos\ichurch-backend\src\models\sca" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -80,7 +128,10 @@
       <workItem from="1739552323898" duration="3764000" />
       <workItem from="1739556644041" duration="147000" />
       <workItem from="1739559185819" duration="4229000" />
-      <workItem from="1739621229821" duration="637000" />
+      <workItem from="1739621229821" duration="959000" />
+      <workItem from="1739622377817" duration="4802000" />
+      <workItem from="1739799714351" duration="227000" />
+      <workItem from="1739889717584" duration="13539000" />
     </task>
     <task id="LOCAL-00001" summary="Ajuste para agenda">
       <option name="closed" value="true" />
@@ -162,7 +213,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739621696718</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="Estatistica do evento - ajuste de bug">
+      <option name="closed" value="true" />
+      <created>1739622136914</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1739622136914</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -178,6 +237,19 @@
     <MESSAGE value="Correção do aniversario" />
     <MESSAGE value="Importacao de usuario" />
     <MESSAGE value="Estatistica do evento" />
-    <option name="LAST_COMMIT_MESSAGE" value="Estatistica do evento" />
+    <MESSAGE value="Estatistica do evento - ajuste de bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="Estatistica do evento - ajuste de bug" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/controllers/attendanceController.js</url>
+          <line>98</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

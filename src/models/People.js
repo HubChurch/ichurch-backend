@@ -1,7 +1,7 @@
 const { DataTypes } = require('sequelize');
-const sequelize = require('../config/db');
+const {worshipDB} = require('../config/db');
 
-const People = sequelize.define('People', {
+const People = worshipDB.define('People', {
     id: {
         type: DataTypes.UUID,
         defaultValue: DataTypes.UUIDV4,
@@ -26,7 +26,10 @@ const People = sequelize.define('People', {
         defaultValue: true,
     },
 }, {
-    tableName: 'people',
-    timestamps: true, 
+    timestamps: true,
+    underscored: true,
+    createdAt: "data_criacao",
+    updatedAt: "data_atualizacao"
+
 });
 module.exports = People;

@@ -1,25 +1,24 @@
-const sequelize = require('./config/db');
-const People = require('./models/People');
-const Members = require('./models/Members');
-const RegularAttendees = require('./models/RegularAttendees');
-const Visitors = require('./models/Visitors');
-const Events = require('./models/Events');
-const Attendance = require('./models/Attendance');
-const Leader = require('./models/Leader');
-const Cell = require('./models/Cell');
-const CellPerson = require('./models/CellPerson');
+const { gestorDB, scaDB, worshipDB,communityDB } = require("../src/models");
 
-
-Cell.belongsToMany(People, { through: CellPerson, foreignKey: 'cell_id', as: 'members' });
-People.belongsToMany(Cell, { through: CellPerson, foreignKey: 'person_id', as: 'cells' });
-
-(async () => {
+async function syncDatabases() {
     try {
-        await sequelize.sync({ alter: true });
-        console.log('Banco de dados sincronizado com sucesso.');
-        process.exit(0);
-    } catch (err) {
-        console.error('Erro ao sincronizar o banco de dados:', err);
-        process.exit(1);
+        await gestorDB.sync({ alter: true });
+        console.log("✅ Banco 'gestor' sincronizado!");
+
+        await scaDB.sync({ alter: true });
+        console.log("✅ Banco 'sca' sincronizado!");
+
+        await communityDB.sync({ alter: true });
+        console.log("✅ Banco 'community' sincronizado!");
+
+        await worshipDB.sync({ alter: true });
+        console.log("✅ Banco 'worship' sincronizado!");
+
+    } catch (error) {
+        console.error("❌ Erro ao sincronizar os bancos de dados:", error);
+    } finally {
+        process.exit();
     }
-})();
+}
+
+syncDatabases();

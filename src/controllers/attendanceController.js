@@ -94,8 +94,6 @@ exports.getEventWithAttendance = async (req, res) => {
     }
 };
 
-
-
 // Marcar presença para múltiplas pessoas no evento
 exports.markMultipleAttendance = async (req, res) => {
     const { event_id, person_ids } = req.body;

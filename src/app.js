@@ -28,8 +28,8 @@ app.use('/utility', utilityRoutes);
 app.use('/leaders', leadershipRoutes);
 
 app.use('/community/people', peopleRoutes);
-app.use('/community/events', eventsRoutes);
-app.use('/community/attendance', attendanceRoutes);
+// app.use('/community/events', eventsRoutes);
+// app.use('/community/attendance', attendanceRoutes);
 
 
 app.use("/sca/auth", authRoutes);

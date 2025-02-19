@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const peopleRoutes = require('./routes/peopleRoutes');
+const peopleRoutes = require('./routes/community/peopleRoutes');
 const membersRoutes = require('./routes/membersRoutes');
 const regularAttendeesRoutes = require('./routes/regularAttendeesRoutes');
 const visitorsRoutes = require('./routes/visitorsRoutes');
@@ -20,7 +20,6 @@ app.use(cors());
 app.use(express.json());
 
 // Rotas
-app.use('/people', peopleRoutes);
 app.use('/members', membersRoutes);
 app.use('/regular-attendees', regularAttendeesRoutes);
 app.use('/visitors', visitorsRoutes);
@@ -29,6 +28,8 @@ app.use('/attendance', attendanceRoutes);
 app.use('/reports', reportsRoutes);
 app.use('/utility', utilityRoutes);
 app.use('/leaders', leadershipRoutes);
+
+app.use('/community/people', peopleRoutes);
 
 app.use("/sca/auth", authRoutes);
 app.use("/sca/users", usersRoutes);

@@ -1,6 +1,5 @@
 const express = require('express');
 const cors = require('cors');
-const peopleRoutes = require('./routes/community/peopleRoutes');
 const membersRoutes = require('./routes/membersRoutes');
 const regularAttendeesRoutes = require('./routes/regularAttendeesRoutes');
 const visitorsRoutes = require('./routes/visitorsRoutes');

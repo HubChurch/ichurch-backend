@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="migrando pro novo layoutdo community">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/sca/authController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/sca/authController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/cellRoutes.js" beforeDir="false" />
+    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="ajustando bug">
+      <change beforePath="$PROJECT_DIR$/src/models/sca/RolePermission.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/sca/RolePermission.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/sca/UserRole.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/sca/UserRole.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +107,7 @@
       <workItem from="1739799714351" duration="227000" />
       <workItem from="1739889717584" duration="33334000" />
       <workItem from="1739963205056" duration="276000" />
-      <workItem from="1739984671105" duration="2381000" />
+      <workItem from="1739984671105" duration="3474000" />
     </task>
     <task id="LOCAL-00001" summary="Ajuste para agenda">
       <option name="closed" value="true" />
@@ -223,7 +221,23 @@
       <option name="project" value="LOCAL" />
       <updated>1739925186945</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="ajustando bug">
+      <option name="closed" value="true" />
+      <created>1739987253231</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1739987253231</updated>
+    </task>
+    <task id="LOCAL-00016" summary="ajustando bug">
+      <option name="closed" value="true" />
+      <created>1739987413006</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1739987413006</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -243,7 +257,8 @@
     <MESSAGE value="Ajustando para agora ter sca e community" />
     <MESSAGE value="ajustando para permissions, roles e user" />
     <MESSAGE value="migrando pro novo layoutdo community" />
-    <option name="LAST_COMMIT_MESSAGE" value="migrando pro novo layoutdo community" />
+    <MESSAGE value="ajustando bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajustando bug" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

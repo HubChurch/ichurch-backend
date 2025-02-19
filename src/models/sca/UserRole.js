@@ -1,7 +1,4 @@
-const {DataTypes} = require('sequelize');
 const {scaDB} = require('../../config/db');
-const Role = require("./Role");
-const Users = require("./User");
 
 const UserRole = scaDB.define('userRole', {
 
@@ -10,13 +7,13 @@ const UserRole = scaDB.define('userRole', {
     underscored: true
 });
 UserRole.associations= (models) => {
-    models.User.belongsToMany(models.Role, {
+    models.User.belongsToMany(models.Roles, {
         as: 'roles',
         through: UserRole,
         foreignKey: 'user_id',
         otherKey: 'role_id',
     });
-    models.Role.belongsToMany(models.User, {
+    models.Roles.belongsToMany(models.User, {
         as: 'users',
         through: UserRole,
         foreignKey: 'role_id',

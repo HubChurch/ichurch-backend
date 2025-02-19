@@ -4,12 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="tirando log">
-      <change afterPath="$PROJECT_DIR$/src/routes/community/AttendanceRoutes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/community/EventsRoutes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/community/PeopleRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/community/attendanceController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/community/attendanceController.js" afterDir="false" />
+    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="ajustando as rotas com novo formato">
+      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/community/peopleController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/community/peopleController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/community/PeopleRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/community/PeopleRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/peopleRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/peopleRoutes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,7 +110,7 @@
       <workItem from="1739889717584" duration="33334000" />
       <workItem from="1739963205056" duration="276000" />
       <workItem from="1739984671105" duration="5544000" />
-      <workItem from="1739993327842" duration="1030000" />
+      <workItem from="1739993327842" duration="3886000" />
     </task>
     <task id="LOCAL-00001" summary="Ajuste para agenda">
       <option name="closed" value="true" />
@@ -273,7 +272,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739990250057</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="ajustando as rotas com novo formato">
+      <option name="closed" value="true" />
+      <created>1739994446304</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1739994446304</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -298,7 +305,8 @@
     <MESSAGE value="BUG 3" />
     <MESSAGE value="sem cell" />
     <MESSAGE value="tirando log" />
-    <option name="LAST_COMMIT_MESSAGE" value="tirando log" />
+    <MESSAGE value="ajustando as rotas com novo formato" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajustando as rotas com novo formato" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

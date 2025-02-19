@@ -29,7 +29,7 @@ app.use('/reports', reportsRoutes);
 app.use('/utility', utilityRoutes);
 app.use('/leaders', leadershipRoutes);
 
-app.use('/community/people', peopleRoutes);
+// app.use('/community/people', peopleRoutes);
 
 app.use("/sca/auth", authRoutes);
 app.use("/sca/users", usersRoutes);

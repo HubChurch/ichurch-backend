@@ -25,7 +25,7 @@ const Attendance = communityDB.define('Attendance', {
         defaultValue: DataTypes.NOW,
     },
 }, {
-    tableName: 'attendance',
+    underscored: true,
     timestamps: true,
 });
 

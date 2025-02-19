@@ -72,3 +72,50 @@ SELECT UUID(), 'Gerenciar Permissões', 'Permite configurar permissões de acess
 WHERE NOT EXISTS (SELECT 1 FROM sca.permissions WHERE token = 'manage_permissions');
 
 
+
+
+
+INSERT INTO community.people (id, company_id, user_id, name, phone, email, birth_date, type, joined_at, status, config, created_at, updated_at)
+SELECT
+    p.id,
+    '78246ef9-d415-4e99-830f-06fbf566654d' AS company_id, -- Substitua pelo ID correto
+    NULL AS user_id,  -- Inicialmente NULL, pode ser atualizado depois
+    p.name,
+    p.phone,
+    NULL AS email, -- Sem e-mail na versão antiga
+    p.birth_date,
+    p.type,
+    p.createdAt AS joined_at,
+    CASE
+        WHEN p.status = 1 THEN 'active'
+        ELSE 'inactive'
+        END AS status,
+    NULL AS config,  -- Pode ser atualizado futuramente
+    p.createdAt AS created_at,
+    p.updatedAt AS updated_at
+FROM ichurch.people p;
+
+
+INSERT INTO community.events (id, company_id, name, event_date, description, status, created_at, updated_at)
+SELECT
+    e.id,
+    '78246ef9-d415-4e99-830f-06fbf566654d' AS company_id, -- Substitua pelo ID correto da empresa
+    e.name,
+    e.event_date,
+    e.description,
+    'active' AS status,  -- Definindo todos como "active" inicialmente
+    e.createdAt AS created_at,
+    e.updatedAt AS updated_at
+FROM ichurch.events e;
+
+INSERT INTO community.attendances (id, company_id, person_id, event_id, attendance_date, created_at, updated_at)
+SELECT
+    a.id,
+    '78246ef9-d415-4e99-830f-06fbf566654d' AS company_id, -- Substitua pelo ID correto da empresa
+    a.person_id,
+    a.event_id,
+    a.attendance_date,
+    a.createdAt AS created_at,
+    a.updatedAt AS updated_at
+FROM ichurch.attendance a;
+

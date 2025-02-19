@@ -29,6 +29,7 @@ const Events = communityDB.define("event", {
     }
 }, {
     timestamps: true,
+    underscored: true
 });
 
 module.exports = Events;

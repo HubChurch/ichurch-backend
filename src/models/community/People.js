@@ -20,7 +20,7 @@ const People = communityDB.define("people", {
         allowNull: false
     },
     phone: {
-        type: DataTypes.STRING(15),
+        type: DataTypes.STRING(30),
         allowNull: true
     },
     email: {
@@ -51,6 +51,7 @@ const People = communityDB.define("people", {
     // Informações de endereço
 }, {
     timestamps: true,
+    underscored: true
 });
 
 module.exports = People;

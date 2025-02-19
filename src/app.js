@@ -9,7 +9,6 @@ const attendanceRoutes = require('./routes/attendanceRoutes');
 const reportsRoutes = require('./routes/reportsRoutes');
 const utilityRoutes = require('./routes/utilityRoutes');
 const leadershipRoutes = require('./routes/leadershipRoutes');
-const cellRoutes = require('./routes/cellRoutes');
 const authRoutes = require('./routes/sca/authRoutes');
 const usersRoutes = require('./routes/sca/usersRoutes');
 const companiesRoutes = require('./routes/sca/companiesRoutes');

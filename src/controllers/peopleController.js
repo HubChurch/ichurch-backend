@@ -34,7 +34,6 @@ exports.getPersonById = async (req, res) => {
     const {id} = req.params;
     try {
         const person = await People.findByPk(id);
-        console.log('teste2')
         if (!person) return res.status(404).json({message: 'Pessoa não encontrada.'});
         res.json(person);
     } catch (err) {

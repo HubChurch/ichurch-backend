@@ -30,7 +30,6 @@ app.use('/attendance', attendanceRoutes);
 app.use('/reports', reportsRoutes);
 app.use('/utility', utilityRoutes);
 app.use('/leaders', leadershipRoutes);
-app.use('/cells', cellRoutes);
 
 app.use("/sca/auth", authRoutes);
 app.use("/sca/users", usersRoutes);

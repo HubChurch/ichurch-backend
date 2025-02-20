@@ -49,7 +49,7 @@ exports.updateEvent = async (req, res) => {
 // 📌 Exclusão lógica (Marcar como deletado)
 exports.deleteEvent = async (req, res) => {
     try {
-        const updated = await Events.update({ status: 'inactive' }, { where: { id: req.params.id, company_id: req.user.company_id } });
+        const updated = await Events.update({ status: 'canceled' }, { where: { id: req.params.id, company_id: req.user.company_id } });
         if (!updated[0]) return res.status(404).json({ error: "Evento não encontrado." });
         res.json({ message: "Evento excluído com sucesso." });
     } catch (err) {

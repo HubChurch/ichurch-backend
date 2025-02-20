@@ -18,4 +18,7 @@ router.put("/:id", authenticate, eventController.updateEvent);
 // 📌 Excluir evento (exclusão lógica)
 router.delete("/:id", authenticate, eventController.deleteEvent);
 
+// 🔹 Listar todas as pessoas relacionadas a um evento
+router.get("/:event_id/people", authenticate, eventController.getEventPeople);
+
 module.exports = router;

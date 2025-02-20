@@ -65,7 +65,7 @@ exports.getAttendanceByEvent = async (req, res) => {
     try {
         const attendance = await Attendance.findAll({
             where: { event_id, company_id: req.user.company_id },
-            include: [{ model: People, as: 'person', attributes: ["id", "name", "type"] }],
+            include: [{ model: People, as: 'person' }],
         });
         res.json(attendance);
     } catch (err) {

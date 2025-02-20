@@ -56,3 +56,47 @@ exports.deleteEvent = async (req, res) => {
         res.status(500).json({ error: "Erro ao excluir evento." });
     }
 };
+
+// 📌 Listar todas as pessoas de um evento (com presença ou não)
+exports.getEventPeople = async (req, res) => {
+    const { event_id } = req.params;
+
+    try {
+        // Verificar se o evento existe
+        const event = await Events.findOne({
+            where: { id: event_id, company_id: req.user.company_id }
+        });
+
+        if (!event) {
+            return res.status(404).json({ message: "Evento não encontrado." });
+        }
+
+        // 🔹 Buscar todas as pessoas da empresa
+        const allPeople = await People.findAll({
+            where: { company_id: req.user.company_id },
+            attributes: ["id", "name", "type"]
+        });
+
+        // 🔹 Buscar presenças desse evento
+        const attendanceList = await Attendance.findAll({
+            where: { event_id },
+            attributes: ["person_id"]
+        });
+
+        // 🔹 Criar um conjunto de IDs das pessoas que marcaram presença
+        const presentPeopleIds = new Set(attendanceList.map(a => a.person_id));
+
+        // 🔹 Adicionar o campo "present" para indicar se a pessoa já marcou presença
+        const formattedPeople = allPeople.map(person => ({
+            id: person.id,
+            name: person.name,
+            type: person.type,
+            present: presentPeopleIds.has(person.id) // Se o ID estiver na lista de presença, está presente
+        }));
+
+        res.json(formattedPeople);
+    } catch (err) {
+        console.error("Erro ao buscar pessoas do evento:", err);
+        res.status(500).json({ error: "Erro ao buscar participantes do evento." });
+    }
+};

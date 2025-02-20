@@ -11,7 +11,7 @@ const usersRoutes = require('./routes/sca/usersRoutes');
 const companiesRoutes = require('./routes/sca/companiesRoutes');
 const rolesRoutes = require('./routes/sca/rolesRoutes');
 const permissionsRoutes = require('./routes/sca/permissionsRoutes');
-// const peopleRoutes = require('./routes/community/PeopleRoutes');
+const peopleRoutes = require('./routes/community/PeopleRoutes');
 // const eventsRoutes = require('./routes/community/eventsRoutes');
 // const attendanceRoutes = require('./routes/community/attendanceRoutes');
 
@@ -27,7 +27,7 @@ app.use('/reports', reportsRoutes);
 app.use('/utility', utilityRoutes);
 app.use('/leaders', leadershipRoutes);
 
-// app.use('/community/people', peopleRoutes);
+app.use('/community/people', peopleRoutes);
 // app.use('/community/events', eventsRoutes);
 // app.use('/community/attendance', attendanceRoutes);
 

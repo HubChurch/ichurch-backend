@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="teste">
-      <change beforePath="$PROJECT_DIR$/src/routes/community/PeopleRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/community/PeopleRoutes.js" afterDir="false" />
+    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="teste 3">
+      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +107,7 @@
       <workItem from="1739889717584" duration="33334000" />
       <workItem from="1739963205056" duration="276000" />
       <workItem from="1739984671105" duration="5544000" />
-      <workItem from="1739993327842" duration="4717000" />
+      <workItem from="1739993327842" duration="7430000" />
     </task>
     <task id="LOCAL-00001" summary="Ajuste para agenda">
       <option name="closed" value="true" />
@@ -293,7 +293,47 @@
       <option name="project" value="LOCAL" />
       <updated>1739998074110</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="teste2">
+      <option name="closed" value="true" />
+      <created>1739998134183</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1739998134183</updated>
+    </task>
+    <task id="LOCAL-00025" summary="teste3">
+      <option name="closed" value="true" />
+      <created>1739998228956</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1739998228956</updated>
+    </task>
+    <task id="LOCAL-00026" summary="Ajustando community">
+      <option name="closed" value="true" />
+      <created>1739998381884</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1739998381884</updated>
+    </task>
+    <task id="LOCAL-00027" summary="Ajustando community">
+      <option name="closed" value="true" />
+      <created>1739998489540</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1739998489540</updated>
+    </task>
+    <task id="LOCAL-00028" summary="teste 3">
+      <option name="closed" value="true" />
+      <created>1739998918557</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1739998918557</updated>
+    </task>
+    <option name="localTasksCounter" value="29" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,7 +361,11 @@
     <MESSAGE value="ajustando as rotas com novo formato" />
     <MESSAGE value="community para people" />
     <MESSAGE value="teste" />
-    <option name="LAST_COMMIT_MESSAGE" value="teste" />
+    <MESSAGE value="teste2" />
+    <MESSAGE value="teste3" />
+    <MESSAGE value="Ajustando community" />
+    <MESSAGE value="teste 3" />
+    <option name="LAST_COMMIT_MESSAGE" value="teste 3" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

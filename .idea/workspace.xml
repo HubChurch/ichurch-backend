@@ -4,9 +4,32 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="people">
-      <change beforePath="$PROJECT_DIR$/src/controllers/community/peopleController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/community/peopleController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/index.js" afterDir="false" />
+    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="teste novo">
+      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/attendanceController.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/eventsController.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/leadershipController.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/membersController.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/regularAttendeesController.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/reportsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/reportsController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/visitorsController.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Attendance.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Cell.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/CellPerson.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Events.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Leader.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Members.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/People.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/RegularAttendees.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/Visitors.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/attendanceRoutes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/community/PeopleRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/community/PeopleRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/eventsRoutes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/leadershipRoutes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/membersRoutes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/regularAttendeesRoutes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/reportsRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/reportsRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/visitorsRoutes.js" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -108,7 +131,7 @@
       <workItem from="1739889717584" duration="33334000" />
       <workItem from="1739963205056" duration="276000" />
       <workItem from="1739984671105" duration="5544000" />
-      <workItem from="1739993327842" duration="8041000" />
+      <workItem from="1739993327842" duration="9572000" />
     </task>
     <task id="LOCAL-00001" summary="Ajuste para agenda">
       <option name="closed" value="true" />
@@ -350,7 +373,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740016569124</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="teste novo">
+      <option name="closed" value="true" />
+      <created>1740017116050</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1740017116050</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -368,7 +399,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ajustes de status pessoa e lista de presenca" />
     <MESSAGE value="correcao de bug" />
     <MESSAGE value="api consulta filtro satus people" />
     <MESSAGE value="bug status" />
@@ -393,18 +423,8 @@
     <MESSAGE value="teste 3" />
     <MESSAGE value="teste 4" />
     <MESSAGE value="people" />
-    <option name="LAST_COMMIT_MESSAGE" value="people" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/controllers/attendanceController.js</url>
-          <line>98</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="teste novo" />
+    <option name="LAST_COMMIT_MESSAGE" value="teste novo" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

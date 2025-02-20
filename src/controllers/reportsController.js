@@ -1,7 +1,6 @@
-const Attendance = require('../models/Attendance');
-const People = require('../models/People');
-const Events = require('../models/Events');
-const Visitors = require('../models/Visitors');
+const Attendance = require('../models/community/Attendance');
+const People = require('../models/community/People');
+const Events = require('../models/community/Events');
 const { Op, Sequelize} = require("sequelize");
 
 
@@ -55,35 +54,6 @@ exports.getEventPresenceReport = async (req, res) => {
     }
 };
 
-exports.getVisitorVisitsReport = async (req, res) => {
-    const { id } = req.params;
-
-    try {
-        const person = await People.findByPk(id);
-        if (!person || person.type !== 'visitor') {
-            return res.status(404).json({ message: 'Visitante não encontrado.' });
-        }
-
-        const visits = await Visitors.findAll({
-            where: { id },
-            attributes: ['visit_date', 'notes'],
-        });
-
-        res.json({
-            visitor: {
-                id: person.id,
-                name: person.name,
-                phone: person.phone,
-                instagram: person.instagram,
-            },
-            totalVisits: visits.length,
-            visits,
-        });
-    } catch (err) {
-        console.error('Erro ao gerar relatório de visitas de visitante:', err);
-        res.status(500).json({ error: 'Erro ao gerar relatório de visitas de visitante.' });
-    }
-};
 
 // Retornar aniversariantes da semana
 exports.getBirthdaysThisWeek = async (req, res) => {

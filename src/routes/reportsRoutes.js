@@ -9,8 +9,6 @@ router.get('/people-stats', reportsController.getPeopleStats);
 // Relatório de presença por evento
 router.get('/event-presence/:event_id', reportsController.getEventPresenceReport);
 
-// Relatório de visitas de um visitante
-router.get('/visitor-visits/:id', reportsController.getVisitorVisitsReport);
 
 // Aniversariantes da semana
 router.get('/birthdays-this-week', reportsController.getBirthdaysThisWeek);

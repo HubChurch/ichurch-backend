@@ -18,8 +18,8 @@ router.put("/:id", authenticate, peopleController.updatePerson);
 // 📌 Desativar uma pessoa (exclusão lógica)
 router.delete("/:id", authenticate, peopleController.deactivatePerson);
 
-// router.patch("/:id/toggle-status",authenticate, peopleController.togglePersonStatus);
-//
-// router.post("/import",authenticate, peopleController.uploadMiddleware, peopleController.importPeopleFile);
+router.patch("/:id/toggle-status",authenticate, peopleController.togglePersonStatus);
+
+router.post("/import",authenticate, peopleController.uploadMiddleware, peopleController.importPeopleFile);
 
 module.exports = router;

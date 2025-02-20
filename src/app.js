@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const reportsRoutes = require('./routes/reportsRoutes');
+// const reportsRoutes = require('./routes/reportsRoutes');
 const utilityRoutes = require('./routes/utilityRoutes');
 const authRoutes = require('./routes/sca/authRoutes');
 const usersRoutes = require('./routes/sca/usersRoutes');
@@ -17,7 +17,7 @@ app.use(express.json());
 
 // Rotas
 app.use('/public', utilityRoutes);
-app.use('/reports', reportsRoutes);
+// app.use('/reports', reportsRoutes);
 app.use('/community/people', peopleRoutes);
 app.use('/community/events', eventsRoutes);
 app.use('/community/attendance', attendanceRoutes);

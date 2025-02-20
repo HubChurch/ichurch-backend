@@ -14,19 +14,32 @@ exports.createEvent = async (req, res) => {
 // 📌 Listar todos os eventos ativos
 exports.getAllEvents = async (req, res) => {
     try {
+        console.log("Requisição recebida para buscar eventos");
+        console.log("Usuário:", req.user);
+
+        if (!req.user || !req.user.company_id) {
+            console.error("Erro: Usuário ou company_id não encontrado!");
+            return res.status(400).json({ error: "Usuário não autenticado ou company_id ausente." });
+        }
+
         const events = await Events.findAll({
-            where: { company_id: req.user.company_id, deleted: false }
+            where: { company_id: req.user.company_id, status: 'active' }
         });
+
+        console.log("Eventos encontrados:", events);
+
         res.json(events);
     } catch (err) {
+        console.error("Erro ao buscar eventos:", err);
         res.status(500).json({ error: "Erro ao buscar eventos." });
     }
 };
 
+
 // 📌 Buscar evento por ID
 exports.getEventById = async (req, res) => {
     try {
-        const event = await Events.findOne({ where: { id: req.params.id, company_id: req.user.company_id, deleted: false } });
+        const event = await Events.findOne({ where: { id: req.params.id, company_id: req.user.company_id, status: 'active' } });
         if (!event) return res.status(404).json({ error: "Evento não encontrado." });
         res.json(event);
     } catch (err) {
@@ -48,7 +61,7 @@ exports.updateEvent = async (req, res) => {
 // 📌 Exclusão lógica (Marcar como deletado)
 exports.deleteEvent = async (req, res) => {
     try {
-        const updated = await Events.update({ deleted: true }, { where: { id: req.params.id, company_id: req.user.company_id } });
+        const updated = await Events.update({ status: 'inactive' }, { where: { id: req.params.id, company_id: req.user.company_id } });
         if (!updated[0]) return res.status(404).json({ error: "Evento não encontrado." });
         res.json({ message: "Evento excluído com sucesso." });
     } catch (err) {

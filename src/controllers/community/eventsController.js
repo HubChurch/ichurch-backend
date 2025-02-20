@@ -14,27 +14,15 @@ exports.createEvent = async (req, res) => {
 // 📌 Listar todos os eventos ativos
 exports.getAllEvents = async (req, res) => {
     try {
-        console.log("Requisição recebida para buscar eventos");
-        console.log("Usuário:", req.user);
-
-        if (!req.user || !req.user.company_id) {
-            console.error("Erro: Usuário ou company_id não encontrado!");
-            return res.status(400).json({ error: "Usuário não autenticado ou company_id ausente." });
-        }
-
         const events = await Events.findAll({
             where: { company_id: req.user.company_id, status: 'active' }
         });
 
-        console.log("Eventos encontrados:", events);
-
         res.json(events);
     } catch (err) {
-        console.error("Erro ao buscar eventos:", err);
         res.status(500).json({ error: "Erro ao buscar eventos." });
     }
 };
-
 
 // 📌 Buscar evento por ID
 exports.getEventById = async (req, res) => {

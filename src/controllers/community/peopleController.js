@@ -18,19 +18,24 @@ exports.createPerson = async (req, res) => {
 // 📌 Listar todas as pessoas ativas de uma empresa
 exports.getAllPeople = async (req, res) => {
     try {
-        console.log('procurando pessoas')
-        console.log(req.user.company_id)
-        const people = await People.findAll({
-            where: { company_id: req.user.company_id, status: "active" }
-        });
-        console.log(people)
+        const { status } = req.query; // Captura o status da query string
+        const whereCondition = { company_id: req.user.company_id };
+
+        if (status) {
+            whereCondition.status = status;
+        }
+
+        const people = await People.findAll({ where: whereCondition });
+
+        console.log(people);
         await Logger(req.user.id, "GET", "/people", 200);
         res.json(people);
     } catch (err) {
-        await Logger(req.user.id, "GET", "/people", 500,err.toString());
+        await Logger(req.user.id, "GET", "/people", 500, err.toString());
         res.status(500).json({ error: "Erro ao buscar pessoas." });
     }
 };
+
 
 // 📌 Buscar uma pessoa pelo ID
 exports.getPersonById = async (req, res) => {

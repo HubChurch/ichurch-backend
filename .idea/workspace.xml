@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="ajuste bug importacao">
+    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="ajuste bug people">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/community/peopleController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/community/peopleController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/sca/authController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/sca/authController.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -110,7 +109,7 @@
       <workItem from="1739963205056" duration="276000" />
       <workItem from="1739984671105" duration="5544000" />
       <workItem from="1739993327842" duration="10100000" />
-      <workItem from="1740064848460" duration="3367000" />
+      <workItem from="1740064848460" duration="4375000" />
     </task>
     <task id="LOCAL-00001" summary="Ajuste para agenda">
       <option name="closed" value="true" />
@@ -384,7 +383,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740019173117</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="ajuste bug people">
+      <option name="closed" value="true" />
+      <created>1740068475870</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1740068475870</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -402,7 +409,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Correção do aniversario" />
     <MESSAGE value="Importacao de usuario" />
     <MESSAGE value="Estatistica do evento" />
     <MESSAGE value="Estatistica do evento - ajuste de bug" />
@@ -427,7 +433,8 @@
     <MESSAGE value="Ajuste de bug" />
     <MESSAGE value="fora reports" />
     <MESSAGE value="ajuste bug importacao" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajuste bug importacao" />
+    <MESSAGE value="ajuste bug people" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajuste bug people" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

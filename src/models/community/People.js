@@ -48,7 +48,6 @@ const People = communityDB.define("people", {
         type: DataTypes.JSON,
         allowNull: true // Pode armazenar configurações extras (ex: batismo, profissão)
     },
-    // Informações de endereço
 }, {
     timestamps: true,
     underscored: true

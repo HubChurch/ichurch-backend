@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="teste 3">
-      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
+    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="people">
+      <change beforePath="$PROJECT_DIR$/src/controllers/community/peopleController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/community/peopleController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,7 +108,7 @@
       <workItem from="1739889717584" duration="33334000" />
       <workItem from="1739963205056" duration="276000" />
       <workItem from="1739984671105" duration="5544000" />
-      <workItem from="1739993327842" duration="7430000" />
+      <workItem from="1739993327842" duration="8041000" />
     </task>
     <task id="LOCAL-00001" summary="Ajuste para agenda">
       <option name="closed" value="true" />
@@ -333,15 +334,40 @@
       <option name="project" value="LOCAL" />
       <updated>1739998918557</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="teste 4">
+      <option name="closed" value="true" />
+      <created>1740016480374</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1740016480374</updated>
+    </task>
+    <task id="LOCAL-00030" summary="people">
+      <option name="closed" value="true" />
+      <created>1740016569124</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1740016569124</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Ajuste para agenda" />
-    <MESSAGE value="Ajuste para deletar e listar adoles" />
     <MESSAGE value="ajustes de status pessoa e lista de presenca" />
     <MESSAGE value="correcao de bug" />
     <MESSAGE value="api consulta filtro satus people" />
@@ -365,7 +391,9 @@
     <MESSAGE value="teste3" />
     <MESSAGE value="Ajustando community" />
     <MESSAGE value="teste 3" />
-    <option name="LAST_COMMIT_MESSAGE" value="teste 3" />
+    <MESSAGE value="teste 4" />
+    <MESSAGE value="people" />
+    <option name="LAST_COMMIT_MESSAGE" value="people" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

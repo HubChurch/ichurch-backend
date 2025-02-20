@@ -1,6 +1,8 @@
-const { People } = require("../../models/community");
+const { People } =- require("../../models/community");
 const {Logger} = require("../../service/logService");
+const multer = require("multer");
 
+const upload = multer({dest: "uploads/"});
 // 📌 Criar uma nova pessoa
 exports.createPerson = async (req, res) => {
     try {
@@ -87,21 +89,6 @@ exports.togglePersonStatus = async (req, res) => {
     }
 };
 
-const multer = require("multer");
-const path = require("path");
-
-// 📌 Configuração do multer para upload de arquivos Excel
-const storage = multer.diskStorage({
-    destination: (req, file, cb) => {
-        cb(null, path.join(__dirname, "../../uploads"));
-    },
-    filename: (req, file, cb) => {
-        cb(null, `${Date.now()}-${file.originalname}`);
-    },
-});
-
-exports.uploadMiddleware = multer({ storage }).single("file");
-
 // 📌 Importar pessoas a partir de um arquivo Excel
 exports.importPeopleFile = async (req, res) => {
     try {
@@ -120,3 +107,5 @@ exports.importPeopleFile = async (req, res) => {
         res.status(500).json({ error: "Erro ao importar pessoas." });
     }
 };
+
+exports.uploadMiddleware = upload.single("file");

@@ -75,7 +75,7 @@ exports.getEventPeople = async (req, res) => {
 
         // 🔹 Buscar todas as pessoas da empresa
         const allPeople = await People.findAll({
-            where: { company_id: req.user.company_id },
+            where: { company_id: req.user.company_id, status : 'active'},
             attributes: ["id", "name", "type"]
         });
 

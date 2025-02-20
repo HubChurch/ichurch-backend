@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="Ajuste bug de eventos" />
+    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="ajuste bug backend" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -110,7 +110,7 @@
       <workItem from="1739963205056" duration="276000" />
       <workItem from="1739984671105" duration="5544000" />
       <workItem from="1739993327842" duration="10100000" />
-      <workItem from="1740064848460" duration="13310000" />
+      <workItem from="1740064848460" duration="13641000" />
     </task>
     <task id="LOCAL-00001" summary="Ajuste para agenda">
       <option name="closed" value="true" />
@@ -464,7 +464,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740080254604</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="ajuste bug backend">
+      <option name="closed" value="true" />
+      <created>1740080614409</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1740080614409</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -482,7 +490,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="migrando pro novo layoutdo community" />
     <MESSAGE value="ajustando bug" />
     <MESSAGE value="BUG 2" />
     <MESSAGE value="BUG 3" />
@@ -507,7 +514,8 @@
     <MESSAGE value="Ajuste de exclusao de evento" />
     <MESSAGE value="Ajuste bug de propriedade de report" />
     <MESSAGE value="Ajuste bug de eventos" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajuste bug de eventos" />
+    <MESSAGE value="ajuste bug backend" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajuste bug backend" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

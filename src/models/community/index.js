@@ -1,6 +1,6 @@
-const People = require('./people');
+const People = require('./People');
 const Events = require('./Events');
-const Attendance = require('./attendance');
+const Attendance = require('./Attendance');
 
 // 📌 Relacionamento entre People e Attendance
 People.hasMany(Attendance, { foreignKey: "person_id", as: "attendances" });

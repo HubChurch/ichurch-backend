@@ -1,35 +1,37 @@
-const Attendance = require('../models/community/Attendance');
-const People = require('../models/community/People');
-const Events = require('../models/community/Events');
-const { Op, Sequelize} = require("sequelize");
+const Attendance = require("../../models/community/Attendance");
+const People = require("../../models/community/People");
+const Events = require("../../models/community/Events");
+const { Op, Sequelize } = require("sequelize");
 
-
-// Estatísticas gerais de pessoas
+// 📌 Estatísticas gerais de pessoas dentro da empresa do usuário autenticado
 exports.getPeopleStats = async (req, res) => {
     try {
-        const totalPeople = await People.count();
-        const totalVisitors = await People.count({ where: { type: 'visitor' } });
-        const totalRegularAttendees = await People.count({ where: { type: 'regular_attendee' } });
-        const totalMembers = await People.count({ where: { type: 'member' } });
+        const companyId = req.user.company_id;
+
+        const totalPeople = await People.count({ where: { company_id: companyId, status : 'active' } });
+        const totalVisitors = await People.count({ where: { company_id: companyId, type: "visitor" , status : 'active'} });
+        const totalRegularAttendees = await People.count({ where: { company_id: companyId, type: "regular_attendee" , status : 'active'} });
+        const totalMembers = await People.count({ where: { company_id: companyId, type: "member", status : 'active' } });
 
         res.json({ totalPeople, totalVisitors, totalRegularAttendees, totalMembers });
     } catch (err) {
-        res.status(500).json({ error: 'Erro ao gerar estatísticas de pessoas.' });
+        res.status(500).json({ error: "Erro ao gerar estatísticas de pessoas." });
     }
 };
 
+// 📌 Relatório de presença por evento
 exports.getEventPresenceReport = async (req, res) => {
     const { event_id } = req.params;
 
     try {
-        const event = await Events.findByPk(event_id);
+        const event = await Events.findOne({ where: { id: event_id, company_id: req.user.company_id } });
         if (!event) {
-            return res.status(404).json({ message: 'Evento não encontrado.' });
+            return res.status(404).json({ message: "Evento não encontrado." });
         }
 
         const attendance = await Attendance.findAll({
             where: { event_id },
-            include: [{ model: People, as: 'person' }],
+            include: [{ model: People, as: "person" }],
         });
 
         const totalAttendees = attendance.length;
@@ -49,13 +51,12 @@ exports.getEventPresenceReport = async (req, res) => {
             attendees,
         });
     } catch (err) {
-        console.error('Erro ao gerar relatório de presença por evento:', err);
-        res.status(500).json({ error: 'Erro ao gerar relatório de presença por evento.' });
+        console.error("Erro ao gerar relatório de presença por evento:", err);
+        res.status(500).json({ error: "Erro ao gerar relatório de presença por evento." });
     }
 };
 
-
-// Retornar aniversariantes da semana
+// 📌 Retornar aniversariantes da semana
 exports.getBirthdaysThisWeek = async (req, res) => {
     try {
         const today = new Date();
@@ -71,12 +72,13 @@ exports.getBirthdaysThisWeek = async (req, res) => {
 
         const birthdays = await People.findAll({
             where: {
-                status: true, // 🔥 Filtra apenas pessoas ativas
+                company_id: req.user.company_id,
+                status: "active", // 🔥 Filtra apenas pessoas ativas
                 [Op.and]: [
                     Sequelize.literal(`DATE_FORMAT(birth_date, '%m-%d') BETWEEN '${startMonthDay}' AND '${endMonthDay}'`)
                 ]
             },
-            order: [[Sequelize.literal(`DATE_FORMAT(birth_date, '%m-%d')`), 'ASC']], // 🔥 Ordena por data de nascimento
+            order: [[Sequelize.literal(`DATE_FORMAT(birth_date, '%m-%d')`), "ASC"]], // 🔥 Ordena por data de nascimento
         });
 
         res.json(birthdays);
@@ -86,17 +88,18 @@ exports.getBirthdaysThisWeek = async (req, res) => {
     }
 };
 
-
+// 📌 Listar membros ausentes nos últimos dois eventos
 exports.getAbsentMembers = async (req, res) => {
     try {
-        // Obter os dois eventos mais recentes
+        // Obter os dois eventos mais recentes da empresa do usuário
         const recentEvents = await Events.findAll({
-            order: [['event_date', 'DESC']],
+            where: { company_id: req.user.company_id },
+            order: [["event_date", "DESC"]],
             limit: 2,
         });
 
         if (recentEvents.length < 2) {
-            return res.status(400).json({ message: 'São necessários pelo menos dois eventos para calcular a ausência.' });
+            return res.status(400).json({ message: "São necessários pelo menos dois eventos para calcular a ausência." });
         }
 
         const [event1, event2] = recentEvents;
@@ -108,8 +111,8 @@ exports.getAbsentMembers = async (req, res) => {
         const attendeesIdsEvent1 = attendeesEvent1.map((attendance) => attendance.person_id);
         const attendeesIdsEvent2 = attendeesEvent2.map((attendance) => attendance.person_id);
 
-        // Obter todos os membros
-        const allMembers = await People.findAll({ where: { type: 'member' } });
+        // Obter todos os membros da empresa do usuário
+        const allMembers = await People.findAll({ where: { company_id: req.user.company_id, type: "member" } });
 
         // Filtrar membros ausentes nos dois eventos
         const absentMembers = allMembers.filter(
@@ -118,60 +121,68 @@ exports.getAbsentMembers = async (req, res) => {
 
         res.json(absentMembers);
     } catch (err) {
-        console.error('Erro ao verificar membros ausentes:', err);
-        res.status(500).json({ error: 'Erro ao verificar membros ausentes.' });
+        console.error("Erro ao verificar membros ausentes:", err);
+        res.status(500).json({ error: "Erro ao verificar membros ausentes." });
     }
 };
 
-// Estatísticas de presença por evento
+// 📌 Estatísticas de presença por evento
 exports.getEventStats = async (req, res) => {
     const { event_id } = req.params;
 
     try {
-        // Buscar todas as pessoas ativas no sistema
-        const totalPeople = await People.count({ where: { status: true } });
+        const event = await Events.findOne({ where: { id: event_id, company_id: req.user.company_id } });
+        if (!event) {
+            return res.status(404).json({ message: "Evento não encontrado." });
+        }
+
+        // Buscar todas as pessoas ativas no sistema da empresa do usuário
+        const totalPeople = await People.count({ where: { company_id: req.user.company_id, status: "active" } });
 
         // Buscar todas as presenças registradas para o evento
         const presentPeople = await Attendance.count({ where: { event_id } });
 
         // Buscar IDs das pessoas que marcaram presença no evento
         const attendanceRecords = await Attendance.findAll({ where: { event_id } });
-        const presentPeopleIds = attendanceRecords.map(record => record.person_id);
-
+        const presentPeopleIds = attendanceRecords.map((record) => record.person_id);
 
         // Contar quantas pessoas estavam ausentes no evento
         const absentPeople = await People.count({
             where: {
-                status: true,
-                id: { [Op.notIn]: presentPeopleIds } // Quem NÃO está na lista de presença
-            }
+                company_id: req.user.company_id,
+                status: "active",
+                id: { [Op.notIn]: presentPeopleIds }, // Quem NÃO está na lista de presença
+            },
         });
 
         // Contar tipos de pessoas presentes no evento
         const totalVisitorsInEvent = await People.count({
-            where: { type: "visitor", status: true, id: { [Op.in]: presentPeopleIds } }
+            where: { company_id: req.user.company_id, type: "visitor", status: "active", id: { [Op.in]: presentPeopleIds } },
         });
 
         const totalRegularAttendeesInEvent = await People.count({
-            where: { type: "regular_attendee", status: true, id: { [Op.in]: presentPeopleIds } }
+            where: { company_id: req.user.company_id, type: "regular_attendee", status: "active", id: { [Op.in]: presentPeopleIds } },
         });
 
         const totalMembersInEvent = await People.count({
-            where: { type: "member", status: true, id: { [Op.in]: presentPeopleIds } }
+            where: { company_id: req.user.company_id, type: "member", status: "active", id: { [Op.in]: presentPeopleIds } },
         });
 
         res.json({
+            event: {
+                id: event.id,
+                name: event.name,
+                date: event.event_date,
+            },
             totalPeople,
             presentPeople,
             absentPeople,
             totalVisitorsInEvent,
             totalRegularAttendeesInEvent,
-            totalMembersInEvent
+            totalMembersInEvent,
         });
-
     } catch (err) {
         console.error("Erro ao gerar estatísticas do evento:", err);
         res.status(500).json({ error: "Erro ao gerar estatísticas do evento." });
     }
 };
-

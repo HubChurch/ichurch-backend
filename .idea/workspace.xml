@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="Ajuste bug de propriedade no evento">
+    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="Ajuste de exclusao de evento">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/reportsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/community/reportsController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/reportsRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/community/reportsRoutes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -72,6 +74,10 @@
       <recent name="C:\projetos\ichurch-backend\src\models\community" />
       <recent name="C:\projetos\ichurch-backend\src\models\sca" />
     </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\projetos\ichurch-backend\src\routes\community" />
+      <recent name="C:\projetos\ichurch-backend\src\controllers\community" />
+    </key>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -108,7 +114,7 @@
       <workItem from="1739963205056" duration="276000" />
       <workItem from="1739984671105" duration="5544000" />
       <workItem from="1739993327842" duration="10100000" />
-      <workItem from="1740064848460" duration="5627000" />
+      <workItem from="1740064848460" duration="6818000" />
     </task>
     <task id="LOCAL-00001" summary="Ajuste para agenda">
       <option name="closed" value="true" />
@@ -414,7 +420,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740069901696</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="Ajuste de exclusao de evento">
+      <option name="closed" value="true" />
+      <created>1740070863239</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1740070863239</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -432,7 +446,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Estatistica do evento - ajuste de bug" />
     <MESSAGE value="Ajustando para agora ter sca e community" />
     <MESSAGE value="ajustando para permissions, roles e user" />
     <MESSAGE value="migrando pro novo layoutdo community" />
@@ -457,7 +470,8 @@
     <MESSAGE value="ajuste bug people" />
     <MESSAGE value="Pessoas ativas ou inativas via parametro" />
     <MESSAGE value="Ajuste bug de propriedade no evento" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ajuste bug de propriedade no evento" />
+    <MESSAGE value="Ajuste de exclusao de evento" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ajuste de exclusao de evento" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

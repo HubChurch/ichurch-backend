@@ -26,7 +26,7 @@ const communityDB = new Sequelize("community", process.env.DB_USER, process.env.
     host: process.env.DB_HOST,
     dialect: "mysql",
     port: 3306,
-    logging: false
+    logging: true
 });
 
 // Exporta as conexões

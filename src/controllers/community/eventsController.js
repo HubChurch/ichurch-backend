@@ -1,5 +1,5 @@
 const { Events } = require("../../models/community");
-
+const { Attendance, People } = require("../../models/community");
 // 📌 Criar um novo evento
 exports.createEvent = async (req, res) => {
     try {
@@ -66,6 +66,8 @@ exports.getEventPeople = async (req, res) => {
         const event = await Events.findOne({
             where: { id: event_id, company_id: req.user.company_id }
         });
+
+        console.log(event)
 
         if (!event) {
             return res.status(404).json({ message: "Evento não encontrado." });

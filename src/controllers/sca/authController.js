@@ -6,9 +6,12 @@ const { Logger } = require("../../service/logService");
 exports.login = async (req, res) => {
     const { email, password } = req.body;
 
+    console.log('INICIANDO LOGIN');
     try {
         const user = await Users.findOne({ where: { email }, include: { model: Companies, as: "company" } });
         if (!user) return res.status(401).json({ error: "Usuário ou senha inválidos." });
+
+        console.log(user)
 
         const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) return res.status(401).json({ error: "Usuário ou senha inválidos." });
@@ -18,7 +21,7 @@ exports.login = async (req, res) => {
             process.env.JWT_SECRET,
             { expiresIn: "8h" }
         );
-
+        console.log('TOKEN GER', token);
         await Logger(user.id, "LOGIN", "/sca/auth/login", 200, "Usuário logou no sistema");
 
         res.json({ token, user });

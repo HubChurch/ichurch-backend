@@ -4,32 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="teste novo">
-      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/attendanceController.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/eventsController.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/leadershipController.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/membersController.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/regularAttendeesController.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/reportsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/reportsController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/visitorsController.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Attendance.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Cell.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/CellPerson.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Events.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Leader.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Members.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/People.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/RegularAttendees.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/Visitors.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/attendanceRoutes.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/community/PeopleRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/community/PeopleRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/eventsRoutes.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/leadershipRoutes.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/membersRoutes.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/regularAttendeesRoutes.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/reportsRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/reportsRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/visitorsRoutes.js" beforeDir="false" />
+    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="ajuste bug importacao">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/community/peopleController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/community/peopleController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/sca/authController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/sca/authController.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,30 +45,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Node.js.reportsRoutes.js.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "database.data.extractors.current.export.id": "SQL Inserts",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/projetos/ichurch-backend",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.uml",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.3.2.2\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Node.js.reportsRoutes.js.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;database.data.extractors.current.export.id&quot;: &quot;SQL Inserts&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/projetos/ichurch-backend&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.uml&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.3.2.2\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\projetos\ichurch-backend\src\models\community" />
@@ -131,7 +109,8 @@
       <workItem from="1739889717584" duration="33334000" />
       <workItem from="1739963205056" duration="276000" />
       <workItem from="1739984671105" duration="5544000" />
-      <workItem from="1739993327842" duration="9572000" />
+      <workItem from="1739993327842" duration="10100000" />
+      <workItem from="1740064848460" duration="3367000" />
     </task>
     <task id="LOCAL-00001" summary="Ajuste para agenda">
       <option name="closed" value="true" />
@@ -381,7 +360,31 @@
       <option name="project" value="LOCAL" />
       <updated>1740017116050</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="Ajuste de bug">
+      <option name="closed" value="true" />
+      <created>1740018731795</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1740018731795</updated>
+    </task>
+    <task id="LOCAL-00033" summary="fora reports">
+      <option name="closed" value="true" />
+      <created>1740018991163</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1740018991163</updated>
+    </task>
+    <task id="LOCAL-00034" summary="ajuste bug importacao">
+      <option name="closed" value="true" />
+      <created>1740019173117</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1740019173117</updated>
+    </task>
+    <option name="localTasksCounter" value="35" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -399,9 +402,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="correcao de bug" />
-    <MESSAGE value="api consulta filtro satus people" />
-    <MESSAGE value="bug status" />
     <MESSAGE value="Correção do aniversario" />
     <MESSAGE value="Importacao de usuario" />
     <MESSAGE value="Estatistica do evento" />
@@ -424,7 +424,10 @@
     <MESSAGE value="teste 4" />
     <MESSAGE value="people" />
     <MESSAGE value="teste novo" />
-    <option name="LAST_COMMIT_MESSAGE" value="teste novo" />
+    <MESSAGE value="Ajuste de bug" />
+    <MESSAGE value="fora reports" />
+    <MESSAGE value="ajuste bug importacao" />
+    <option name="LAST_COMMIT_MESSAGE" value="ajuste bug importacao" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

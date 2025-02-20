@@ -1,4 +1,4 @@
-const { People } =- require("../../models/community");
+const { People } = require("../../models/community");
 const {Logger} = require("../../service/logService");
 const multer = require("multer");
 
@@ -18,9 +18,12 @@ exports.createPerson = async (req, res) => {
 // 📌 Listar todas as pessoas ativas de uma empresa
 exports.getAllPeople = async (req, res) => {
     try {
+        console.log('procurando pessoas')
+        console.log(req.user.company_id)
         const people = await People.findAll({
             where: { company_id: req.user.company_id, status: "active" }
         });
+        console.log(people)
         await Logger(req.user.id, "GET", "/people", 200);
         res.json(people);
     } catch (err) {

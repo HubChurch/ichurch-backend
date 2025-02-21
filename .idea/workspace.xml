@@ -5,38 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="ajuste bug backend">
-      <change afterPath="$PROJECT_DIR$/src/controllers/ministry/ministryController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controllers/ministry/ministryMemberController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/ministry/Ministries.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/ministry/MinistryMember.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/ministry/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/ministry/ministryMemberRoutes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/ministry/ministryRoutes.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/config/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/db.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/community/eventsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/community/eventsController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/community/peopleController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/community/peopleController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/community/reportsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/community/reportsController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/sca/authController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/sca/authController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/sca/permissionsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/sca/permissionsController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/sca/rolesController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/sca/rolesController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/middlewares/authMiddleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/authMiddleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/community/Events.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/community/Events.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/sca/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/sca/User.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/community/AttendanceRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/community/AttendanceRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/community/EventsRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/community/EventsRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/community/PeopleRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/community/PeopleRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/community/reportsRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/community/reportsRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/sca/authRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/sca/authRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/sca/companiesRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/sca/companiesRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/sca/permissionsRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/sca/permissionsRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/sca/rolesRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/sca/rolesRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/sca/usersRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/sca/usersRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/sync.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sync.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/sca/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/sca/userController.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +56,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "database.data.extractors.current.export.id": "SQL Inserts",
-    "git-widget-placeholder": "ministerios",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/projetos/ichurch-backend",
     "node.js.detected.package.eslint": "true",
@@ -558,7 +528,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ajustando bug" />
     <MESSAGE value="BUG 2" />
     <MESSAGE value="BUG 3" />
     <MESSAGE value="sem cell" />
@@ -583,7 +552,20 @@
     <MESSAGE value="Ajuste bug de propriedade de report" />
     <MESSAGE value="Ajuste bug de eventos" />
     <MESSAGE value="ajuste bug backend" />
-    <option name="LAST_COMMIT_MESSAGE" value="ajuste bug backend" />
+    <MESSAGE value="sistema de ministerios" />
+    <option name="LAST_COMMIT_MESSAGE" value="sistema de ministerios" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/controllers/sca/userController.js</url>
+          <line>4</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

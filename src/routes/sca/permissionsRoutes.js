@@ -1,10 +1,10 @@
 const express = require("express");
 const { getUserPermissions } = require("../../controllers/sca/permissionsController");
-const { authenticate } = require("../../middlewares/authMiddleware");
+const authMiddleware = require("../../middlewares/authMiddleware");
 
 const router = express.Router();
 
 // 📌 Listar as Permissões do Usuário Autenticado
-router.get("/me", authenticate, getUserPermissions);
+router.get("/me", authMiddleware, getUserPermissions);
 
 module.exports = router;

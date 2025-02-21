@@ -1,14 +1,14 @@
 const express = require("express");
 const { getUserRoles, updateUserRoles, getRolePermissions } = require("../../controllers/sca/rolesController");
-const { authenticate } = require("../../middlewares/authMiddleware");
+const authMiddleware = require("../../middlewares/authMiddleware");
 
 const router = express.Router();
 
 // 📌 Listar as Roles do Usuário Autenticado
-router.get("/me", authenticate, getUserRoles);
+router.get("/me", authMiddleware, getUserRoles);
 
 // 📌 Atualizar Roles de um Usuário (Adicionar ou Remover) - Apenas Master
-router.post("/update", authenticate, updateUserRoles);
+router.post("/update", authMiddleware, updateUserRoles);
 
 // 📌 Listar permissões de uma Role
 router.get("/:role_id/permissions", getRolePermissions);

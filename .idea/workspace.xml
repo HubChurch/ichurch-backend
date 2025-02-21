@@ -4,7 +4,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="ajuste bug backend" />
+    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="ajuste bug backend">
+      <change afterPath="$PROJECT_DIR$/src/controllers/ministry/ministryController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/controllers/ministry/ministryMemberController.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/ministry/Ministries.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/ministry/MinistryMember.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/models/ministry/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/ministry/ministryMemberRoutes.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/routes/ministry/ministryRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/config/db.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/config/db.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/community/eventsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/community/eventsController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/community/peopleController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/community/peopleController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/community/reportsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/community/reportsController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/sca/authController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/sca/authController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/sca/permissionsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/sca/permissionsController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/sca/rolesController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/sca/rolesController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/middlewares/authMiddleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/authMiddleware.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/community/Events.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/community/Events.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/sca/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/sca/User.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/community/AttendanceRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/community/AttendanceRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/community/EventsRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/community/EventsRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/community/PeopleRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/community/PeopleRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/community/reportsRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/community/reportsRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/sca/authRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/sca/authRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/sca/companiesRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/sca/companiesRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/sca/permissionsRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/sca/permissionsRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/sca/rolesRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/sca/rolesRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/sca/usersRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/sca/usersRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sync.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sync.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -18,6 +51,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="main" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -41,39 +79,61 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Node.js.reportsRoutes.js.executor&quot;: &quot;Debug&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;database.data.extractors.current.export.id&quot;: &quot;SQL Inserts&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/projetos/ichurch-backend&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.uml&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.3.2.2\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Jest.🔹 Testes no módulo Ministério.executor": "Run",
+    "Node.js.reportsRoutes.js.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "database.data.extractors.current.export.id": "SQL Inserts",
+    "git-widget-placeholder": "ministerios",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/projetos/ichurch-backend",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs.jest.jest_package": "C:/projetos/ichurch-backend/node_modules/jest",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "reference.settings.ide.settings.uml",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.3.2.2\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\projetos\ichurch-backend\src\models\community" />
       <recent name="C:\projetos\ichurch-backend\src\models\sca" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\projetos\ichurch-backend\src\models\ministry" />
       <recent name="C:\projetos\ichurch-backend\src\routes\community" />
       <recent name="C:\projetos\ichurch-backend\src\controllers\community" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="🔹 Testes no módulo Ministério" type="JavaScriptTestRunnerJest" temporary="true" nameIsGenerated="true">
+      <node-interpreter value="project" />
+      <jest-package value="$PROJECT_DIR$/node_modules/jest" />
+      <working-dir value="$PROJECT_DIR$" />
+      <envs />
+      <scope-kind value="SUITE" />
+      <test-file value="$PROJECT_DIR$/src/__tests__/ministry.test.js" />
+      <test-names>
+        <test-name value="🔹 Testes no módulo Ministério" />
+      </test-names>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Jest.🔹 Testes no módulo Ministério" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -110,7 +170,7 @@
       <workItem from="1739963205056" duration="276000" />
       <workItem from="1739984671105" duration="5544000" />
       <workItem from="1739993327842" duration="10100000" />
-      <workItem from="1740064848460" duration="13641000" />
+      <workItem from="1740064848460" duration="23791000" />
     </task>
     <task id="LOCAL-00001" summary="Ajuste para agenda">
       <option name="closed" value="true" />
@@ -472,7 +532,15 @@
       <option name="project" value="LOCAL" />
       <updated>1740080614409</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="ajuste bug backend">
+      <option name="closed" value="true" />
+      <created>1740081014035</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1740081014035</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

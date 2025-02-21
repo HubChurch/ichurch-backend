@@ -11,6 +11,10 @@ const Events = communityDB.define("event", {
         type: DataTypes.UUID,
         allowNull: false
     },
+    ministry_id: {
+        type: DataTypes.UUID,
+        allowNull: true
+    },
     name: {
         type: DataTypes.STRING(100),
         allowNull: false

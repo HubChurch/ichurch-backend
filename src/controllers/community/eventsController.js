@@ -67,8 +67,6 @@ exports.getEventPeople = async (req, res) => {
             where: { id: event_id, company_id: req.user.company_id }
         });
 
-        console.log(event)
-
         if (!event) {
             return res.status(404).json({ message: "Evento não encontrado." });
         }

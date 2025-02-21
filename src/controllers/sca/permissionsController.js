@@ -3,7 +3,6 @@ const {Roles, Permissions, Users} = require("../../models/sca");
 // 📌 Listar as Permissões do Usuário Autenticado
 exports.getUserPermissions = async (req, res) => {
     try {
-        console.log("Usuário autenticado:", req.user.id);
 
         const user = await Users.findByPk(req.user.id, {
             include: [{model: Roles, as: "roles", include: [{model: Permissions, as: "permissions", through: {attributes: []}}],}],

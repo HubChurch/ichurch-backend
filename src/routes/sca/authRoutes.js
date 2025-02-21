@@ -1,6 +1,6 @@
 const express = require("express");
-const { login, logout, getAuthenticatedUser } = require("../../controllers/sca/authController");
-const { authenticate } = require("../../middlewares/authMiddleware");
+const { login, logout, getauthMiddlewaredUser } = require("../../controllers/sca/authController");
+const authMiddleware = require("../../middlewares/authMiddleware");
 
 const router = express.Router();
 
@@ -8,9 +8,9 @@ const router = express.Router();
 router.post("/login", login);
 
 // 📌 Rota para Logout (Opcional, pode ser apenas frontend removendo o token)
-router.post("/logout", authenticate, logout);
+router.post("/logout", authMiddleware, logout);
 
 // 📌 Rota para obter os dados do usuário autenticado
-router.get("/me", authenticate, getAuthenticatedUser);
+router.get("/me", authMiddleware, getauthMiddlewaredUser);
 
 module.exports = router;

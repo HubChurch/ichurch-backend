@@ -4,7 +4,6 @@ const { Logger } = require("../../service/logService");
 // 📌 Listar as Roles do Usuário Autenticado
 exports.getUserRoles = async (req, res) => {
     try {
-        console.log("Usuário autenticado:", req.user.id);
 
         const user = await Users.findByPk(req.user.id, {
             include: [{ model: Roles, as: "roles", through: { attributes: [] } }],

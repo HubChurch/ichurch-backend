@@ -1,22 +1,22 @@
 const express = require("express");
 const router = express.Router();
 const attendanceController = require("../../controllers/community/attendanceController");
-const { authenticate } = require("../../middlewares/authMiddleware");
+const authMiddleware = require("../../middlewares/authMiddleware");
 
 // 📌 Registrar presença individual
-router.post("/", authenticate, attendanceController.markAttendance);
+router.post("/", authMiddleware, attendanceController.markAttendance);
 
 // 📌 Registrar presença para múltiplas pessoas
-router.post("/mark-multiple", authenticate, attendanceController.markMultipleAttendance);
+router.post("/mark-multiple", authMiddleware, attendanceController.markMultipleAttendance);
 
 // 📌 Listar presenças por evento
-router.get("/event/:event_id", authenticate, attendanceController.getAttendanceByEvent);
+router.get("/event/:event_id", authMiddleware, attendanceController.getAttendanceByEvent);
 
 // 📌 Atualizar presença de uma pessoa em um evento
-router.put("/:id", authenticate, attendanceController.updateAttendance);
+router.put("/:id", authMiddleware, attendanceController.updateAttendance);
 
-router.get('/by-event',authenticate, attendanceController.getAttendanceByEvent);
-router.get('/by-person',authenticate, attendanceController.getAttendanceByPerson);
+router.get('/by-event',authMiddleware, attendanceController.getAttendanceByEvent);
+router.get('/by-person',authMiddleware, attendanceController.getAttendanceByPerson);
 
-router.post('/toggle',authenticate, attendanceController.toggleAttendance);
+router.post('/toggle',authMiddleware, attendanceController.toggleAttendance);
 module.exports = router;

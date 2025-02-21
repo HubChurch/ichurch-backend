@@ -1,24 +1,24 @@
 const express = require("express");
 const router = express.Router();
 const eventController = require("../../controllers/community/eventsController");
-const { authenticate } = require("../../middlewares/authMiddleware");
+const authMiddleware = require("../../middlewares/authMiddleware");
 
 // 📌 Criar um novo evento
-router.post("/", authenticate, eventController.createEvent);
+router.post("/", authMiddleware, eventController.createEvent);
 
 // 📌 Listar todos os eventos ativos
-router.get("/", authenticate, eventController.getAllEvents);
+router.get("/", authMiddleware, eventController.getAllEvents);
 
 // 📌 Buscar evento por ID
-router.get("/:id", authenticate, eventController.getEventById);
+router.get("/:id", authMiddleware, eventController.getEventById);
 
 // 📌 Atualizar um evento
-router.put("/:id", authenticate, eventController.updateEvent);
+router.put("/:id", authMiddleware, eventController.updateEvent);
 
 // 📌 Excluir evento (exclusão lógica)
-router.delete("/:id", authenticate, eventController.deleteEvent);
+router.delete("/:id", authMiddleware, eventController.deleteEvent);
 
 // 🔹 Listar todas as pessoas relacionadas a um evento
-router.get("/:event_id/people", authenticate, eventController.getEventPeople);
+router.get("/:event_id/people", authMiddleware, eventController.getEventPeople);
 
 module.exports = router;

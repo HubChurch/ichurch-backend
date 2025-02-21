@@ -28,6 +28,12 @@ const communityDB = new Sequelize("community", process.env.DB_USER, process.env.
     port: 3306,
     logging: false
 });
+const ministryDB = new Sequelize("ministry", process.env.DB_USER, process.env.DB_PASS, {
+    host: process.env.DB_HOST,
+    dialect: "mysql",
+    port: 3306,
+    logging: false
+});
 
 // Exporta as conexões
-module.exports = { sequelize, worshipDB,scaDB,communityDB };
+module.exports = { sequelize, worshipDB,scaDB,communityDB, ministryDB };

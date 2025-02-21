@@ -11,10 +11,6 @@ const Users = scaDB.define('user', {
     company_id: {
         type: DataTypes.UUID,
         allowNull: false,
-        // references: { // 🔹 Define a referência explícita no banco
-        //     model: Companies,
-        //     key: 'id',
-        // },
         onDelete: 'CASCADE',
         onUpdate: 'CASCADE',
     },

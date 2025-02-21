@@ -27,7 +27,6 @@ exports.getAllPeople = async (req, res) => {
 
         const people = await People.findAll({ where: whereCondition });
 
-        console.log(people);
         await Logger(req.user.id, "GET", "/people", 200);
         res.json(people);
     } catch (err) {
@@ -105,8 +104,6 @@ exports.importPeopleFile = async (req, res) => {
         }
 
         // 🔥 Aqui seria o processamento do Excel (por exemplo, usando xlsx ou papaparse)
-        console.log("Arquivo recebido:", req.file.filename);
-
         await Logger(req.user.id, "POST", "/people/import", 200, { filename: req.file.filename });
 
         res.status(200).json({ message: "Arquivo recebido e processado com sucesso." });

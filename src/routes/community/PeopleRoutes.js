@@ -16,7 +16,7 @@ router.get("/", authMiddleware, peopleController.getAllPeople);
 router.get("/:id", authMiddleware, peopleController.getPersonById);
 
 // 📌 Atualizar uma pessoa
-router.put("/:id", authMiddleware, peopleController.updatePerson);
+router.put("/:id", authMiddleware, upload.single("photo"),peopleController.updatePerson);
 
 // 📌 Desativar uma pessoa (exclusão lógica)
 router.delete("/:id", authMiddleware, peopleController.deactivatePerson);

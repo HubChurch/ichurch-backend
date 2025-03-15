@@ -78,12 +78,32 @@ exports.getPersonById = async (req, res) => {
 // 📌 Atualizar pessoa
 exports.updatePerson = async (req, res) => {
     try {
-        const updated = await People.update(req.body, { where: { id: req.params.id, company_id: req.user.company_id } });
-        if (!updated[0]) return res.status(404).json({ error: "Pessoa não encontrada." });
+        let imageUrl = null;
+
+        // 📌 Se houver uma nova imagem, faz upload para o S3
+        if (req.file) {
+            try {
+                imageUrl = await uploadToS3(req.file, "profile", req.body.name);
+            } catch (uploadError) {
+                console.error("Erro ao enviar imagem para o S3:", uploadError);
+                return res.status(500).json({ error: "Erro ao enviar imagem para o S3." });
+            }
+        }
+
+        // 📌 Atualiza os dados da pessoa
+        const updatedData = { ...req.body };
+        if (imageUrl) updatedData.photo = imageUrl; // 🔥 Atualiza a foto apenas se houver uma nova
+
+        const [updated] = await People.update(updatedData, {
+            where: { id: req.params.id, company_id: req.user.company_id },
+        });
+
+        if (!updated) return res.status(404).json({ error: "Pessoa não encontrada." });
+
         await Logger(req.user.id, "UPDATE", "/people/:id", 200);
         res.json({ message: "Pessoa atualizada com sucesso." });
     } catch (err) {
-        await Logger(req.user.id, "UPDATE", "/people/:id", 500,err.toString());
+        await Logger(req.user.id, "UPDATE", "/people/:id", 500, err.toString());
         res.status(500).json({ error: "Erro ao atualizar pessoa." });
     }
 };

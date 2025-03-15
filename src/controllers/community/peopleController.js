@@ -4,25 +4,34 @@ const multer = require("multer");
 
 const upload = multer({dest: "uploads/"});
 // 📌 Criar uma nova pessoa
+const uploadToS3 = require("../../utils/uploadService");
+
 exports.createPerson = async (req, res) => {
     try {
         const { photo, ...personData } = req.body;
+        let imageUrl = null;
 
-        // Se houver imagem, verificamos se é uma string válida
-        if (photo && typeof photo !== "string") {
-            return res.status(400).json({ error: "Formato de imagem inválido." });
+        // Se houver uma imagem no upload, faz o upload para o S3
+        if (req.file) {
+            try {
+                imageUrl = await uploadToS3(req.file,'profile', personData.name); // Upload e retorna a URL
+            } catch (uploadError) {
+                console.error("Erro ao fazer upload da imagem:", uploadError);
+                return res.status(500).json({ error: "Erro ao enviar imagem para o S3." });
+            }
         }
 
         const person = await People.create({
             ...personData,
             company_id: req.user.company_id,
-            photo: photo || null // Se não tiver imagem, salva como NULL
+            photo: imageUrl || null
         });
+
 
         await Logger(req.user.id, "CREATE", "/people", 201, {
             ...req.body,
             company_id: req.user.company_id
-        });
+        }.toString());
 
         res.status(201).json(person);
     } catch (err) {

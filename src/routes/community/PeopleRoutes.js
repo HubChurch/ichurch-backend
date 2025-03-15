@@ -2,9 +2,12 @@ const express = require("express");
 const router = express.Router();
 const peopleController = require("../../controllers/community/peopleController");
 const authMiddleware = require("../../middlewares/authMiddleware");
+const multer = require("multer");
+
+const upload = multer({ storage: multer.memoryStorage() });
 
 // 📌 Criar uma nova pessoa
-router.post("/", authMiddleware, peopleController.createPerson);
+router.post("/", authMiddleware,  upload.single("photo"),peopleController.createPerson);
 
 // 📌 Listar todas as pessoas ativas
 router.get("/", authMiddleware, peopleController.getAllPeople);

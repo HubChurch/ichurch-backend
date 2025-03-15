@@ -74,7 +74,7 @@ exports.getEventPeople = async (req, res) => {
         // 🔹 Buscar todas as pessoas da empresa
         const allPeople = await People.findAll({
             where: { company_id: req.user.company_id, status : 'active'},
-            attributes: ["id", "name", "type"]
+            attributes: ["id", "name", "type", "photo"]
         });
 
         // 🔹 Buscar presenças desse evento
@@ -91,6 +91,7 @@ exports.getEventPeople = async (req, res) => {
             id: person.id,
             name: person.name,
             type: person.type,
+            photo: person.photo,
             present: presentPeopleIds.has(person.id) // Se o ID estiver na lista de presença, está presente
         }));
 

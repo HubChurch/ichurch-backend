@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="sistema de ministerios">
+    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.5.0 - edicao de usuar com imagem">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/community/eventsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/community/eventsController.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -142,6 +143,7 @@
       <workItem from="1740064848460" duration="23791000" />
       <workItem from="1740139684955" duration="12000" />
       <workItem from="1740415564177" duration="639000" />
+      <workItem from="1742051861589" duration="2449000" />
     </task>
     <task id="LOCAL-00001" summary="Ajuste para agenda">
       <option name="closed" value="true" />
@@ -519,7 +521,23 @@
       <option name="project" value="LOCAL" />
       <updated>1740100539941</updated>
     </task>
-    <option name="localTasksCounter" value="48" />
+    <task id="LOCAL-00048" summary="Sistema de salvar fotos no s3">
+      <option name="closed" value="true" />
+      <created>1742051741780</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1742051741780</updated>
+    </task>
+    <task id="LOCAL-00049" summary="versao 0.5.0 - edicao de usuar com imagem">
+      <option name="closed" value="true" />
+      <created>1742055314941</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1742055314941</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -537,9 +555,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="BUG 2" />
-    <MESSAGE value="BUG 3" />
-    <MESSAGE value="sem cell" />
     <MESSAGE value="tirando log" />
     <MESSAGE value="ajustando as rotas com novo formato" />
     <MESSAGE value="community para people" />
@@ -562,7 +577,10 @@
     <MESSAGE value="Ajuste bug de eventos" />
     <MESSAGE value="ajuste bug backend" />
     <MESSAGE value="sistema de ministerios" />
-    <option name="LAST_COMMIT_MESSAGE" value="sistema de ministerios" />
+    <MESSAGE value="Cadastrando imagem no adolescente" />
+    <MESSAGE value="Sistema de salvar fotos no s3" />
+    <MESSAGE value="versao 0.5.0 - edicao de usuar com imagem" />
+    <option name="LAST_COMMIT_MESSAGE" value="versao 0.5.0 - edicao de usuar com imagem" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

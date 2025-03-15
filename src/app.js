@@ -19,7 +19,7 @@ app.use(express.json());
 
 // Rotas
 app.use('/public', utilityRoutes);
-// app.use('/community/reports', reportsRoutes);
+app.use('/community/reports', reportsRoutes);
 app.use('/community/people', peopleRoutes);
 app.use('/community/events', eventsRoutes);
 app.use('/community/attendance', attendanceRoutes);

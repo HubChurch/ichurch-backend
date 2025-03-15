@@ -44,6 +44,10 @@ const People = communityDB.define("people", {
         type: DataTypes.ENUM("active", "inactive", "deleted"), // Delete lógico
         defaultValue: "active"
     },
+    photo: {
+        type: DataTypes.TEXT,
+        allowNull: true
+    },
     config: {
         type: DataTypes.JSON,
         allowNull: true // Pode armazenar configurações extras (ex: batismo, profissão)

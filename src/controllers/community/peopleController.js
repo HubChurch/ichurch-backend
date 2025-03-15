@@ -6,14 +6,31 @@ const upload = multer({dest: "uploads/"});
 // 📌 Criar uma nova pessoa
 exports.createPerson = async (req, res) => {
     try {
-        const person = await People.create({ ...req.body, company_id: req.user.company_id });
-        await Logger(req.user.id, "CREATE", "/people", 201,{ ...req.body, company_id: req.user.company_id });
+        const { photo, ...personData } = req.body;
+
+        // Se houver imagem, verificamos se é uma string válida
+        if (photo && typeof photo !== "string") {
+            return res.status(400).json({ error: "Formato de imagem inválido." });
+        }
+
+        const person = await People.create({
+            ...personData,
+            company_id: req.user.company_id,
+            photo: photo || null // Se não tiver imagem, salva como NULL
+        });
+
+        await Logger(req.user.id, "CREATE", "/people", 201, {
+            ...req.body,
+            company_id: req.user.company_id
+        });
+
         res.status(201).json(person);
     } catch (err) {
-        await Logger(req.user.id, "CREATE", "/people", 500,err.toString());
+        await Logger(req.user.id, "CREATE", "/people", 500, err.toString());
         res.status(500).json({ error: "Erro ao criar pessoa." });
     }
 };
+
 
 // 📌 Listar todas as pessoas ativas de uma empresa
 exports.getAllPeople = async (req, res) => {

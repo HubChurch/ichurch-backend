@@ -84,3 +84,44 @@ exports.saveFaceImages = async (req, res) => {
         res.status(500).json({ success: false, message: "Erro no servidor" });
     }
 };
+
+
+
+exports.recognizeFace = async (req, res) => {
+    if (!req.file) return res.status(400).json({ error: "Nenhuma imagem enviada" });
+
+    const imageKey = `faces/${Date.now()}.jpg`;
+
+    try {
+        // Enviar imagem para o S3
+        await s3.send(
+            new PutObjectCommand({
+                Bucket: bucketName,
+                Key: imageKey,
+                Body: req.file.buffer,
+                ContentType: "image/jpeg",
+            })
+        );
+
+        console.log("Imagem enviada para S3:", imageKey);
+
+        // Comparar imagens com Rekognition
+        const params = {
+            SourceImage: { S3Object: { Bucket: bucketName, Name: imageKey } },
+            TargetImage: { S3Object: { Bucket: bucketName, Name: "faces/imagem1.jpg" } }, // Corrigido
+            SimilarityThreshold: 80,
+        };
+
+        const command = new CompareFacesCommand(params);
+        const response = await rekognition.send(command);
+
+        if (response.FaceMatches.length > 0) {
+            res.json({ success: true, message: "Usuário reconhecido!", data: response.FaceMatches });
+        } else {
+            res.json({ success: false, message: "Usuário não reconhecido" });
+        }
+    } catch (error) {
+        console.error("Erro no reconhecimento:", error);
+        res.status(500).json({ error: "Erro no processamento" });
+    }
+};

@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.5.0 - edicao de usuar com imagem">
+    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.6.0 - Reconhecimento facial inicio">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/community/eventsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/community/eventsController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/FaceRecognitionController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/FaceRecognitionController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/faceRecognition.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/faceRecognition.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +17,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="TypeScript File" />
         <option value="JavaScript File" />
       </list>
     </option>
@@ -144,14 +146,7 @@
       <workItem from="1740139684955" duration="12000" />
       <workItem from="1740415564177" duration="639000" />
       <workItem from="1742051861589" duration="2449000" />
-    </task>
-    <task id="LOCAL-00001" summary="Ajuste para agenda">
-      <option name="closed" value="true" />
-      <created>1739484351906</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1739484351906</updated>
+      <workItem from="1742136495290" duration="5343000" />
     </task>
     <task id="LOCAL-00002" summary="Ajuste para deletar e listar adoles">
       <option name="closed" value="true" />
@@ -537,7 +532,15 @@
       <option name="project" value="LOCAL" />
       <updated>1742055314941</updated>
     </task>
-    <option name="localTasksCounter" value="50" />
+    <task id="LOCAL-00050" summary="versao 0.6.0 - Reconhecimento facial inicio">
+      <option name="closed" value="true" />
+      <created>1742139088945</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1742139088947</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -555,7 +558,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="tirando log" />
     <MESSAGE value="ajustando as rotas com novo formato" />
     <MESSAGE value="community para people" />
     <MESSAGE value="teste" />
@@ -580,7 +582,8 @@
     <MESSAGE value="Cadastrando imagem no adolescente" />
     <MESSAGE value="Sistema de salvar fotos no s3" />
     <MESSAGE value="versao 0.5.0 - edicao de usuar com imagem" />
-    <option name="LAST_COMMIT_MESSAGE" value="versao 0.5.0 - edicao de usuar com imagem" />
+    <MESSAGE value="versao 0.6.0 - Reconhecimento facial inicio" />
+    <option name="LAST_COMMIT_MESSAGE" value="versao 0.6.0 - Reconhecimento facial inicio" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

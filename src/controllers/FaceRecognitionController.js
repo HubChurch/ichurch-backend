@@ -66,3 +66,36 @@ exports.recognizeFace = async (req, res) => {
         res.status(500).json({ error: "Erro no processamento" });
     }
 };
+
+exports.saveFaceImages = async (req, res) => {
+    try {
+        const { userId } = req.body;
+        if (!userId) {
+            return res.status(400).json({ success: false, message: 'UUID do usuário é obrigatório' });
+        }
+
+        if (!req.files || req.files.length === 0) {
+            return res.status(400).json({ success: false, message: 'Nenhuma imagem recebida' });
+        }
+
+        const uploadPromises = req.files.map(async (file, index) => {
+            const imageKey = `faces/${userId}/face_${index}.jpg`;
+            const params = {
+                Bucket: process.env.AWS_BUCKET_NAME,
+                Key: imageKey,
+                Body: file.buffer,
+                ContentType: 'image/jpeg',
+            };
+
+            await s3.send(new PutObjectCommand(params));
+            return imageKey;
+        });
+
+        const uploadedImages = await Promise.all(uploadPromises);
+
+        res.json({ success: true, message: 'Imagens salvas com sucesso', images: uploadedImages });
+    } catch (error) {
+        console.error('Erro ao salvar imagens:', error);
+        res.status(500).json({ success: false, message: 'Erro no servidor' });
+    }
+};

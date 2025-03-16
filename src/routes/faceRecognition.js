@@ -9,6 +9,6 @@ const upload = multer({ storage });
 // Criar endpoint para reconhecimento facial
 router.post("/recognize", FaceRecognitionController.uploadImage, FaceRecognitionController.recognizeFace);
 router.post('/save', upload.array('images', 5), FaceRecognitionController.saveFaceImages);
-
+router.get("/check/:userId", FaceRecognitionController.checkUserImages);
 
 module.exports = router;

@@ -13,6 +13,8 @@ const attendanceRoutes = require('./routes/community/AttendanceRoutes');
 const ministryRoutes = require('./routes/ministry/ministryRoutes');
 const ministryMemberRoutes = require('./routes/ministry/ministryMemberRoutes');
 
+const faceRecognitionRoutes = require("./routes/faceRecognition");
+
 const app = express();
 app.use(cors());
 app.use(express.json());
@@ -32,6 +34,7 @@ app.use("/sca/permissions", permissionsRoutes);
 
 app.use("/ministry/", ministryRoutes);
 app.use("/ministry/members", ministryMemberRoutes);
+app.use("/face-recognition", faceRecognitionRoutes);
 
 // Middleware de erro
 const errorHandler = require('./middlewares/errorHandler');

@@ -16,6 +16,7 @@ const s3 = new S3Client({
 const storage = multer.memoryStorage();
 const upload = multer({ storage });
 
+
 exports.uploadImages = upload.array("images", 5); // No máximo 5 imagens
 
 /**

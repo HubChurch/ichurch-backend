@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.6.0 - Reconhecimento facial inicio">
+    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.6.3 - verificando se a pessoa ja tem reconhecimento facial - Ajuste de bug">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/FaceRecognitionController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/FaceRecognitionController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/faceRecognition.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/faceRecognition.js" afterDir="false" />
@@ -146,31 +146,7 @@
       <workItem from="1740139684955" duration="12000" />
       <workItem from="1740415564177" duration="639000" />
       <workItem from="1742051861589" duration="2449000" />
-      <workItem from="1742136495290" duration="5343000" />
-    </task>
-    <task id="LOCAL-00002" summary="Ajuste para deletar e listar adoles">
-      <option name="closed" value="true" />
-      <created>1739486314226</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1739486314226</updated>
-    </task>
-    <task id="LOCAL-00003" summary="ajustes de status pessoa e lista de presenca">
-      <option name="closed" value="true" />
-      <created>1739507801108</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1739507801108</updated>
-    </task>
-    <task id="LOCAL-00004" summary="correcao de bug">
-      <option name="closed" value="true" />
-      <created>1739508444340</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1739508444340</updated>
+      <workItem from="1742136495290" duration="6915000" />
     </task>
     <task id="LOCAL-00005" summary="api consulta filtro satus people">
       <option name="closed" value="true" />
@@ -540,7 +516,31 @@
       <option name="project" value="LOCAL" />
       <updated>1742139088947</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="versao 0.6.1 - salvando 5 imagens para cada pessoa">
+      <option name="closed" value="true" />
+      <created>1742146325178</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1742146325178</updated>
+    </task>
+    <task id="LOCAL-00052" summary="versao 0.6.2 - verificando se a pessoa ja tem reconhecimento facial">
+      <option name="closed" value="true" />
+      <created>1742147968440</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1742147968440</updated>
+    </task>
+    <task id="LOCAL-00053" summary="versao 0.6.3 - verificando se a pessoa ja tem reconhecimento facial - Ajuste de bug">
+      <option name="closed" value="true" />
+      <created>1742148143040</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1742148143040</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -558,9 +558,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ajustando as rotas com novo formato" />
-    <MESSAGE value="community para people" />
-    <MESSAGE value="teste" />
     <MESSAGE value="teste2" />
     <MESSAGE value="teste3" />
     <MESSAGE value="Ajustando community" />
@@ -583,7 +580,10 @@
     <MESSAGE value="Sistema de salvar fotos no s3" />
     <MESSAGE value="versao 0.5.0 - edicao de usuar com imagem" />
     <MESSAGE value="versao 0.6.0 - Reconhecimento facial inicio" />
-    <option name="LAST_COMMIT_MESSAGE" value="versao 0.6.0 - Reconhecimento facial inicio" />
+    <MESSAGE value="versao 0.6.1 - salvando 5 imagens para cada pessoa" />
+    <MESSAGE value="versao 0.6.2 - verificando se a pessoa ja tem reconhecimento facial" />
+    <MESSAGE value="versao 0.6.3 - verificando se a pessoa ja tem reconhecimento facial - Ajuste de bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="versao 0.6.3 - verificando se a pessoa ja tem reconhecimento facial - Ajuste de bug" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

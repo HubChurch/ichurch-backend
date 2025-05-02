@@ -12,6 +12,8 @@ const eventsRoutes = require('./routes/community/EventsRoutes');
 const attendanceRoutes = require('./routes/community/AttendanceRoutes');
 const ministryRoutes = require('./routes/ministry/ministryRoutes');
 const ministryMemberRoutes = require('./routes/ministry/ministryMemberRoutes');
+const ministryCellGroup = require('./routes/ministry/cellGroupRoutes')
+const ministryCellMember = require('./routes/ministry/cellMemberRoutes')
 
 const faceRecognitionRoutes = require("./routes/faceRecognition");
 
@@ -32,8 +34,10 @@ app.use("/sca/companies", companiesRoutes);
 app.use("/sca/roles", rolesRoutes);
 app.use("/sca/permissions", permissionsRoutes);
 
-app.use("/ministry/", ministryRoutes);
+app.use("/ministry/ministries", ministryRoutes);
 app.use("/ministry/members", ministryMemberRoutes);
+app.use("/ministry/cell-groups", ministryCellGroup);
+app.use("/ministry/cell-members", ministryCellMember);
 app.use("/face-recognition", faceRecognitionRoutes);
 
 // Middleware de erro

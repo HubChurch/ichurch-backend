@@ -1,17 +1,43 @@
-const Ministries = require("./Ministries");
+const Ministry = require("./Ministries");
 const MinistryMember = require("./MinistryMember");
-const Event = require("../community/Events");
+const CellGroup = require("./CellGroups");
+const CellMember = require("./CellMembers");
 
 // 📌 Relacionamento: Um Ministério tem vários membros
-Ministries.hasMany(MinistryMember, { foreignKey: "ministry_id", as: "members" });
-MinistryMember.belongsTo(Ministries, { foreignKey: "ministry_id", as: "ministry" });
+Ministry.hasMany(MinistryMember, {
+    foreignKey: "ministry_id",
+    as: "members",
+});
+MinistryMember.belongsTo(Ministry, {
+    foreignKey: "ministry_id",
+    as: "ministry",
+});
 
-// 📌 Relacionamento: Um Ministério pode ter vários eventos
-// Ministries.hasMany(Event, { foreignKey: "ministry_id", as: "events" });
-// Event.belongsTo(Ministries, { foreignKey: "ministry_id", as: "ministry" });
+// 📌 Relacionamento: Um Ministério tem várias células
+Ministry.hasMany(CellGroup, {
+    foreignKey: "ministry_id",
+    as: "cell_groups",
+});
+CellGroup.belongsTo(Ministry, {
+    foreignKey: "ministry_id",
+    as: "ministry",
+});
 
-// 📌 Relacionamento: Um membro pode estar em vários ministérios
+// 📌 Relacionamento: Uma célula tem vários membros
+CellGroup.hasMany(CellMember, {
+    foreignKey: "cell_group_id",
+    as: "members",
+});
+CellMember.belongsTo(CellGroup, {
+    foreignKey: "cell_group_id",
+    as: "cell_group",
+});
+
+// 📌 Relacionamento com pessoa pode ser adicionado se quiser referenciar community.person futuramente
+
 module.exports = {
-    Ministries,
+    Ministry,
     MinistryMember,
+    CellGroup,
+    CellMember,
 };

@@ -1,7 +1,7 @@
 const express = require("express");
 const {
     createCellGroup,
-    getCellGroupsByMinistry,
+    getCellGroupsByMinistry,getCellGroupById,updateCellGroup
 } = require("../../controllers/ministry/cellGroupController");
 const authMiddleware = require("../../middlewares/authMiddleware");
 

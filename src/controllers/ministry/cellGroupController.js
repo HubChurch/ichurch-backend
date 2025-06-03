@@ -56,7 +56,68 @@ const getCellGroupsByMinistry = async (req, res) => {
     }
 };
 
+/**
+* Pe
+*/
+
+
+/**
+ * @route   GET /ministry/cell-groups/:id/details
+ * @desc    Retorna os dados de uma célula específica
+ * @access  Protegido
+ */
+const getCellGroupById = async (req, res) => {
+    try {
+        const { id } = req.params;
+
+        const cellGroup = await CellGroup.findOne({
+            where: { id, company_id: req.company_id },
+        });
+
+        if (!cellGroup) {
+            return res.status(404).json({ error: "Célula não encontrada" });
+        }
+
+        return res.status(200).json(cellGroup);
+    } catch (error) {
+        console.error("Erro ao buscar célula:", error);
+        return res.status(500).json({ error: "Erro interno do servidor" });
+    }
+};
+
+/**
+ * @route   PUT /ministry/cell-groups/:id
+ * @desc    Atualiza os dados de uma célula existente
+ * @access  Protegido
+ */
+const updateCellGroup = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const { name, description } = req.body;
+
+        const cellGroup = await CellGroup.findOne({
+            where: { id, company_id: req.company_id },
+        });
+
+        if (!cellGroup) {
+            return res.status(404).json({ error: "Célula não encontrada" });
+        }
+
+        cellGroup.name = name;
+        cellGroup.description = description;
+        await cellGroup.save();
+
+        return res.status(200).json(cellGroup);
+    } catch (error) {
+        console.error("Erro ao atualizar célula:", error);
+        return res.status(500).json({ error: "Erro interno do servidor" });
+    }
+};
+
+
 module.exports = {
     createCellGroup,
     getCellGroupsByMinistry,
+    updateCellGroup,
+    getCellGroupById
 };

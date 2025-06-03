@@ -6,10 +6,8 @@ const Ministry = require("../../models/ministry/Ministries");
 const createMinistry = async (req, res) => {
     try {
         const { name, description } = req.body;
-
-        console.log('name')
         const ministry = await Ministry.create({
-            company_id: req.company_id, // ✅ Define automaticamente o company_id
+            company_id: req.company_id,
             name,
             description,
         });

@@ -21,4 +21,8 @@ router.post("/", authMiddleware, createCellGroup);
  */
 router.get("/:ministry_id", authMiddleware, getCellGroupsByMinistry);
 
+router.get("/:id/details", authMiddleware, getCellGroupById);
+
+router.put("/:id", authMiddleware, updateCellGroup);
+
 module.exports = router;

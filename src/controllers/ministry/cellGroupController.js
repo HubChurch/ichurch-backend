@@ -81,6 +81,7 @@ const getCellGroupById = async (req, res) => {
                             model: People,
                             as: "person",
                             attributes: ["id", "name"],
+                            required: false,
                         },
                     ],
                 },

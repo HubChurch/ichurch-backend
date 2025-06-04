@@ -33,7 +33,6 @@ const Ministries = ministryDB.define(
     {
         timestamps: true,
         underscored: true,
-        schema: "ministry",
 
     }
 );

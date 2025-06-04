@@ -55,8 +55,6 @@ const People = communityDB.define("people", {
 }, {
     timestamps: true,
     underscored: true ,
-    schema: "community",
-    tableName: "people",
 });
 
 module.exports = People;

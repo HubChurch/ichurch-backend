@@ -1,6 +1,7 @@
 const CellGroup = require("../../models/ministry/CellGroups");
 const Ministry = require("../../models/ministry/Ministries");
 const {CellMember} = require("../../models/ministry");
+const {People} = require("../../models/community");
 
 /**
  * Cria uma nova célula vinculada a um ministério
@@ -64,24 +65,50 @@ const getCellGroupsByMinistry = async (req, res) => {
  * @desc    Retorna os dados de uma célula específica
  * @access  Protegido
  */
+
 const getCellGroupById = async (req, res) => {
     try {
         const { id } = req.params;
 
         const cellGroup = await CellGroup.findOne({
             where: { id, company_id: req.company_id },
+            include: [
+                {
+                    model: CellMember,
+                    as: "members",
+                    include: [
+                        {
+                            model: People,
+                            as: "person",
+                            attributes: ["id", "name"],
+                        },
+                    ],
+                },
+            ],
         });
 
         if (!cellGroup) {
             return res.status(404).json({ error: "Célula não encontrada" });
         }
 
-        return res.status(200).json(cellGroup);
+        const formatted = {
+            id: cellGroup.id,
+            name: cellGroup.name,
+            description: cellGroup.description,
+            members: cellGroup.members.map((member) => ({
+                id: member.person.id,
+                name: member.person.name,
+                role: member.role,
+            })),
+        };
+
+        return res.status(200).json(formatted);
     } catch (error) {
         console.error("Erro ao buscar célula:", error);
         return res.status(500).json({ error: "Erro interno do servidor" });
     }
 };
+
 
 /**
  * @route   PUT /ministry/cell-groups/:id

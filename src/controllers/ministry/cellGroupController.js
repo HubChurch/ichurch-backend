@@ -76,14 +76,6 @@ const getCellGroupById = async (req, res) => {
                 {
                     model: CellMember,
                     as: "members",
-                    include: [
-                        {
-                            model: People,
-                            as: "person",
-                            attributes: ["id", "name"],
-                            required: false,
-                        },
-                    ],
                 },
             ],
         });
@@ -92,15 +84,26 @@ const getCellGroupById = async (req, res) => {
             return res.status(404).json({ error: "Célula não encontrada" });
         }
 
+        const memberData = await Promise.all(
+            cellGroup.members.map(async (member) => {
+                const person = await People.findOne({
+                    where: { id: member.person_id },
+                    attributes: ["id", "name"],
+                });
+
+                return {
+                    id: person?.id || member.person_id,
+                    name: person?.name || "Desconhecido",
+                    role: member.role,
+                };
+            })
+        );
+
         const formatted = {
             id: cellGroup.id,
             name: cellGroup.name,
             description: cellGroup.description,
-            members: cellGroup.members.map((member) => ({
-                id: member.person.id,
-                name: member.person.name,
-                role: member.role,
-            })),
+            members: memberData,
         };
 
         return res.status(200).json(formatted);

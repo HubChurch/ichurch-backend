@@ -39,10 +39,6 @@ CellMember.belongsTo(Person, {
     as: "person",
 });
 
-Person.hasMany(CellMember, {
-    foreignKey: "person_id",
-    as: "cell_memberships",
-});
 
 // 📌 Relacionamento com pessoa pode ser adicionado se quiser referenciar community.person futuramente
 

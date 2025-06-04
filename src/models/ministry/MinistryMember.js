@@ -30,6 +30,8 @@ const MinistryMember = ministryDB.define(
     {
         timestamps: true,
         underscored: true,
+        schema: "ministry",
+
     }
 );
 

@@ -53,6 +53,7 @@ const People = communityDB.define("people", {
         allowNull: true // Pode armazenar configurações extras (ex: batismo, profissão)
     },
 }, {
+    sequelize: communityDB,
     timestamps: true,
     underscored: true ,
     schema: "community",

@@ -1,5 +1,6 @@
 const CellGroup = require("../../models/ministry/CellGroups");
 const Ministry = require("../../models/ministry/Ministries");
+const {CellMember} = require("../../models/ministry");
 
 /**
  * Cria uma nova célula vinculada a um ministério

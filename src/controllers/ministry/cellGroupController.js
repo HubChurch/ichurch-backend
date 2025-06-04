@@ -56,9 +56,6 @@ const getCellGroupsByMinistry = async (req, res) => {
     }
 };
 
-/**
-* Pe
-*/
 
 
 /**
@@ -93,7 +90,7 @@ const getCellGroupById = async (req, res) => {
 const updateCellGroup = async (req, res) => {
     try {
         const { id } = req.params;
-        const { name, description } = req.body;
+        const { name, description, members } = req.body;
 
         const cellGroup = await CellGroup.findOne({
             where: { id, company_id: req.company_id },
@@ -103,17 +100,34 @@ const updateCellGroup = async (req, res) => {
             return res.status(404).json({ error: "Célula não encontrada" });
         }
 
+        // Atualiza nome e descrição
         cellGroup.name = name;
         cellGroup.description = description;
         await cellGroup.save();
 
-        return res.status(200).json(cellGroup);
+        if (Array.isArray(members)) {
+            // Remove todos os membros atuais
+            await CellMember.destroy({
+                where: { cell_group_id: id, company_id: req.company_id },
+            });
+
+            // Adiciona os novos membros
+            const newMembers = members.map(({ id: person_id, role }) => ({
+                company_id: req.company_id,
+                cell_group_id: id,
+                person_id,
+                role,
+            }));
+
+            await CellMember.bulkCreate(newMembers);
+        }
+
+        return res.status(200).json({ message: "Célula atualizada com sucesso" });
     } catch (error) {
         console.error("Erro ao atualizar célula:", error);
         return res.status(500).json({ error: "Erro interno do servidor" });
     }
 };
-
 
 module.exports = {
     createCellGroup,

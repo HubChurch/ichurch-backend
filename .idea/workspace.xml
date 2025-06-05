@@ -4,18 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.6.3 - verificando se a pessoa ja tem reconhecimento facial - Ajuste de bug">
-      <change afterPath="$PROJECT_DIR$/src/controllers/ministry/cellGroupController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/controllers/ministry/cellMemberController.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/ministry/CellGroups.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/models/ministry/CellMembers.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/ministry/cellGroupRoutes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/routes/ministry/cellMemberRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.7.11 - Listagem de membros de celula">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/ministry/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/ministry/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,32 +49,32 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Jest.🔹 Testes no módulo Ministério.executor": "Run",
-    "Node.js.reportsRoutes.js.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "database.data.extractors.current.export.id": "SQL Inserts",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Projeto/ichurch-backend/src/models/ministry",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs.jest.jest_package": "C:/projetos/ichurch-backend/node_modules/jest",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.uml",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.3.2.2\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Jest.🔹 Testes no módulo Ministério.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.reportsRoutes.js.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;database.data.extractors.current.export.id&quot;: &quot;SQL Inserts&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Projeto/ichurch-backend/src/models/ministry&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs.jest.jest_package&quot;: &quot;C:/projetos/ichurch-backend/node_modules/jest&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.uml&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;C:\\Program Files\\JetBrains\\IntelliJ IDEA 2024.3.5\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Projeto\ichurch-backend\src\models\ministry" />
@@ -159,110 +149,14 @@
       <workItem from="1742136495290" duration="6915000" />
       <workItem from="1744415485685" duration="762000" />
       <workItem from="1746205376258" duration="1953000" />
-    </task>
-    <task id="LOCAL-00005" summary="api consulta filtro satus people">
-      <option name="closed" value="true" />
-      <created>1739508568621</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1739508568621</updated>
-    </task>
-    <task id="LOCAL-00006" summary="api consulta filtro satus people">
-      <option name="closed" value="true" />
-      <created>1739509001598</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1739509001598</updated>
-    </task>
-    <task id="LOCAL-00007" summary="bug status">
-      <option name="closed" value="true" />
-      <created>1739509613730</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1739509613730</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Correção do aniversario">
-      <option name="closed" value="true" />
-      <created>1739553597996</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1739553597996</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Importacao de usuario">
-      <option name="closed" value="true" />
-      <created>1739562186276</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1739562186276</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Estatistica do evento">
-      <option name="closed" value="true" />
-      <created>1739621696718</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1739621696718</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Estatistica do evento - ajuste de bug">
-      <option name="closed" value="true" />
-      <created>1739622136914</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1739622136914</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Ajustando para agora ter sca e community">
-      <option name="closed" value="true" />
-      <created>1739903871403</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1739903871404</updated>
-    </task>
-    <task id="LOCAL-00013" summary="ajustando para permissions, roles e user">
-      <option name="closed" value="true" />
-      <created>1739922901573</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1739922901573</updated>
-    </task>
-    <task id="LOCAL-00014" summary="migrando pro novo layoutdo community">
-      <option name="closed" value="true" />
-      <created>1739925186945</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1739925186945</updated>
-    </task>
-    <task id="LOCAL-00015" summary="ajustando bug">
-      <option name="closed" value="true" />
-      <created>1739987253231</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1739987253231</updated>
-    </task>
-    <task id="LOCAL-00016" summary="ajustando bug">
-      <option name="closed" value="true" />
-      <created>1739987413006</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1739987413006</updated>
-    </task>
-    <task id="LOCAL-00017" summary="BUG 2">
-      <option name="closed" value="true" />
-      <created>1739988335030</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1739988335030</updated>
+      <workItem from="1746482044194" duration="1012000" />
+      <workItem from="1746579139453" duration="686000" />
+      <workItem from="1747742786947" duration="622000" />
+      <workItem from="1747745197571" duration="8000" />
+      <workItem from="1748272064932" duration="20000" />
+      <workItem from="1748975291266" duration="3964000" />
+      <workItem from="1748990674460" duration="9233000" />
+      <workItem from="1749126657145" duration="302000" />
     </task>
     <task id="LOCAL-00018" summary="BUG 3">
       <option name="closed" value="true" />
@@ -552,7 +446,111 @@
       <option name="project" value="LOCAL" />
       <updated>1742148143040</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="versao 0.7.0 - Endpoints de celula">
+      <option name="closed" value="true" />
+      <created>1748992342615</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1748992342616</updated>
+    </task>
+    <task id="LOCAL-00055" summary="versao 0.7.1 - Endpoints de celula">
+      <option name="closed" value="true" />
+      <created>1748993084432</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1748993084432</updated>
+    </task>
+    <task id="LOCAL-00056" summary="versao 0.7.2 - Endpoints de celula - ajuste de edicao de membros de celula">
+      <option name="closed" value="true" />
+      <created>1749029898515</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1749029898515</updated>
+    </task>
+    <task id="LOCAL-00057" summary="versao 0.7.2 - bug de importacao">
+      <option name="closed" value="true" />
+      <created>1749030184029</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1749030184029</updated>
+    </task>
+    <task id="LOCAL-00058" summary="versao 0.7.3 - Listagem de membros de celula">
+      <option name="closed" value="true" />
+      <created>1749030496288</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1749030496288</updated>
+    </task>
+    <task id="LOCAL-00059" summary="versao 0.7.4 - Listagem de membros de celula">
+      <option name="closed" value="true" />
+      <created>1749030792236</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1749030792236</updated>
+    </task>
+    <task id="LOCAL-00060" summary="versao 0.7.5 - Listagem de membros de celula">
+      <option name="closed" value="true" />
+      <created>1749030930065</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1749030930065</updated>
+    </task>
+    <task id="LOCAL-00061" summary="versao 0.7.6- Listagem de membros de celula">
+      <option name="closed" value="true" />
+      <created>1749031084935</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1749031084935</updated>
+    </task>
+    <task id="LOCAL-00062" summary="versao 0.7.7- Listagem de membros de celula">
+      <option name="closed" value="true" />
+      <created>1749031669939</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1749031669939</updated>
+    </task>
+    <task id="LOCAL-00063" summary="versao 0.7.8- Listagem de membros de celula">
+      <option name="closed" value="true" />
+      <created>1749031896376</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1749031896376</updated>
+    </task>
+    <task id="LOCAL-00064" summary="versao 0.7.9- Listagem de membros de celula">
+      <option name="closed" value="true" />
+      <created>1749032013262</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1749032013262</updated>
+    </task>
+    <task id="LOCAL-00065" summary="versao 0.7.10- Listagem de membros de celula">
+      <option name="closed" value="true" />
+      <created>1749032182442</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1749032182442</updated>
+    </task>
+    <task id="LOCAL-00066" summary="versao 0.7.11 - Listagem de membros de celula">
+      <option name="closed" value="true" />
+      <created>1749032277861</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1749032277861</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -570,19 +568,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="teste2" />
-    <MESSAGE value="teste3" />
-    <MESSAGE value="Ajustando community" />
-    <MESSAGE value="teste 3" />
-    <MESSAGE value="teste 4" />
-    <MESSAGE value="people" />
-    <MESSAGE value="teste novo" />
-    <MESSAGE value="Ajuste de bug" />
-    <MESSAGE value="fora reports" />
-    <MESSAGE value="ajuste bug importacao" />
-    <MESSAGE value="ajuste bug people" />
-    <MESSAGE value="Pessoas ativas ou inativas via parametro" />
-    <MESSAGE value="Ajuste bug de propriedade no evento" />
     <MESSAGE value="Ajuste de exclusao de evento" />
     <MESSAGE value="Ajuste bug de propriedade de report" />
     <MESSAGE value="Ajuste bug de eventos" />
@@ -595,16 +580,28 @@
     <MESSAGE value="versao 0.6.1 - salvando 5 imagens para cada pessoa" />
     <MESSAGE value="versao 0.6.2 - verificando se a pessoa ja tem reconhecimento facial" />
     <MESSAGE value="versao 0.6.3 - verificando se a pessoa ja tem reconhecimento facial - Ajuste de bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="versao 0.6.3 - verificando se a pessoa ja tem reconhecimento facial - Ajuste de bug" />
+    <MESSAGE value="versao 0.7.0 - Endpoints de celula" />
+    <MESSAGE value="versao 0.7.1 - Endpoints de celula" />
+    <MESSAGE value="versao 0.7.2 - Endpoints de celula - ajuste de edicao de membros de celula" />
+    <MESSAGE value="versao 0.7.2 - bug de importacao" />
+    <MESSAGE value="versao 0.7.3 - Listagem de membros de celula" />
+    <MESSAGE value="versao 0.7.4 - Listagem de membros de celula" />
+    <MESSAGE value="versao 0.7.5 - Listagem de membros de celula" />
+    <MESSAGE value="versao 0.7.6- Listagem de membros de celula" />
+    <MESSAGE value="versao 0.7.7- Listagem de membros de celula" />
+    <MESSAGE value="versao 0.7.8- Listagem de membros de celula" />
+    <MESSAGE value="versao 0.7.9- Listagem de membros de celula" />
+    <MESSAGE value="versao 0.7.10- Listagem de membros de celula" />
+    <MESSAGE value="versao 0.7.11 - Listagem de membros de celula" />
+    <option name="LAST_COMMIT_MESSAGE" value="versao 0.7.11 - Listagem de membros de celula" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/controllers/ministry/cellGroupController.js</url>
-          <line>6</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="1" />
+          <line>121</line>
+          <option name="timeStamp" value="5" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

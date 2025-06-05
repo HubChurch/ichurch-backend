@@ -4,7 +4,7 @@ const authMiddleware = require("../../middlewares/authMiddleware");
 
 const router = express.Router();
 
-router.post("/", createUser);
+router.post("/", authMiddleware,createUser);
 router.get("/company/:company_id", authMiddleware, getUsersByCompany);
 
 module.exports = router;

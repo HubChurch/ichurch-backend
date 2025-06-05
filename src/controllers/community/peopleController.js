@@ -44,14 +44,22 @@ exports.createPerson = async (req, res) => {
 // 📌 Listar todas as pessoas ativas de uma empresa
 exports.getAllPeople = async (req, res) => {
     try {
-        const { status } = req.query; // Captura o status da query string
+        const { status } = req.query;
         const whereCondition = { company_id: req.user.company_id };
 
         if (status) {
             whereCondition.status = status;
         }
 
-        const people = await People.findAll({ where: whereCondition });
+        const peopleRaw = await People.findAll({
+            where: whereCondition,
+            attributes: ['id', 'name', 'email', 'status', 'photo', 'user_id'],
+        });
+
+        const people = peopleRaw.map(person => ({
+            ...person.toJSON(),
+            hasAccount: !!person.user_id,
+        }));
 
         await Logger(req.user.id, "GET", "/people", 200);
         res.json(people);

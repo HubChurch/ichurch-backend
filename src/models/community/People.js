@@ -28,6 +28,10 @@ const People = communityDB.define("people", {
         allowNull: true,
         validate: { isEmail: true }
     },
+    address: {
+        type: DataTypes.STRING(100),
+        allowNull: true,
+    },
     birth_date: {
         type: DataTypes.DATEONLY,
         allowNull: true

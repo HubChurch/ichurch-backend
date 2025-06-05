@@ -1,4 +1,5 @@
 const Ministry = require("../../models/ministry/Ministries");
+const {Sequelize} = require("sequelize");
 
 /**
  * Cria um novo ministério vinculado ao usuário autenticado
@@ -43,9 +44,12 @@ const createMinistry = async (req, res) => {
 const getAllMinistries = async (req, res) => {
     try {
         const ministries = await Ministry.findAll({
-            where: { company_id: req.company_id }, // ✅ Filtrando automaticamente pelo company_id
+            where: { company_id: req.company_id },
+            order: [
+                [Sequelize.literal(`type = 'core'`), 'DESC'],
+                ['name', 'ASC'],
+            ],
         });
-
         return res.json(ministries);
     } catch (error) {
         return res.status(500).json({ error: "Erro ao buscar ministérios" });

@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.0 - Cadastro, ministerio padrao, usuario master.">
+    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.1 - Cadastro de novos ministerios">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/ministry/ministryController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ministry/ministryController.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,15 +157,8 @@
       <workItem from="1748975291266" duration="3964000" />
       <workItem from="1748990674460" duration="9233000" />
       <workItem from="1749126657145" duration="2539000" />
-      <workItem from="1749129937958" duration="5210000" />
-    </task>
-    <task id="LOCAL-00021" summary="ajustando as rotas com novo formato">
-      <option name="closed" value="true" />
-      <created>1739994446304</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1739994446304</updated>
+      <workItem from="1749129937958" duration="7012000" />
+      <workItem from="1749142278212" duration="8000" />
     </task>
     <task id="LOCAL-00022" summary="community para people">
       <option name="closed" value="true" />
@@ -552,7 +544,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749135904945</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="versao 0.8.1 - Cadastro de novos ministerios">
+      <option name="closed" value="true" />
+      <created>1749139736024</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1749139736024</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -570,7 +570,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="ajuste bug backend" />
     <MESSAGE value="sistema de ministerios" />
     <MESSAGE value="Cadastrando imagem no adolescente" />
     <MESSAGE value="Sistema de salvar fotos no s3" />
@@ -595,7 +594,8 @@
     <MESSAGE value="versao 0.7.12 - Serviço de criacao de usuario" />
     <MESSAGE value="versao 0.7.13 - Melhorias na listagem de pessoas" />
     <MESSAGE value="versao 0.8.0 - Cadastro, ministerio padrao, usuario master." />
-    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.0 - Cadastro, ministerio padrao, usuario master." />
+    <MESSAGE value="versao 0.8.1 - Cadastro de novos ministerios" />
+    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.1 - Cadastro de novos ministerios" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

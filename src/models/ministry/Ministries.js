@@ -45,11 +45,6 @@ const Ministries = ministryDB.define(
             type: DataTypes.STRING(12),
             allowNull: true,
         },
-        plugins: {
-            type: DataTypes.JSON, // Armazena array de plugins
-            allowNull: false,
-            defaultValue: [],
-        },
         status: {
             type: DataTypes.ENUM('active', 'inactive', 'deleted'),
             defaultValue: 'active',

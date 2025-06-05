@@ -4,12 +4,30 @@ const Ministry = require("../../models/ministry/Ministries");
  * Cria um novo ministério vinculado ao usuário autenticado
  */
 const createMinistry = async (req, res) => {
+    function generateCode(length = 5) {
+        const chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+        let code = '';
+        for (let i = 0; i < length; i++) {
+            code += chars.charAt(Math.floor(Math.random() * chars.length));
+        }
+        return code;
+    }
+
+
     try {
-        const { name, description } = req.body;
+        const { name, description, type, visibility, plugins } = req.body;
+
+        const code = (visibility === "private" || visibility === "secret")
+            ? generateCode()
+            : null;
+
         const ministry = await Ministry.create({
             company_id: req.company_id,
             name,
             description,
+            type,
+            visibility,
+            code,
         });
 
         return res.status(201).json(ministry);

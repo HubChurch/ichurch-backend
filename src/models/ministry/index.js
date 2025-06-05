@@ -2,7 +2,7 @@ const Ministry = require("./Ministries");
 const MinistryMember = require("./MinistryMember");
 const CellGroup = require("./CellGroups");
 const CellMember = require("./CellMembers");
-const Person = require("../community/People"); // ajuste conforme o caminho real
+const Person = require("../community/People");
 
 // 📌 Relacionamento: Um Ministério tem vários membros
 Ministry.hasMany(MinistryMember, {
@@ -33,11 +33,11 @@ CellMember.belongsTo(CellGroup, {
     foreignKey: "cell_group_id",
     as: "cell_group",
 });
-
-CellMember.belongsTo(Person, {
-    foreignKey: "person_id",
-    as: "person",
-});
+//
+// CellMember.belongsTo(Person, {
+//     foreignKey: "person_id",
+//     as: "person",
+// });
 
 
 // 📌 Relacionamento com pessoa pode ser adicionado se quiser referenciar community.person futuramente

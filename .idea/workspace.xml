@@ -4,9 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.7.12 - Serviço de criacao de usuario">
+    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.7.13 - Melhorias na listagem de pessoas">
+      <change afterPath="$PROJECT_DIR$/src/utils/plugin.enum.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/community/peopleController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/community/peopleController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/sca/authController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/sca/authController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/ministry/Ministries.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/ministry/Ministries.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/ministry/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/ministry/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/sca/authRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/sca/authRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/sync.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/sync.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +21,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="JavaScript File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -157,15 +162,8 @@
       <workItem from="1748272064932" duration="20000" />
       <workItem from="1748975291266" duration="3964000" />
       <workItem from="1748990674460" duration="9233000" />
-      <workItem from="1749126657145" duration="1430000" />
-    </task>
-    <task id="LOCAL-00019" summary="sem cell">
-      <option name="closed" value="true" />
-      <created>1739989642367</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1739989642367</updated>
+      <workItem from="1749126657145" duration="2539000" />
+      <workItem from="1749129937958" duration="2802000" />
     </task>
     <task id="LOCAL-00020" summary="tirando log">
       <option name="closed" value="true" />
@@ -551,7 +549,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749127094458</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="versao 0.7.13 - Melhorias na listagem de pessoas">
+      <option name="closed" value="true" />
+      <created>1749128139118</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1749128139118</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -569,7 +575,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Ajuste bug de propriedade de report" />
     <MESSAGE value="Ajuste bug de eventos" />
     <MESSAGE value="ajuste bug backend" />
     <MESSAGE value="sistema de ministerios" />
@@ -594,7 +599,8 @@
     <MESSAGE value="versao 0.7.10- Listagem de membros de celula" />
     <MESSAGE value="versao 0.7.11 - Listagem de membros de celula" />
     <MESSAGE value="versao 0.7.12 - Serviço de criacao de usuario" />
-    <option name="LAST_COMMIT_MESSAGE" value="versao 0.7.12 - Serviço de criacao de usuario" />
+    <MESSAGE value="versao 0.7.13 - Melhorias na listagem de pessoas" />
+    <option name="LAST_COMMIT_MESSAGE" value="versao 0.7.13 - Melhorias na listagem de pessoas" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

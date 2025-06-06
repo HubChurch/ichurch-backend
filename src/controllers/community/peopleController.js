@@ -10,35 +10,57 @@ const {ministryDB} = require("../../config/db");
 
 exports.createPerson = async (req, res) => {
     try {
-        const {photo, ...personData} = req.body;
+        const { photo, ...personData } = req.body;
         let imageUrl = null;
 
-        // Se houver uma imagem no upload, faz o upload para o S3
+        // Upload imagem se houver
         if (req.file) {
             try {
-                imageUrl = await uploadToS3(req.file, 'profile', personData.name); // Upload e retorna a URL
+                imageUrl = await uploadToS3(req.file, 'profile', personData.name);
             } catch (uploadError) {
                 console.error("Erro ao fazer upload da imagem:", uploadError);
-                return res.status(500).json({error: "Erro ao enviar imagem para o S3."});
+                return res.status(500).json({ error: "Erro ao enviar imagem para o S3." });
             }
         }
 
+        // Cria pessoa
         const person = await People.create({
             ...personData,
             company_id: req.user.company_id,
-            photo: imageUrl || null
+            photo: imageUrl || null,
         });
 
+        // Busca o ministério core da empresa
+        const coreMinistry = await Ministries.findOne({
+            where: {
+                company_id: req.user.company_id,
+                is_core: true, // exemplo, ajuste conforme seu modelo
+            },
+        });
+
+        if (coreMinistry) {
+            // Associa a pessoa ao ministério core como MEMBER
+            await MinistryMember.create({
+                ministry_id: coreMinistry.id,
+                person_id: person.id,
+                role: 'MEMBER',
+                status: 'ativo',
+                created_at: new Date(),
+                updated_at: new Date(),
+            });
+        } else {
+            console.warn(`Ministério core não encontrado para empresa ${req.user.company_id}`);
+        }
 
         await Logger(req.user.id, "CREATE", "/people", 201, {
             ...req.body,
-            company_id: req.user.company_id
+            company_id: req.user.company_id,
         }.toString());
 
         res.status(201).json(person);
     } catch (err) {
         await Logger(req.user.id, "CREATE", "/people", 500, err.toString());
-        res.status(500).json({error: "Erro ao criar pessoa."});
+        res.status(500).json({ error: "Erro ao criar pessoa." });
     }
 };
 

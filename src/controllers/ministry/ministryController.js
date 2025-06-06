@@ -67,7 +67,7 @@ const getAllMinistries = async (req, res) => {
           AND mm.status = 'ativo'
           AND mm.role = 'LEADER'
       )`),
-                        'LeadersCount'
+                        'leadersCount'
                     ],
                     [
                         Sequelize.literal(`(
@@ -78,7 +78,7 @@ const getAllMinistries = async (req, res) => {
           AND mm.status = 'ativo'
           AND mm.role = 'AUX'
       )`),
-                        'AuxCount'
+                        'auxCount'
                     ],
                     [
                         Sequelize.literal(`(
@@ -89,7 +89,7 @@ const getAllMinistries = async (req, res) => {
           AND mm.status = 'ativo'
           AND mm.role = 'MEMBER'
       )`),
-                        'MembersCount'
+                        'membersCount'
                     ],
                 ],
             },

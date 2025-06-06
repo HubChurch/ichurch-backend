@@ -7,6 +7,7 @@ const upload = multer({dest: "uploads/"});
 const uploadToS3 = require("../../utils/uploadService");
 const Ministries = require("../../models/ministry/Ministries");
 const {ministryDB} = require("../../config/db");
+const {MinistryMember} = require("../../models/ministry");
 
 exports.createPerson = async (req, res) => {
     try {
@@ -34,7 +35,7 @@ exports.createPerson = async (req, res) => {
         const coreMinistry = await Ministries.findOne({
             where: {
                 company_id: req.user.company_id,
-                is_core: true, // exemplo, ajuste conforme seu modelo
+                type: 'core',
             },
         });
 
@@ -60,7 +61,8 @@ exports.createPerson = async (req, res) => {
         res.status(201).json(person);
     } catch (err) {
         await Logger(req.user.id, "CREATE", "/people", 500, err.toString());
-        res.status(500).json({ error: "Erro ao criar pessoa." });
+        console.log(err)
+        res.status(500).json({ error: err });
     }
 };
 

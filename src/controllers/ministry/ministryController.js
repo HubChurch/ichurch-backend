@@ -214,10 +214,37 @@ const deleteMinistry = async (req, res) => {
     }
 };
 
+const updateMinisteryMembers = async (req, res) => {
+    const { id } = req.params;
+    const { members } = req.body; // array de person_id
+
+    try {
+        // Exemplo: remover membros antigos e inserir os novos
+        await MinistryMember.destroy({ where: { ministry_id: id } });
+
+        const newMembers = members.map((personId) => ({
+            ministry_id: id,
+            person_id: personId,
+            role: "MEMBER", // ou papel padrão, ou enviar junto
+            status: "ativo",
+            created_at: new Date(),
+            updated_at: new Date(),
+        }));
+
+        await MinistryMember.bulkCreate(newMembers);
+
+        res.status(200).json({ message: "Membros atualizados com sucesso." });
+    } catch (err) {
+        res.status(500).json({ error: "Erro ao atualizar membros." });
+    }
+};
+
+
 module.exports = {
     createMinistry,
     getAllMinistries,
     getMinistryById,
     updateMinistry,
     deleteMinistry,
+    updateMinisteryMembers
 };

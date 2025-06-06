@@ -4,7 +4,7 @@ const {
     getAllMinistries,
     getMinistryById,
     updateMinistry,
-    deleteMinistry,
+    deleteMinistry, updateMinisteryMembers,
 } = require("../../controllers/ministry/ministryController");
 const authMiddleware = require("../../middlewares/authMiddleware");
 
@@ -44,5 +44,9 @@ router.put("/:id", authMiddleware, updateMinistry);
  * @access  Público (ou pode ser restrito conforme necessidade)
  */
 router.delete("/:id", authMiddleware, deleteMinistry);
+
+
+router.patch("/:id/members", authMiddleware, updateMinisteryMembers );
+
 
 module.exports = router;

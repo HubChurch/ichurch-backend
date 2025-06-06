@@ -160,6 +160,8 @@ const getMinistryById = async (req, res) => {
             name: ministry.name,
             description: ministry.description,
             type: ministry.type,
+            visibility: ministry.visibility,
+            code: ministry.code,
             members,
         });
     } catch (error) {

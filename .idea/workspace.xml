@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.8 - corrigindo a listagem de ministerio">
-      <change afterPath="$PROJECT_DIR$/src/service/peopleService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/community/peopleController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/community/peopleController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/ministry/ministryController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ministry/ministryController.js" afterDir="false" />
-    </list>
+    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.9 - Tela de dados de um ministerio trazendo todos seus membros" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,8 +13,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="TypeScript File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -162,15 +158,7 @@
       <workItem from="1749129937958" duration="7012000" />
       <workItem from="1749142278212" duration="8000" />
       <workItem from="1749152608176" duration="7517000" />
-      <workItem from="1749211186093" duration="3531000" />
-    </task>
-    <task id="LOCAL-00028" summary="teste 3">
-      <option name="closed" value="true" />
-      <created>1739998918557</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1739998918557</updated>
+      <workItem from="1749211186093" duration="3575000" />
     </task>
     <task id="LOCAL-00029" summary="teste 4">
       <option name="closed" value="true" />
@@ -556,7 +544,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749215851624</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="versao 0.8.9 - Tela de dados de um ministerio trazendo todos seus membros">
+      <option name="closed" value="true" />
+      <created>1749217416012</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1749217416012</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -574,7 +570,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="versao 0.6.2 - verificando se a pessoa ja tem reconhecimento facial" />
     <MESSAGE value="versao 0.6.3 - verificando se a pessoa ja tem reconhecimento facial - Ajuste de bug" />
     <MESSAGE value="versao 0.7.0 - Endpoints de celula" />
     <MESSAGE value="versao 0.7.1 - Endpoints de celula" />
@@ -599,7 +594,8 @@
     <MESSAGE value="versao 0.8.6 - erro na edicao" />
     <MESSAGE value="versao 0.8.7 - listagem de ministerios" />
     <MESSAGE value="versao 0.8.8 - corrigindo a listagem de ministerio" />
-    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.8 - corrigindo a listagem de ministerio" />
+    <MESSAGE value="versao 0.8.9 - Tela de dados de um ministerio trazendo todos seus membros" />
+    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.9 - Tela de dados de um ministerio trazendo todos seus membros" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

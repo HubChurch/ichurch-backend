@@ -16,7 +16,7 @@ const createMinistry = async (req, res) => {
 
 
     try {
-        const { name, description, type, visibility, plugins } = req.body;
+        const {name, description, type, visibility, plugins} = req.body;
 
         const code = (visibility === "private" || visibility === "secret")
             ? generateCode()
@@ -34,17 +34,66 @@ const createMinistry = async (req, res) => {
         return res.status(201).json(ministry);
     } catch (error) {
         console.error("Erro ao criar ministério:", error);
-        return res.status(500).json({ error: "Erro interno do servidor" });
+        return res.status(500).json({error: "Erro interno do servidor"});
     }
 };
 
 /**
  * Lista todos os ministérios da empresa autenticada
  */
+
 const getAllMinistries = async (req, res) => {
     try {
         const ministries = await Ministry.findAll({
-            where: { company_id: req.company_id },
+            where: {company_id: req.company_id},
+            attributes: {
+                include: [
+                    [
+                        Sequelize.literal(`(
+        SELECT COUNT(*)
+        FROM ministry_members AS mm
+        WHERE
+          mm.ministry_id = ministry.id
+          AND mm.status = 'ativo'
+      )`),
+                        'peopleCount'
+                    ],
+                    [
+                        Sequelize.literal(`(
+        SELECT COUNT(*)
+        FROM ministry_members AS mm
+        WHERE
+          mm.ministry_id = ministry.id
+          AND mm.status = 'ativo'
+          AND mm.role = 'LEADER'
+      )`),
+                        'LeadersCount'
+                    ],
+                    [
+                        Sequelize.literal(`(
+        SELECT COUNT(*)
+        FROM ministry_members AS mm
+        WHERE
+          mm.ministry_id = ministry.id
+          AND mm.status = 'ativo'
+          AND mm.role = 'AUX'
+      )`),
+                        'AuxCount'
+                    ],
+                    [
+                        Sequelize.literal(`(
+        SELECT COUNT(*)
+        FROM ministry_members AS mm
+        WHERE
+          mm.ministry_id = ministry.id
+          AND mm.status = 'ativo'
+          AND mm.role = 'MEMBER'
+      )`),
+                        'MembersCount'
+                    ],
+                ],
+            },
+
             order: [
                 [Sequelize.literal(`type = 'core'`), 'DESC'],
                 ['name', 'ASC'],
@@ -52,28 +101,30 @@ const getAllMinistries = async (req, res) => {
         });
         return res.json(ministries);
     } catch (error) {
-        return res.status(500).json({ error: "Erro ao buscar ministérios" });
+        console.error(error);
+        return res.status(500).json({error: "Erro ao buscar ministérios"});
     }
 };
+
 
 /**
  * Obtém detalhes de um ministério pelo ID
  */
 const getMinistryById = async (req, res) => {
     try {
-        const { id } = req.params;
+        const {id} = req.params;
 
         const ministry = await Ministry.findOne({
-            where: { id, company_id: req.company_id }, // ✅ Garante que pertence ao usuário
+            where: {id, company_id: req.company_id}, // ✅ Garante que pertence ao usuário
         });
 
         if (!ministry) {
-            return res.status(404).json({ error: "Ministério não encontrado" });
+            return res.status(404).json({error: "Ministério não encontrado"});
         }
 
         return res.json(ministry);
     } catch (error) {
-        return res.status(500).json({ error: "Erro ao buscar ministério" });
+        return res.status(500).json({error: "Erro ao buscar ministério"});
     }
 };
 
@@ -82,20 +133,20 @@ const getMinistryById = async (req, res) => {
  */
 const updateMinistry = async (req, res) => {
     try {
-        const { id } = req.params;
+        const {id} = req.params;
 
         const ministry = await Ministry.findOne({
-            where: { id, company_id: req.company_id },
+            where: {id, company_id: req.company_id},
         });
 
         if (!ministry) {
-            return res.status(404).json({ error: "Ministério não encontrado" });
+            return res.status(404).json({error: "Ministério não encontrado"});
         }
 
         await ministry.update(req.body);
         return res.json(ministry);
     } catch (error) {
-        return res.status(500).json({ error: "Erro ao atualizar ministério" });
+        return res.status(500).json({error: "Erro ao atualizar ministério"});
     }
 };
 
@@ -104,20 +155,20 @@ const updateMinistry = async (req, res) => {
  */
 const deleteMinistry = async (req, res) => {
     try {
-        const { id } = req.params;
+        const {id} = req.params;
 
         const ministry = await Ministry.findOne({
-            where: { id, company_id: req.company_id },
+            where: {id, company_id: req.company_id},
         });
 
         if (!ministry) {
-            return res.status(404).json({ error: "Ministério não encontrado" });
+            return res.status(404).json({error: "Ministério não encontrado"});
         }
 
         await ministry.destroy();
         return res.status(204).send();
     } catch (error) {
-        return res.status(500).json({ error: "Erro ao deletar ministério" });
+        return res.status(500).json({error: "Erro ao deletar ministério"});
     }
 };
 

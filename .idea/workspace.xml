@@ -4,8 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.1 - Cadastro de novos ministerios">
+    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.3 - Adiciona endereço no cadastro de pessoa">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/community/peopleController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/community/peopleController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/community/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/community/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/ministry/Ministries.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/ministry/Ministries.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/ministry/MinistryMember.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/ministry/MinistryMember.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/ministry/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/ministry/index.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -159,22 +164,7 @@
       <workItem from="1749126657145" duration="2539000" />
       <workItem from="1749129937958" duration="7012000" />
       <workItem from="1749142278212" duration="8000" />
-    </task>
-    <task id="LOCAL-00022" summary="community para people">
-      <option name="closed" value="true" />
-      <created>1739997309641</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1739997309641</updated>
-    </task>
-    <task id="LOCAL-00023" summary="teste">
-      <option name="closed" value="true" />
-      <created>1739998074110</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1739998074110</updated>
+      <workItem from="1749152608176" duration="6425000" />
     </task>
     <task id="LOCAL-00024" summary="teste2">
       <option name="closed" value="true" />
@@ -552,7 +542,23 @@
       <option name="project" value="LOCAL" />
       <updated>1749139736024</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="versao 0.8.2 - ordem ministerio">
+      <option name="closed" value="true" />
+      <created>1749152777379</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1749152777380</updated>
+    </task>
+    <task id="LOCAL-00072" summary="versao 0.8.3 - Adiciona endereço no cadastro de pessoa">
+      <option name="closed" value="true" />
+      <created>1749162787337</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1749162787337</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -570,8 +576,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="sistema de ministerios" />
-    <MESSAGE value="Cadastrando imagem no adolescente" />
     <MESSAGE value="Sistema de salvar fotos no s3" />
     <MESSAGE value="versao 0.5.0 - edicao de usuar com imagem" />
     <MESSAGE value="versao 0.6.0 - Reconhecimento facial inicio" />
@@ -595,7 +599,9 @@
     <MESSAGE value="versao 0.7.13 - Melhorias na listagem de pessoas" />
     <MESSAGE value="versao 0.8.0 - Cadastro, ministerio padrao, usuario master." />
     <MESSAGE value="versao 0.8.1 - Cadastro de novos ministerios" />
-    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.1 - Cadastro de novos ministerios" />
+    <MESSAGE value="versao 0.8.2 - ordem ministerio" />
+    <MESSAGE value="versao 0.8.3 - Adiciona endereço no cadastro de pessoa" />
+    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.3 - Adiciona endereço no cadastro de pessoa" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

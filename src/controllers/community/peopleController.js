@@ -95,7 +95,6 @@ exports.getAllPeople = async (req, res) => {
     }
 };
 
-
 exports.getPersonById = async (req, res) => {
     try {
         // 1 - Buscar a pessoa no banco community
@@ -117,6 +116,8 @@ exports.getPersonById = async (req, res) => {
               AND mm.status = 'ativo'
         `;
 
+        console.log(ministriesQuery)
+
         const ministries = await ministryDB.query(ministriesQuery, {
             replacements: {personId: req.params.id},
             type: ministryDB.QueryTypes.SELECT,
@@ -135,7 +136,6 @@ exports.getPersonById = async (req, res) => {
         res.status(500).json({error: "Erro ao buscar pessoa."});
     }
 };
-
 
 // 📌 Atualizar pessoa
 exports.updatePerson = async (req, res) => {
@@ -166,7 +166,7 @@ exports.updatePerson = async (req, res) => {
         res.json({message: "Pessoa atualizada com sucesso."});
     } catch (err) {
         await Logger(req.user.id, "UPDATE", "/people/:id", 500, err.toString());
-        res.status(500).json({error: "Erro ao atualizar pessoa."});
+        res.status(500).json({error: `Erro ao atualizar pessoa. - ${err.toString()}`});
     }
 };
 

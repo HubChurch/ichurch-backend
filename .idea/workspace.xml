@@ -4,8 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.6 - erro na edicao">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.8 - corrigindo a listagem de ministerio">
+      <change afterPath="$PROJECT_DIR$/src/service/peopleService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/community/peopleController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/community/peopleController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/ministry/ministryController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ministry/ministryController.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -160,23 +162,7 @@
       <workItem from="1749129937958" duration="7012000" />
       <workItem from="1749142278212" duration="8000" />
       <workItem from="1749152608176" duration="7517000" />
-      <workItem from="1749211186093" duration="924000" />
-    </task>
-    <task id="LOCAL-00026" summary="Ajustando community">
-      <option name="closed" value="true" />
-      <created>1739998381884</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1739998381884</updated>
-    </task>
-    <task id="LOCAL-00027" summary="Ajustando community">
-      <option name="closed" value="true" />
-      <created>1739998489540</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1739998489540</updated>
+      <workItem from="1749211186093" duration="3531000" />
     </task>
     <task id="LOCAL-00028" summary="teste 3">
       <option name="closed" value="true" />
@@ -554,7 +540,23 @@
       <option name="project" value="LOCAL" />
       <updated>1749211328735</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="versao 0.8.7 - listagem de ministerios">
+      <option name="closed" value="true" />
+      <created>1749215587793</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1749215587793</updated>
+    </task>
+    <task id="LOCAL-00076" summary="versao 0.8.8 - corrigindo a listagem de ministerio">
+      <option name="closed" value="true" />
+      <created>1749215851624</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1749215851624</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -572,8 +574,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="versao 0.6.0 - Reconhecimento facial inicio" />
-    <MESSAGE value="versao 0.6.1 - salvando 5 imagens para cada pessoa" />
     <MESSAGE value="versao 0.6.2 - verificando se a pessoa ja tem reconhecimento facial" />
     <MESSAGE value="versao 0.6.3 - verificando se a pessoa ja tem reconhecimento facial - Ajuste de bug" />
     <MESSAGE value="versao 0.7.0 - Endpoints de celula" />
@@ -597,7 +597,9 @@
     <MESSAGE value="versao 0.8.3 - Adiciona endereço no cadastro de pessoa" />
     <MESSAGE value="versao 0.8.4 - get detalhe da pessoa" />
     <MESSAGE value="versao 0.8.6 - erro na edicao" />
-    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.6 - erro na edicao" />
+    <MESSAGE value="versao 0.8.7 - listagem de ministerios" />
+    <MESSAGE value="versao 0.8.8 - corrigindo a listagem de ministerio" />
+    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.8 - corrigindo a listagem de ministerio" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

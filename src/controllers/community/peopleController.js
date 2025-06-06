@@ -227,3 +227,33 @@ exports.importPeopleFile = async (req, res) => {
 };
 
 exports.uploadMiddleware = upload.single("file");
+
+
+/**
+ * Busca pessoas por lista de IDs
+ * Espera um array JSON no corpo da requisição: { ids: ["id1", "id2", ...] }
+ */
+exports.getPeopleByIds = async (req, res) => {
+    try {
+        const { ids } = req.body;
+
+        if (!Array.isArray(ids) || ids.length === 0) {
+            return res.status(400).json({ error: "Array de IDs inválido ou vazio." });
+        }
+
+        // Buscar pessoas que pertençam à empresa autenticada
+        const people = await People.findAll({
+            where: {
+                id: ids,
+                company_id: req.user.company_id,
+                status: "active", // opcional, só ativas
+            },
+            attributes: ["id", "name", "email", "photo", "user_id"], // atributos que você quiser retornar
+        });
+
+        res.json(people);
+    } catch (err) {
+        console.error(err);
+        res.status(500).json({ error: "Erro ao buscar pessoas por IDs." });
+    }
+};

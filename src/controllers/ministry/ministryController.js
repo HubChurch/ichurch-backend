@@ -1,5 +1,8 @@
 const Ministry = require("../../models/ministry/Ministries");
 const {Sequelize} = require("sequelize");
+const {MinistryMember} = require("../../models/ministry");
+const {getPeopleByIds} = require("../community/peopleController");
+const {fetchPeopleByIds} = require("../../service/peopleService");
 
 /**
  * Cria um novo ministério vinculado ao usuário autenticado
@@ -107,24 +110,61 @@ const getAllMinistries = async (req, res) => {
 };
 
 
-/**
- * Obtém detalhes de um ministério pelo ID
- */
 const getMinistryById = async (req, res) => {
     try {
-        const {id} = req.params;
+        const { id } = req.params;
 
+        // Busca ministério e membros (sem dados da pessoa)
         const ministry = await Ministry.findOne({
-            where: {id, company_id: req.company_id}, // ✅ Garante que pertence ao usuário
+            where: {
+                id,
+                company_id: req.company_id,
+            },
+            include: [
+                {
+                    model: MinistryMember,
+                    as: "members",
+                    required: false,
+                    where: { status: "ativo" },
+                    attributes: ["id", "person_id", "role"],
+                },
+            ],
         });
 
         if (!ministry) {
-            return res.status(404).json({error: "Ministério não encontrado"});
+            return res.status(404).json({ error: "Ministério não encontrado" });
         }
 
-        return res.json(ministry);
+        const memberRecords = ministry.members || [];
+        const personIds = memberRecords.map(m => m.person_id);
+        let peopleData = [];
+
+
+        if (personIds.length > 0) {
+            peopleData = await fetchPeopleByIds(personIds, req.company_id);
+        }
+
+        // Montar membros juntando dados de pessoas
+        const members = memberRecords.map(m => {
+            const person = peopleData.find(p => p.id === m.person_id);
+            return {
+                id: person?.id ?? m.person_id,
+                name: person?.name ?? "Usuário não encontrado",
+                role: m.role,
+                photo: person?.photo ?? null,
+            };
+        });
+
+        return res.json({
+            id: ministry.id,
+            name: ministry.name,
+            description: ministry.description,
+            type: ministry.type,
+            members,
+        });
     } catch (error) {
-        return res.status(500).json({error: "Erro ao buscar ministério"});
+        console.error("Erro no getMinistryById:", error);
+        return res.status(500).json({ error: "Erro ao buscar ministério" });
     }
 };
 

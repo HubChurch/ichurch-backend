@@ -4,7 +4,7 @@ const {
     getAllMinistries,
     getMinistryById,
     updateMinistry,
-    deleteMinistry, updateMinisteryMembers,
+    deleteMinistry, updateMinistryMembers,
 } = require("../../controllers/ministry/ministryController");
 const authMiddleware = require("../../middlewares/authMiddleware");
 
@@ -46,7 +46,7 @@ router.put("/:id", authMiddleware, updateMinistry);
 router.delete("/:id", authMiddleware, deleteMinistry);
 
 
-router.patch("/:id/members", authMiddleware, updateMinisteryMembers );
+router.patch("/:id/members", authMiddleware, updateMinistryMembers );
 
 
 module.exports = router;

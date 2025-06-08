@@ -214,7 +214,7 @@ const deleteMinistry = async (req, res) => {
     }
 };
 
-const updateMinisteryMembers = async (req, res) => {
+const updateMinistryMembers = async (req, res) => {
     const { id } = req.params;
     const { members } = req.body; // array de person_id
 
@@ -246,5 +246,5 @@ module.exports = {
     getMinistryById,
     updateMinistry,
     deleteMinistry,
-    updateMinisteryMembers
+    updateMinistryMembers
 };

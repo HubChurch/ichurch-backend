@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.10 - Ajuste no get id ministerio">
+    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.11 - Ajuste na edicao de membros de ministerio">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/community/eventsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/community/eventsController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/ministry/ministryController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ministry/ministryController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/community/Events.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/community/Events.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/ministry/ministryRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/ministry/ministryRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/sca/rolesRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/sca/rolesRoutes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -165,15 +166,10 @@
       <workItem from="1749152608176" duration="7517000" />
       <workItem from="1749211186093" duration="3575000" />
       <workItem from="1749233031460" duration="224000" />
-      <workItem from="1749233291360" duration="2042000" />
-    </task>
-    <task id="LOCAL-00030" summary="people">
-      <option name="closed" value="true" />
-      <created>1740016569124</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1740016569124</updated>
+      <workItem from="1749233291360" duration="3594000" />
+      <workItem from="1749262845295" duration="2689000" />
+      <workItem from="1749394205416" duration="557000" />
+      <workItem from="1749399392388" duration="2071000" />
     </task>
     <task id="LOCAL-00031" summary="teste novo">
       <option name="closed" value="true" />
@@ -559,7 +555,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749233237119</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="versao 0.8.11 - Ajuste na edicao de membros de ministerio">
+      <option name="closed" value="true" />
+      <created>1749236628447</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1749236628447</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -577,7 +581,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="versao 0.7.0 - Endpoints de celula" />
     <MESSAGE value="versao 0.7.1 - Endpoints de celula" />
     <MESSAGE value="versao 0.7.2 - Endpoints de celula - ajuste de edicao de membros de celula" />
     <MESSAGE value="versao 0.7.2 - bug de importacao" />
@@ -602,7 +605,8 @@
     <MESSAGE value="versao 0.8.8 - corrigindo a listagem de ministerio" />
     <MESSAGE value="versao 0.8.9 - Tela de dados de um ministerio trazendo todos seus membros" />
     <MESSAGE value="versao 0.8.10 - Ajuste no get id ministerio" />
-    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.10 - Ajuste no get id ministerio" />
+    <MESSAGE value="versao 0.8.11 - Ajuste na edicao de membros de ministerio" />
+    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.11 - Ajuste na edicao de membros de ministerio" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

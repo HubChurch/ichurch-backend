@@ -28,8 +28,8 @@ const Events = communityDB.define("event", {
         allowNull: true
     },
     status: {
-        type: DataTypes.ENUM("active", "canceled"),
-        defaultValue: "active"
+        type: DataTypes.ENUM("scheduled", "cancelled", "completed"),
+        defaultValue: "scheduled"
     }
 }, {
     timestamps: true,

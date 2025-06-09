@@ -216,25 +216,32 @@ const deleteMinistry = async (req, res) => {
 
 const updateMinistryMembers = async (req, res) => {
     const { id } = req.params;
-    const { members } = req.body; // array de person_id
+    const { members } = req.body; // array de { id, role }
+
+    if (!Array.isArray(members)) {
+        return res.status(400).json({ error: "Formato inválido para membros." });
+    }
 
     try {
-        // Exemplo: remover membros antigos e inserir os novos
+        // Remove todos os membros antigos
         await MinistryMember.destroy({ where: { ministry_id: id } });
 
-        const newMembers = members.map((personId) => ({
+        // Cria nova lista com os dados recebidos
+        const newMembers = members.map(({ id: person_id, role }) => ({
             ministry_id: id,
-            person_id: personId,
-            role: "MEMBER", // ou papel padrão, ou enviar junto
+            person_id,
+            role: role || "MEMBER", // role padrão
             status: "ativo",
             created_at: new Date(),
             updated_at: new Date(),
         }));
 
+        // Insere os novos membros
         await MinistryMember.bulkCreate(newMembers);
 
         res.status(200).json({ message: "Membros atualizados com sucesso." });
     } catch (err) {
+        console.error(err);
         res.status(500).json({ error: "Erro ao atualizar membros." });
     }
 };

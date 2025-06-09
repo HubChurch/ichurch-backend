@@ -14,14 +14,14 @@ exports.createEvent = async (req, res) => {
 };
 
 // 📌 Listar todos os eventos ativos
-exports.getAllEvents = async (req, res) => {
+exports.getEvents = async (req, res) => {
     try {
-        const {ministry_id, start_date, end_date, fields} = req.query;
+        const { ministry_id, start_date, end_date, fields } = req.query;
 
-        // 🎯 Construção segura de condições
         const where = {};
+
         if (ministry_id) where.ministry_id = ministry_id;
-        if (start_date) where.event_date = {[Op.gte]: new Date(start_date)};
+        if (start_date) where.event_date = { [Op.gte]: new Date(start_date) };
         if (end_date) {
             where.event_date = {
                 ...(where.event_date || {}),
@@ -29,7 +29,6 @@ exports.getAllEvents = async (req, res) => {
             };
         }
 
-        // 📌 Campos permitidos na resposta
         const allowedFields = [
             "id",
             "name",
@@ -38,30 +37,24 @@ exports.getAllEvents = async (req, res) => {
             "ministry_id",
             "company_id",
             "status",
-            "situation",
             "created_at",
             "updated_at",
         ];
 
         const attributes = fields
-            ? fields
-                .split(",")
-                .map((f) => f.trim())
-                .filter((f) => allowedFields.includes(f))
+            ? fields.split(",").filter((f) => allowedFields.includes(f))
             : undefined;
 
-        // 📥 Consulta principal
         const events = await Events.findAll({
             where,
             attributes,
             order: [["event_date", "DESC"]],
-            // include: [] // Adicione relações aqui se necessário
         });
 
-        res.status(200).json(events);
+        return res.status(200).json(events);
     } catch (error) {
         console.error("Erro ao buscar eventos:", error);
-        res.status(500).json({message: "Erro interno no servidor."});
+        return res.status(500).json({ message: "Erro interno no servidor." });
     }
 };
 

@@ -8,8 +8,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/community/eventsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/community/eventsController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/ministry/ministryController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ministry/ministryController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/community/Events.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/community/Events.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/ministry/ministryRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/ministry/ministryRoutes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,15 +167,9 @@
       <workItem from="1749233291360" duration="3594000" />
       <workItem from="1749262845295" duration="2689000" />
       <workItem from="1749394205416" duration="557000" />
-      <workItem from="1749399392388" duration="2071000" />
-    </task>
-    <task id="LOCAL-00031" summary="teste novo">
-      <option name="closed" value="true" />
-      <created>1740017116050</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1740017116050</updated>
+      <workItem from="1749399392388" duration="2382000" />
+      <workItem from="1749488959081" duration="3926000" />
+      <workItem from="1749504048030" duration="872000" />
     </task>
     <task id="LOCAL-00032" summary="Ajuste de bug">
       <option name="closed" value="true" />
@@ -563,7 +555,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749236628447</updated>
     </task>
-    <option name="localTasksCounter" value="80" />
+    <task id="LOCAL-00080" summary="versao 0.8.11 - Ajuste na edicao de membros de ministerio">
+      <option name="closed" value="true" />
+      <created>1749401622841</created>
+      <option name="number" value="00080" />
+      <option name="presentableId" value="LOCAL-00080" />
+      <option name="project" value="LOCAL" />
+      <updated>1749401622842</updated>
+    </task>
+    <option name="localTasksCounter" value="81" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

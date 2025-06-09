@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.12 - Ajuste de evento">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/community/eventsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/community/eventsController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/community/Events.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/community/Events.js" afterDir="false" />
-    </list>
+    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.13 - Ajuste de evento" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -170,15 +166,7 @@
       <workItem from="1749399392388" duration="2382000" />
       <workItem from="1749488959081" duration="3926000" />
       <workItem from="1749504048030" duration="1227000" />
-      <workItem from="1749506291770" duration="1051000" />
-    </task>
-    <task id="LOCAL-00034" summary="ajuste bug importacao">
-      <option name="closed" value="true" />
-      <created>1740019173117</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1740019173117</updated>
+      <workItem from="1749506291770" duration="1513000" />
     </task>
     <task id="LOCAL-00035" summary="ajuste bug people">
       <option name="closed" value="true" />
@@ -564,7 +552,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749505391991</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="versao 0.8.13 - Ajuste de evento">
+      <option name="closed" value="true" />
+      <created>1749507966923</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1749507966923</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -582,7 +578,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="versao 0.7.2 - bug de importacao" />
     <MESSAGE value="versao 0.7.3 - Listagem de membros de celula" />
     <MESSAGE value="versao 0.7.4 - Listagem de membros de celula" />
     <MESSAGE value="versao 0.7.5 - Listagem de membros de celula" />
@@ -607,7 +602,8 @@
     <MESSAGE value="versao 0.8.11 - Ajuste na edicao de membros de ministerio" />
     <MESSAGE value="versao 0.8.12 - Ajuste no update de usuarios do ministerio" />
     <MESSAGE value="versao 0.8.12 - Ajuste de evento" />
-    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.12 - Ajuste de evento" />
+    <MESSAGE value="versao 0.8.13 - Ajuste de evento" />
+    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.13 - Ajuste de evento" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -18,41 +18,64 @@ exports.createEvent = async (req, res) => {
 };
 
 // 📌 Listar todos os eventos
+const { sequelize } = require("../../models/community"); // ou onde seu sequelize está configurado
+
 exports.getEvents = async (req, res) => {
     try {
         const { ministry_id, start_date, end_date, fields } = req.query;
-        const where = { company_id: req.user.company_id };
 
-        if (ministry_id) where.ministry_id = ministry_id;
-        if (start_date) where.event_date = { [Op.gte]: new Date(start_date) };
-        if (end_date) {
-            where.event_date = {
-                ...(where.event_date || {}),
-                [Op.lte]: new Date(end_date),
-            };
+        const where = [`e.company_id = :company_id`];
+        const replacements = { company_id: req.user.company_id };
+
+        if (ministry_id) {
+            where.push(`e.ministry_id = :ministry_id`);
+            replacements.ministry_id = ministry_id;
         }
 
-        const allowedFields = [
-            "id",
-            "name",
-            "description",
-            "event_date",
-            "ministry_id",
-            "company_id",
-            "status",
-            "type",
-            "created_at",
-            "updated_at",
-        ];
+        if (start_date) {
+            where.push(`e.event_date >= :start_date`);
+            replacements.start_date = start_date;
+        }
 
-        const attributes = fields
-            ? fields.split(",").filter((f) => allowedFields.includes(f))
-            : undefined;
+        if (end_date) {
+            where.push(`e.event_date <= :end_date`);
+            replacements.end_date = end_date;
+        }
 
-        const events = await Events.findAll({
-            where,
-            attributes,
-            order: [["event_date", "DESC"]],
+        const selectFields = fields
+            ? fields
+                .split(",")
+                .filter((f) =>
+                    [
+                        "id",
+                        "name",
+                        "description",
+                        "event_date",
+                        "ministry_id",
+                        "company_id",
+                        "status",
+                        "type",
+                        "created_at",
+                        "updated_at",
+                    ].includes(f),
+                )
+                .map((f) => `e.${f}`)
+            : ["e.*"];
+
+        // Inclui também o nome do ministério
+        selectFields.push("m.name AS ministry_name");
+
+        const query = `
+      SELECT ${selectFields.join(", ")}
+      FROM community.events e
+      LEFT JOIN ministry.ministries m ON e.ministry_id = m.id
+      WHERE ${where.join(" AND ")}
+      ORDER BY e.event_date DESC
+    `;
+
+        const events = await sequelize.query(query, {
+            replacements,
+            type: sequelize.QueryTypes.SELECT,
         });
 
         return res.status(200).json(events);
@@ -61,6 +84,7 @@ exports.getEvents = async (req, res) => {
         return res.status(500).json({ message: "Erro interno no servidor." });
     }
 };
+
 
 // 📌 Buscar evento por ID
 exports.getEventById = async (req, res) => {

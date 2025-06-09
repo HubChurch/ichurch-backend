@@ -1,6 +1,7 @@
 const { Events } = require("../../models/community");
 const { Attendance, People } = require("../../models/community");
 const { Op } = require("sequelize");
+const {communityDB} = require("../../config/db");
 
 // 📌 Criar um novo evento
 exports.createEvent = async (req, res) => {
@@ -18,7 +19,7 @@ exports.createEvent = async (req, res) => {
 };
 
 // 📌 Listar todos os eventos
-const { sequelize } = require("../../models/community"); // ou onde seu sequelize está configurado
+
 
 exports.getEvents = async (req, res) => {
     try {
@@ -66,16 +67,16 @@ exports.getEvents = async (req, res) => {
         selectFields.push("m.name AS ministry_name");
 
         const query = `
-      SELECT ${selectFields.join(", ")}
-      FROM community.events e
-      LEFT JOIN ministry.ministries m ON e.ministry_id = m.id
-      WHERE ${where.join(" AND ")}
-      ORDER BY e.event_date DESC
-    `;
+            SELECT ${selectFields.join(", ")}
+            FROM community.events e
+                     LEFT JOIN ministry.ministries m ON e.ministry_id = m.id
+            WHERE ${where.join(" AND ")}
+            ORDER BY e.event_date DESC
+        `;
 
-        const events = await sequelize.query(query, {
+        const events = await communityDB.query(query, {
             replacements,
-            type: sequelize.QueryTypes.SELECT,
+            type: communityDB.QueryTypes.SELECT,
         });
 
         return res.status(200).json(events);

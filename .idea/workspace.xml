@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.11 - Ajuste na edicao de membros de ministerio">
+    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.12 - Ajuste de evento">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/community/eventsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/community/eventsController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/ministry/ministryController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ministry/ministryController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/community/Events.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/community/Events.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,23 +169,8 @@
       <workItem from="1749394205416" duration="557000" />
       <workItem from="1749399392388" duration="2382000" />
       <workItem from="1749488959081" duration="3926000" />
-      <workItem from="1749504048030" duration="872000" />
-    </task>
-    <task id="LOCAL-00032" summary="Ajuste de bug">
-      <option name="closed" value="true" />
-      <created>1740018731795</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1740018731795</updated>
-    </task>
-    <task id="LOCAL-00033" summary="fora reports">
-      <option name="closed" value="true" />
-      <created>1740018991163</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1740018991163</updated>
+      <workItem from="1749504048030" duration="1227000" />
+      <workItem from="1749506291770" duration="1051000" />
     </task>
     <task id="LOCAL-00034" summary="ajuste bug importacao">
       <option name="closed" value="true" />
@@ -563,7 +548,23 @@
       <option name="project" value="LOCAL" />
       <updated>1749401622842</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="versao 0.8.12 - Ajuste no update de usuarios do ministerio">
+      <option name="closed" value="true" />
+      <created>1749505057852</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1749505057852</updated>
+    </task>
+    <task id="LOCAL-00082" summary="versao 0.8.12 - Ajuste de evento">
+      <option name="closed" value="true" />
+      <created>1749505391991</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1749505391991</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -581,8 +582,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="versao 0.7.1 - Endpoints de celula" />
-    <MESSAGE value="versao 0.7.2 - Endpoints de celula - ajuste de edicao de membros de celula" />
     <MESSAGE value="versao 0.7.2 - bug de importacao" />
     <MESSAGE value="versao 0.7.3 - Listagem de membros de celula" />
     <MESSAGE value="versao 0.7.4 - Listagem de membros de celula" />
@@ -606,7 +605,9 @@
     <MESSAGE value="versao 0.8.9 - Tela de dados de um ministerio trazendo todos seus membros" />
     <MESSAGE value="versao 0.8.10 - Ajuste no get id ministerio" />
     <MESSAGE value="versao 0.8.11 - Ajuste na edicao de membros de ministerio" />
-    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.11 - Ajuste na edicao de membros de ministerio" />
+    <MESSAGE value="versao 0.8.12 - Ajuste no update de usuarios do ministerio" />
+    <MESSAGE value="versao 0.8.12 - Ajuste de evento" />
+    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.12 - Ajuste de evento" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

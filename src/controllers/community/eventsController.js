@@ -1,24 +1,27 @@
-const {Events} = require("../../models/community");
-const {Attendance, People} = require("../../models/community");
-const {Op} = require("sequelize");
+const { Events } = require("../../models/community");
+const { Attendance, People } = require("../../models/community");
+const { Op } = require("sequelize");
 
 // 📌 Criar um novo evento
 exports.createEvent = async (req, res) => {
     try {
-        const event = await Events.create({...req.body, company_id: req.user.company_id});
+        const event = await Events.create({
+            ...req.body,
+            company_id: req.user.company_id,
+            status: "scheduled",
+        });
         res.status(201).json(event);
     } catch (err) {
         console.error("Erro ao criar evento:", err);
-        res.status(500).json({error: "Erro ao criar evento."});
+        res.status(500).json({ error: "Erro ao criar evento." });
     }
 };
 
-// 📌 Listar todos os eventos ativos
+// 📌 Listar todos os eventos
 exports.getEvents = async (req, res) => {
     try {
         const { ministry_id, start_date, end_date, fields } = req.query;
-
-        const where = {};
+        const where = { company_id: req.user.company_id };
 
         if (ministry_id) where.ministry_id = ministry_id;
         if (start_date) where.event_date = { [Op.gte]: new Date(start_date) };
@@ -37,6 +40,7 @@ exports.getEvents = async (req, res) => {
             "ministry_id",
             "company_id",
             "status",
+            "type",
             "created_at",
             "updated_at",
         ];
@@ -65,84 +69,86 @@ exports.getEventById = async (req, res) => {
             where: {
                 id: req.params.id,
                 company_id: req.user.company_id,
-                status: 'active'
-            }
+            },
         });
-        if (!event) return res.status(404).json({error: "Evento não encontrado."});
+        if (!event)
+            return res.status(404).json({ error: "Evento não encontrado." });
         res.json(event);
     } catch (err) {
-        res.status(500).json({error: "Erro ao buscar evento."});
+        res.status(500).json({ error: "Erro ao buscar evento." });
     }
 };
 
 // 📌 Atualizar evento
 exports.updateEvent = async (req, res) => {
     try {
-        const updated = await Events.update(req.body, {where: {id: req.params.id, company_id: req.user.company_id}});
-        if (!updated[0]) return res.status(404).json({error: "Evento não encontrado."});
-        res.json({message: "Evento atualizado com sucesso."});
+        const [updatedCount] = await Events.update(req.body, {
+            where: { id: req.params.id, company_id: req.user.company_id },
+        });
+        if (!updatedCount)
+            return res.status(404).json({ error: "Evento não encontrado." });
+        res.json({ message: "Evento atualizado com sucesso." });
     } catch (err) {
-        res.status(500).json({error: "Erro ao atualizar evento."});
+        res.status(500).json({ error: "Erro ao atualizar evento." });
     }
 };
 
-// 📌 Exclusão lógica (Marcar como deletado)
+// 📌 Exclusão lógica (Marcar como cancelado)
 exports.deleteEvent = async (req, res) => {
     try {
-        const updated = await Events.update({status: 'canceled'}, {
-            where: {
-                id: req.params.id,
-                company_id: req.user.company_id
+        const [updatedCount] = await Events.update(
+            { status: "cancelled" },
+            {
+                where: {
+                    id: req.params.id,
+                    company_id: req.user.company_id,
+                },
             }
-        });
-        if (!updated[0]) return res.status(404).json({error: "Evento não encontrado."});
-        res.json({message: "Evento excluído com sucesso."});
+        );
+        if (!updatedCount)
+            return res.status(404).json({ error: "Evento não encontrado." });
+        res.json({ message: "Evento cancelado com sucesso." });
     } catch (err) {
-        res.status(500).json({error: "Erro ao excluir evento."});
+        res.status(500).json({ error: "Erro ao cancelar evento." });
     }
 };
 
 // 📌 Listar todas as pessoas de um evento (com presença ou não)
 exports.getEventPeople = async (req, res) => {
-    const {event_id} = req.params;
+    const { event_id } = req.params;
 
     try {
-        // Verificar se o evento existe
         const event = await Events.findOne({
-            where: {id: event_id, company_id: req.user.company_id}
+            where: { id: event_id, company_id: req.user.company_id },
         });
 
         if (!event) {
-            return res.status(404).json({message: "Evento não encontrado."});
+            return res.status(404).json({ message: "Evento não encontrado." });
         }
 
-        // 🔹 Buscar todas as pessoas da empresa
         const allPeople = await People.findAll({
-            where: {company_id: req.user.company_id, status: 'active'},
-            attributes: ["id", "name", "type", "photo"]
+            where: { company_id: req.user.company_id, status: "active" },
+            attributes: ["id", "name", "type", "photo"],
         });
 
-        // 🔹 Buscar presenças desse evento
         const attendanceList = await Attendance.findAll({
-            where: {event_id},
-            attributes: ["person_id"]
+            where: { event_id },
+            attributes: ["person_id"],
         });
 
-        // 🔹 Criar um conjunto de IDs das pessoas que marcaram presença
-        const presentPeopleIds = new Set(attendanceList.map(a => a.person_id));
+        const presentPeopleIds = new Set(attendanceList.map((a) => a.person_id));
 
-        // 🔹 Adicionar o campo "present" para indicar se a pessoa já marcou presença
-        const formattedPeople = allPeople.map(person => ({
+        const formattedPeople = allPeople.map((person) => ({
             id: person.id,
             name: person.name,
             type: person.type,
             photo: person.photo,
-            present: presentPeopleIds.has(person.id) // Se o ID estiver na lista de presença, está presente
+            present: presentPeopleIds.has(person.id),
         }));
 
         res.json(formattedPeople);
     } catch (err) {
         console.error("Erro ao buscar pessoas do evento:", err);
-        res.status(500).json({error: "Erro ao buscar participantes do evento."});
+        res.status(500).json({ error: "Erro ao buscar participantes do evento." });
     }
 };

@@ -1,6 +1,6 @@
 const CellGroup = require("../../models/ministry/CellGroups");
 const Ministry = require("../../models/ministry/Ministries");
-const {CellMember} = require("../../models/ministry");
+const {CellMember, MinistryMember} = require("../../models/ministry");
 const {People} = require("../../models/community");
 
 /**
@@ -105,16 +105,24 @@ const getCellGroupById = async (req, res) => {
 
         const memberData = await Promise.all(
             cellGroup.members.map(async (member) => {
-                console.log('Buscando pessoa para membro:', member.person_id);
                 const person = await People.findOne({
                     where: { id: member.person_id },
-                    attributes: ["id", "name"],
+                    attributes: ["id", "name", "photo"],
+                });
+
+                const ministryMember = await MinistryMember.findOne({
+                    where: {
+                        person_id: member.person_id,
+                        ministry_id: cellGroup.ministry_id,
+                    },
+                    attributes: ["role"],
                 });
 
                 return {
                     id: person?.id || member.person_id,
                     name: person?.name || "Desconhecido",
-                    role: member.role,
+                    photo: person?.photo || null,
+                    role: ministryMember?.role || "MEMBER", // fallback
                 };
             })
         );
@@ -132,6 +140,7 @@ const getCellGroupById = async (req, res) => {
         return res.status(500).json({ error: "Erro interno do servidor" });
     }
 };
+
 
 
 /**

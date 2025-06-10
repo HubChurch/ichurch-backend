@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.37">
+    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.38">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -178,15 +178,7 @@
       <workItem from="1749580120363" duration="1241000" />
       <workItem from="1749581404393" duration="1175000" />
       <workItem from="1749583945199" duration="3952000" />
-      <workItem from="1749591137093" duration="5416000" />
-    </task>
-    <task id="LOCAL-00059" summary="versao 0.7.4 - Listagem de membros de celula">
-      <option name="closed" value="true" />
-      <created>1749030792236</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1749030792236</updated>
+      <workItem from="1749591137093" duration="6113000" />
     </task>
     <task id="LOCAL-00060" summary="versao 0.7.5 - Listagem de membros de celula">
       <option name="closed" value="true" />
@@ -572,7 +564,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749596684875</updated>
     </task>
-    <option name="localTasksCounter" value="108" />
+    <task id="LOCAL-00108" summary="versao 0.8.38">
+      <option name="closed" value="true" />
+      <created>1749597331671</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1749597331671</updated>
+    </task>
+    <option name="localTasksCounter" value="109" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -590,7 +590,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="versao 0.8.12 - Ajuste de evento" />
     <MESSAGE value="versao 0.8.13 - Ajuste de evento" />
     <MESSAGE value="versao 0.8.14 - Ajuste listagem de evento" />
     <MESSAGE value="versao 0.8.15 -correcao de bug" />
@@ -615,14 +614,15 @@
     <MESSAGE value="versao 0.8.35 - Create cell group" />
     <MESSAGE value="versao 0.8.36 -" />
     <MESSAGE value="versao 0.8.37" />
-    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.37" />
+    <MESSAGE value="versao 0.8.38" />
+    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.38" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/controllers/ministry/cellGroupController.js</url>
-          <line>144</line>
+          <line>141</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">

@@ -1,5 +1,5 @@
 const Ministry = require("../../models/ministry/Ministries");
-const {Sequelize} = require("sequelize");
+const {Sequelize, Op} = require("sequelize");
 const {MinistryMember} = require("../../models/ministry");
 const {getPeopleByIds} = require("../community/peopleController");
 const {fetchPeopleByIds} = require("../../service/peopleService");
@@ -47,8 +47,9 @@ const createMinistry = async (req, res) => {
 
 
 const getAllMinistries = async (req, res) => {
-    const { company_id, is_master, people_id } = req;
+    const { company_id, people_id } = req;
     const { ministry_id } = req.query;
+    const is_master = req.user.is_master; // Verifica se o usuário é master
 
     try {
         let where = { company_id };
@@ -59,10 +60,10 @@ const getAllMinistries = async (req, res) => {
         }
 
         // 👤 Se NÃO for master ou se houve filtro por user_id, forçar os ministérios do usuário
-        if (!is_master ) {
+        if (!is_master) {
             const userMinistries = await MinistryMember.findAll({
                 where: {
-                    people_id: people_id,
+                    person_id: people_id,
                     status: "ativo",
                 },
                 attributes: ["ministry_id"],
@@ -81,7 +82,7 @@ const getAllMinistries = async (req, res) => {
         // 🔄 Consulta
         const ministries = await Ministry.findAll({
             where,
-            attributes: ["id", "name", "type", "description", "visibility", "icon", "color"],
+            attributes: ["id", "name", "type", "description", "visibility", "code"],
             order: [
                 [Sequelize.literal(`type = 'core'`), "DESC"],
                 ["name", "ASC"],

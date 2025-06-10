@@ -4,8 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.21 - Ajuste no checkin">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.22 -Ajuste na listagem de ministerio">
       <change beforePath="$PROJECT_DIR$/src/controllers/ministry/ministryController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ministry/ministryController.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -174,15 +173,7 @@
       <workItem from="1749509443562" duration="1937000" />
       <workItem from="1749564601809" duration="3028000" />
       <workItem from="1749569242757" duration="2747000" />
-      <workItem from="1749572991824" duration="593000" />
-    </task>
-    <task id="LOCAL-00043" summary="Ajuste bug de propriedade de report">
-      <option name="closed" value="true" />
-      <created>1740078356469</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1740078356469</updated>
+      <workItem from="1749572991824" duration="901000" />
     </task>
     <task id="LOCAL-00044" summary="Ajuste bug de eventos">
       <option name="closed" value="true" />
@@ -568,7 +559,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749572327148</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="versao 0.8.22 -Ajuste na listagem de ministerio">
+      <option name="closed" value="true" />
+      <created>1749573615016</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1749573615016</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -586,7 +585,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="versao 0.7.11 - Listagem de membros de celula" />
     <MESSAGE value="versao 0.7.12 - Serviço de criacao de usuario" />
     <MESSAGE value="versao 0.7.13 - Melhorias na listagem de pessoas" />
     <MESSAGE value="versao 0.8.0 - Cadastro, ministerio padrao, usuario master." />
@@ -611,7 +609,8 @@
     <MESSAGE value="versao 0.8.19 - passando user_id do cara logado" />
     <MESSAGE value="versao 0.8.20 - salvando o id de pessoa no  token" />
     <MESSAGE value="versao 0.8.21 - Ajuste no checkin" />
-    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.21 - Ajuste no checkin" />
+    <MESSAGE value="versao 0.8.22 -Ajuste na listagem de ministerio" />
+    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.22 -Ajuste na listagem de ministerio" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

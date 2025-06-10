@@ -23,34 +23,54 @@ exports.markMultipleAttendance = async (req, res) => {
     const { event_id, person_ids } = req.body;
 
     try {
+        // 1. Verifica se o evento existe
         const event = await Events.findByPk(event_id);
         if (!event) {
             return res.status(404).json({ message: 'Evento não encontrado.' });
         }
 
+        // 2. Busca todas as pessoas informadas
         const people = await People.findAll({ where: { id: person_ids } });
+        const foundIds = people.map(p => p.id);
+        const missingIds = person_ids.filter(id => !foundIds.includes(id));
 
-        if (people.length !== person_ids.length) {
+        console.log(person_ids)
+        if (missingIds.length > 0) {
             return res.status(400).json({
                 message: 'Algumas pessoas não foram encontradas.',
-                missingIds: person_ids.filter(id => !people.find(p => p.id === id))
+                missingIds,
             });
         }
 
-        const attendanceRecords = person_ids.map(person_id => ({
+        // 3. Busca presenças já registradas
+        const existing = await Attendance.findAll({
+            where: {
+                event_id,
+                person_id: person_ids,
+            },
+        });
+
+        const alreadyMarked = existing.map((a) => a.person_id);
+        const newIds = person_ids.filter(id => !alreadyMarked.includes(id));
+
+        // 4. Cria somente as que ainda não existem
+        const attendanceRecords = newIds.map(person_id => ({
             event_id,
             person_id,
-            company_id: req.user.company_id
+            company_id: req.user.company_id,
         }));
 
-        await Attendance.bulkCreate(attendanceRecords);
+        if (attendanceRecords.length > 0) {
+            await Attendance.bulkCreate(attendanceRecords);
+        }
 
+        // 5. Retorno completo
         res.status(201).json({
-            message: 'Presença marcada com sucesso para as pessoas selecionadas.',
-            attendedPeople: people.map(person => ({
-                id: person.id,
-                name: person.name
-            }))
+            message: 'Presença registrada com sucesso.',
+            newMarked: newIds,
+            alreadyMarked,
+            totalRequested: person_ids.length,
+            totalSaved: attendanceRecords.length,
         });
 
     } catch (err) {
@@ -58,6 +78,7 @@ exports.markMultipleAttendance = async (req, res) => {
         res.status(500).json({ error: 'Erro ao marcar presença.' });
     }
 };
+
 
 // 📌 Listar presenças por evento
 exports.getAttendanceByEvent = async (req, res) => {

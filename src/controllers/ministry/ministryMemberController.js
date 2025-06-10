@@ -62,7 +62,7 @@ const getMembersByMinistry = async (req, res) => {
         // 2. Busca os dados das pessoas no outro banco
         const people = await People.findAll({
             where: { id: personIds },
-            attributes: ['id', 'name', 'email'], // personalize conforme necessário
+            attributes: ['id', 'name', 'email', 'photo'], // personalize conforme necessário
         });
 
         const peopleMap = Object.fromEntries(people.map((p) => [p.id, p]));

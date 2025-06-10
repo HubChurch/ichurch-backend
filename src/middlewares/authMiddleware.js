@@ -21,6 +21,7 @@ const authMiddleware = (req, res, next) => {
 
         req.user = decoded; // Adiciona os dados do usuário ao request
         req.company_id = decoded.company_id; // ✅ Adiciona `company_id` automaticamente a todas as requisições
+        req.user_id = decoded.user_id;
 
         next(); // Passa para o próximo middleware/controller
     } catch (err) {

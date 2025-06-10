@@ -186,7 +186,7 @@ exports.getEventPeople = async (req, res) => {
 
 
 exports.getCheckinStatus = async (req, res) =>{
-    const userId = req.user.id;
+    const userId = req.user_id;
     const eventId = req.params.event_id;
 
     const alreadyChecked = await checkinService.hasCheckedIn(userId, eventId);

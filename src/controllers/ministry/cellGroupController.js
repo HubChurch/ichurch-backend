@@ -10,6 +10,10 @@ const createCellGroup = async (req, res) => {
     try {
         const { name, description, ministry_id, members } = req.body;
 
+        if (!name?.trim()) {
+            return res.status(400).json({ error: "O nome da célula é obrigatório." });
+        }
+
         const ministry = await Ministry.findOne({
             where: { id: ministry_id, company_id: req.company_id },
         });
@@ -17,7 +21,7 @@ const createCellGroup = async (req, res) => {
         if (!ministry) {
             return res
                 .status(404)
-                .json({ error: "Ministério não encontrado ou não pertence a você" });
+                .json({ error: "Ministério não encontrado ou não pertence a você." });
         }
 
         const cellGroup = await CellGroup.create({
@@ -27,9 +31,11 @@ const createCellGroup = async (req, res) => {
             description,
         });
 
-        // Verifica se membros foram enviados e cria as relações
+        // Criar relações com membros se fornecidos
         if (Array.isArray(members) && members.length > 0) {
-            const cellMembersData = members.map((person_id) => ({
+            const memberIds = members.filter((id) => typeof id === "string");
+
+            const cellMembersData = memberIds.map((person_id) => ({
                 cell_group_id: cellGroup.id,
                 person_id,
                 company_id: req.company_id,
@@ -38,10 +44,10 @@ const createCellGroup = async (req, res) => {
             await CellMember.bulkCreate(cellMembersData);
         }
 
-        return res.status(201).json(cellGroup);
+        return res.status(201).json({ message: "Célula criada com sucesso", cellGroup });
     } catch (error) {
         console.error("Erro ao criar célula:", error);
-        return res.status(500).json({ error: "Erro interno do servidor" });
+        return res.status(500).json({ error: "Erro ao criar célula." });
     }
 };
 
@@ -99,10 +105,14 @@ const getCellGroupById = async (req, res) => {
 
         const memberData = await Promise.all(
             cellGroup.members.map(async (member) => {
+                console.log('Buscando pessoa para membro:', member.person_id);
                 const person = await People.findOne({
                     where: { id: member.person_id },
                     attributes: ["id", "name"],
                 });
+
+                console.log(person)
+
 
                 return {
                     id: person?.id || member.person_id,

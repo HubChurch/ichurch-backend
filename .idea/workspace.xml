@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.34 - GET CELULAS DE MINISTERIO">
+    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.35 - Create cell group">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/ministry/cellGroupController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ministry/cellGroupController.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,15 +179,7 @@
       <workItem from="1749580120363" duration="1241000" />
       <workItem from="1749581404393" duration="1175000" />
       <workItem from="1749583945199" duration="3952000" />
-      <workItem from="1749591137093" duration="1301000" />
-    </task>
-    <task id="LOCAL-00055" summary="versao 0.7.1 - Endpoints de celula">
-      <option name="closed" value="true" />
-      <created>1748993084432</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1748993084432</updated>
+      <workItem from="1749591137093" duration="4027000" />
     </task>
     <task id="LOCAL-00056" summary="versao 0.7.2 - Endpoints de celula - ajuste de edicao de membros de celula">
       <option name="closed" value="true" />
@@ -572,7 +565,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749591222523</updated>
     </task>
-    <option name="localTasksCounter" value="104" />
+    <task id="LOCAL-00104" summary="versao 0.8.35 - Create cell group">
+      <option name="closed" value="true" />
+      <created>1749593093685</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1749593093685</updated>
+    </task>
+    <option name="localTasksCounter" value="105" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -590,7 +591,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="versao 0.8.10 - Ajuste no get id ministerio" />
     <MESSAGE value="versao 0.8.11 - Ajuste na edicao de membros de ministerio" />
     <MESSAGE value="versao 0.8.12 - Ajuste no update de usuarios do ministerio" />
     <MESSAGE value="versao 0.8.12 - Ajuste de evento" />
@@ -615,14 +615,15 @@
     <MESSAGE value="versao 0.8.32" />
     <MESSAGE value="versao 0.8.33" />
     <MESSAGE value="versao 0.8.34 - GET CELULAS DE MINISTERIO" />
-    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.34 - GET CELULAS DE MINISTERIO" />
+    <MESSAGE value="versao 0.8.35 - Create cell group" />
+    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.35 - Create cell group" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/controllers/ministry/cellGroupController.js</url>
-          <line>121</line>
+          <line>138</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">

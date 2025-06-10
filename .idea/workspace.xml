@@ -4,12 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.16 - Tela de checkin para eventos">
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.17 - bug de importacao">
       <change beforePath="$PROJECT_DIR$/src/controllers/community/eventsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/community/eventsController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/eventsService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/eventsService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,15 +171,7 @@
       <workItem from="1749506291770" duration="1513000" />
       <workItem from="1749508864716" duration="446000" />
       <workItem from="1749509443562" duration="1937000" />
-      <workItem from="1749564601809" duration="1322000" />
-    </task>
-    <task id="LOCAL-00038" summary="Ajuste bug de propriedade no evento">
-      <option name="closed" value="true" />
-      <created>1740069901696</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1740069901696</updated>
+      <workItem from="1749564601809" duration="2285000" />
     </task>
     <task id="LOCAL-00039" summary="Ajuste de exclusao de evento">
       <option name="closed" value="true" />
@@ -569,7 +557,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749564930894</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary="versao 0.8.17 - bug de importacao">
+      <option name="closed" value="true" />
+      <created>1749566034362</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1749566034362</updated>
+    </task>
+    <option name="localTasksCounter" value="88" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -587,7 +583,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="versao 0.7.6- Listagem de membros de celula" />
     <MESSAGE value="versao 0.7.7- Listagem de membros de celula" />
     <MESSAGE value="versao 0.7.8- Listagem de membros de celula" />
     <MESSAGE value="versao 0.7.9- Listagem de membros de celula" />
@@ -612,7 +607,8 @@
     <MESSAGE value="versao 0.8.14 - Ajuste listagem de evento" />
     <MESSAGE value="versao 0.8.15 -correcao de bug" />
     <MESSAGE value="versao 0.8.16 - Tela de checkin para eventos" />
-    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.16 - Tela de checkin para eventos" />
+    <MESSAGE value="versao 0.8.17 - bug de importacao" />
+    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.17 - bug de importacao" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -70,7 +70,7 @@ const getMembersByMinistry = async (req, res) => {
         // 3. Merge manual: junta membros com dados das pessoas
         const enriched = members.map((member) => ({
             ...member.toJSON(),
-            "id": peopleMap[member.person_id]?.person_id || null,
+            "id": member.person_id,
             "email": peopleMap[member.person_id]?.email || null,
             "name": peopleMap[member.person_id]?.name || "Usuário não encontrado",
             "photo": peopleMap[member.person_id]?.photo || null,

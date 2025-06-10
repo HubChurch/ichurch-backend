@@ -45,67 +45,53 @@ const createMinistry = async (req, res) => {
  * Lista todos os ministérios da empresa autenticada
  */
 
-const getAllMinistries = async (req, res) => {
-    try {
-        const ministries = await Ministry.findAll({
-            where: {company_id: req.company_id},
-            attributes: {
-                include: [
-                    [
-                        Sequelize.literal(`(
-        SELECT COUNT(*)
-        FROM ministry_members AS mm
-        WHERE
-          mm.ministry_id = ministry.id
-          AND mm.status = 'ativo'
-      )`),
-                        'peopleCount'
-                    ],
-                    [
-                        Sequelize.literal(`(
-        SELECT COUNT(*)
-        FROM ministry_members AS mm
-        WHERE
-          mm.ministry_id = ministry.id
-          AND mm.status = 'ativo'
-          AND mm.role = 'LEADER'
-      )`),
-                        'leadersCount'
-                    ],
-                    [
-                        Sequelize.literal(`(
-        SELECT COUNT(*)
-        FROM ministry_members AS mm
-        WHERE
-          mm.ministry_id = ministry.id
-          AND mm.status = 'ativo'
-          AND mm.role = 'AUX'
-      )`),
-                        'auxCount'
-                    ],
-                    [
-                        Sequelize.literal(`(
-        SELECT COUNT(*)
-        FROM ministry_members AS mm
-        WHERE
-          mm.ministry_id = ministry.id
-          AND mm.status = 'ativo'
-          AND mm.role = 'MEMBER'
-      )`),
-                        'membersCount'
-                    ],
-                ],
-            },
 
+const getAllMinistries = async (req, res) => {
+    const { company_id, is_master, people_id } = req;
+    const { ministry_id } = req.query;
+
+    try {
+        let where = { company_id };
+
+        // 🔍 Filtro por ID de ministério (tem prioridade)
+        if (ministry_id) {
+            where.id = ministry_id;
+        }
+
+        // 👤 Se NÃO for master ou se houve filtro por user_id, forçar os ministérios do usuário
+        if (!is_master ) {
+            const userMinistries = await MinistryMember.findAll({
+                where: {
+                    people_id: people_id,
+                    status: "ativo",
+                },
+                attributes: ["ministry_id"],
+            });
+
+            const ministryIds = userMinistries.map((m) => m.ministry_id);
+            if (ministryIds.length === 0) {
+                return res.json([]); // não participa de nenhum
+            }
+
+            where.id = ministry_id
+                ? ministry_id // já filtrado anteriormente
+                : { [Op.in]: ministryIds };
+        }
+
+        // 🔄 Consulta
+        const ministries = await Ministry.findAll({
+            where,
+            attributes: ["id", "name", "type", "description", "visibility", "icon", "color"],
             order: [
-                [Sequelize.literal(`type = 'core'`), 'DESC'],
-                ['name', 'ASC'],
+                [Sequelize.literal(`type = 'core'`), "DESC"],
+                ["name", "ASC"],
             ],
         });
+
         return res.json(ministries);
     } catch (error) {
-        console.error(error);
-        return res.status(500).json({error: "Erro ao buscar ministérios"});
+        console.error("Erro ao buscar ministérios:", error);
+        return res.status(500).json({ error: "Erro ao buscar ministérios" });
     }
 };
 

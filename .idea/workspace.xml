@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.19 - passando user_id do cara logado">
-      <change beforePath="$PROJECT_DIR$/src/controllers/community/eventsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/community/eventsController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/sca/authController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/sca/authController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/middlewares/authMiddleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/middlewares/authMiddleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/eventsService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/eventsService.js" afterDir="false" />
+    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.21 - Ajuste no checkin">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/ministry/ministryController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ministry/ministryController.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -175,23 +173,8 @@
       <workItem from="1749508864716" duration="446000" />
       <workItem from="1749509443562" duration="1937000" />
       <workItem from="1749564601809" duration="3028000" />
-      <workItem from="1749569242757" duration="1726000" />
-    </task>
-    <task id="LOCAL-00041" summary="Ajuste bug de propriedade de report">
-      <option name="closed" value="true" />
-      <created>1740074319044</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1740074319044</updated>
-    </task>
-    <task id="LOCAL-00042" summary="Ajuste bug de propriedade de report">
-      <option name="closed" value="true" />
-      <created>1740074980571</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1740074980571</updated>
+      <workItem from="1749569242757" duration="2747000" />
+      <workItem from="1749572991824" duration="593000" />
     </task>
     <task id="LOCAL-00043" summary="Ajuste bug de propriedade de report">
       <option name="closed" value="true" />
@@ -569,7 +552,23 @@
       <option name="project" value="LOCAL" />
       <updated>1749569566462</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <task id="LOCAL-00090" summary="versao 0.8.20 - salvando o id de pessoa no  token">
+      <option name="closed" value="true" />
+      <created>1749571014947</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1749571014948</updated>
+    </task>
+    <task id="LOCAL-00091" summary="versao 0.8.21 - Ajuste no checkin">
+      <option name="closed" value="true" />
+      <created>1749572327148</created>
+      <option name="number" value="00091" />
+      <option name="presentableId" value="LOCAL-00091" />
+      <option name="project" value="LOCAL" />
+      <updated>1749572327148</updated>
+    </task>
+    <option name="localTasksCounter" value="92" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -587,8 +586,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="versao 0.7.9- Listagem de membros de celula" />
-    <MESSAGE value="versao 0.7.10- Listagem de membros de celula" />
     <MESSAGE value="versao 0.7.11 - Listagem de membros de celula" />
     <MESSAGE value="versao 0.7.12 - Serviço de criacao de usuario" />
     <MESSAGE value="versao 0.7.13 - Melhorias na listagem de pessoas" />
@@ -612,7 +609,9 @@
     <MESSAGE value="versao 0.8.17 - bug de importacao" />
     <MESSAGE value="versao 0.8.18 -Ajuste retorno get event" />
     <MESSAGE value="versao 0.8.19 - passando user_id do cara logado" />
-    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.19 - passando user_id do cara logado" />
+    <MESSAGE value="versao 0.8.20 - salvando o id de pessoa no  token" />
+    <MESSAGE value="versao 0.8.21 - Ajuste no checkin" />
+    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.21 - Ajuste no checkin" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.36 -" />
+    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.37">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -176,23 +178,7 @@
       <workItem from="1749580120363" duration="1241000" />
       <workItem from="1749581404393" duration="1175000" />
       <workItem from="1749583945199" duration="3952000" />
-      <workItem from="1749591137093" duration="4600000" />
-    </task>
-    <task id="LOCAL-00057" summary="versao 0.7.2 - bug de importacao">
-      <option name="closed" value="true" />
-      <created>1749030184029</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1749030184029</updated>
-    </task>
-    <task id="LOCAL-00058" summary="versao 0.7.3 - Listagem de membros de celula">
-      <option name="closed" value="true" />
-      <created>1749030496288</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1749030496288</updated>
+      <workItem from="1749591137093" duration="5416000" />
     </task>
     <task id="LOCAL-00059" summary="versao 0.7.4 - Listagem de membros de celula">
       <option name="closed" value="true" />
@@ -570,7 +556,23 @@
       <option name="project" value="LOCAL" />
       <updated>1749595968070</updated>
     </task>
-    <option name="localTasksCounter" value="106" />
+    <task id="LOCAL-00106" summary="versao 0.8.36 -">
+      <option name="closed" value="true" />
+      <created>1749596521864</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1749596521864</updated>
+    </task>
+    <task id="LOCAL-00107" summary="versao 0.8.37">
+      <option name="closed" value="true" />
+      <created>1749596684875</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1749596684875</updated>
+    </task>
+    <option name="localTasksCounter" value="108" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -588,7 +590,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="versao 0.8.12 - Ajuste no update de usuarios do ministerio" />
     <MESSAGE value="versao 0.8.12 - Ajuste de evento" />
     <MESSAGE value="versao 0.8.13 - Ajuste de evento" />
     <MESSAGE value="versao 0.8.14 - Ajuste listagem de evento" />
@@ -613,7 +614,8 @@
     <MESSAGE value="versao 0.8.34 - GET CELULAS DE MINISTERIO" />
     <MESSAGE value="versao 0.8.35 - Create cell group" />
     <MESSAGE value="versao 0.8.36 -" />
-    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.36 -" />
+    <MESSAGE value="versao 0.8.37" />
+    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.37" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

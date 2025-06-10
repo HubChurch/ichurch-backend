@@ -116,8 +116,6 @@ exports.getPersonById = async (req, res) => {
               AND mm.status = 'ativo'
         `;
 
-        console.log(ministriesQuery)
-
         const ministries = await ministryDB.query(ministriesQuery, {
             replacements: {personId: req.params.id},
             type: ministryDB.QueryTypes.SELECT,

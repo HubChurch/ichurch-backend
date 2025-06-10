@@ -111,9 +111,6 @@ const getCellGroupById = async (req, res) => {
                     attributes: ["id", "name"],
                 });
 
-                console.log(person)
-
-
                 return {
                     id: person?.id || member.person_id,
                     name: person?.name || "Desconhecido",

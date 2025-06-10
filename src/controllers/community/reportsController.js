@@ -51,6 +51,7 @@ exports.getEventPresenceReport = async (req, res) => {
                 id: event.id,
                 name: event.name,
                 date: event.event_date,
+                ministry_id: event.ministry_id,
             },
             totalAttendees: attendance.length,
             attendees: attendance.map((record) => record.person),

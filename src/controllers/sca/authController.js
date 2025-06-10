@@ -3,6 +3,7 @@ const jwt = require("jsonwebtoken");
 const {Users, Companies} = require("../../models/sca");
 const {Logger} = require("../../service/logService");
 const Ministries = require("../../models/ministry/Ministries");
+const { People} = require("../../models/community");
 
 exports.login = async (req, res) => {
     const {email, password} = req.body;
@@ -14,8 +15,10 @@ exports.login = async (req, res) => {
         const isMatch = await bcrypt.compare(password, user.password);
         if (!isMatch) return res.status(401).json({error: "Usuário ou senha inválidos."});
 
-        const token = jwt.sign(
-            {id: user.id, company_id: user.company_id, is_master: user.is_master},
+        const people = await People.findOne({where : {user_id: user.id}});
+
+        token = jwt.sign(
+            {id: user.id, company_id: user.company_id, is_master: user.is_master, email: user.email, people_id: people?.id ?? undefined},
             process.env.JWT_SECRET,
             {expiresIn: "8h"}
         );
@@ -51,20 +54,20 @@ exports.getauthMiddlewaredUser = async (req, res) => {
 
 
 exports.registerChurch = async (req, res) => {
-    const { churchName, adminName, email, password } = req.body;
+    const {churchName, adminName, email, password} = req.body;
 
     try {
         // 🔍 Verificar se o email já está em uso por qualquer usuário
-        const existingUser = await Users.findOne({ where: { email } });
+        const existingUser = await Users.findOne({where: {email}});
         if (existingUser) {
-            return res.status(400).json({ error: "Este email já está em uso por outro usuário." });
+            return res.status(400).json({error: "Este email já está em uso por outro usuário."});
         }
 
         // 🔐 Criptografar senha
         const hashedPassword = await bcrypt.hash(password, 10);
 
         // 🏢 Criar empresa (igreja)
-        const company = await Companies.create({ name: churchName, email });
+        const company = await Companies.create({name: churchName, email});
 
         // 👤 Criar usuário master
         const user = await Users.create({
@@ -76,7 +79,7 @@ exports.registerChurch = async (req, res) => {
         });
 
         // 🔁 Atualizar empresa com owner_id
-        await company.update({ owner_id: user.id });
+        await company.update({owner_id: user.id});
 
         // ✝️ Criar ministério padrão com nome da igreja
         await Ministries.create({
@@ -87,10 +90,10 @@ exports.registerChurch = async (req, res) => {
         });
 
 
-        res.status(201).json({ message: "Igreja e usuário master criados com sucesso." });
+        res.status(201).json({message: "Igreja e usuário master criados com sucesso."});
 
     } catch (err) {
         console.error("Erro ao registrar igreja:", err);
-        res.status(500).json({ error: "Erro ao registrar igreja." });
+        res.status(500).json({error: "Erro ao registrar igreja."});
     }
 };

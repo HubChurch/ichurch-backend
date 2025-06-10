@@ -28,10 +28,10 @@ const eventService = {
     },
 
     // ✅ Check-in: verificar se usuário já fez
-    async hasCheckedIn(userId, eventId) {
+    async hasCheckedIn(peopleId, eventId) {
         const checkin = await Attendance.findOne({
             where: {
-                user_id: userId,
+                person_id: peopleId,
                 event_id: eventId,
             },
         });
@@ -40,16 +40,16 @@ const eventService = {
     },
 
     // ✅ Check-in: registrar presença
-    async registerCheckin(userId, eventId) {
-        const alreadyChecked = await this.hasCheckedIn(userId, eventId);
+    async registerCheckin(peopleId, eventId) {
+        const alreadyChecked = await this.hasCheckedIn(peopleId, eventId);
         if (alreadyChecked) {
             throw new Error("Usuário já fez check-in neste evento.");
         }
 
         return Attendance.create({
-            user_id: userId,
+            people_id: peopleId,
             event_id: eventId,
-            checkin_date: dayjs().toDate(),
+            attendance_date: dayjs().toDate(),
         });
     },
 

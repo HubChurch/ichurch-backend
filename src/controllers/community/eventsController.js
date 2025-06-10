@@ -185,18 +185,42 @@ exports.getEventPeople = async (req, res) => {
 };
 
 
-exports.getCheckinStatus = async (req, res) =>{
-    const userId = req.user_id;
+exports.getCheckinStatus = async (req, res) => {
+    const people_id = req.people_id;
     const eventId = req.params.event_id;
 
-    const alreadyChecked = await checkinService.hasCheckedIn(userId, eventId);
-    return res.json({ alreadyChecked });
-}
+    if (!people_id) {
+        return res.status(403).json({
+            error: "Usuário atual não está vinculado a uma pessoa (people_id).",
+        });
+    }
 
-exports.checkin = async (req, res) =>{
-    const userId = req.user.id;
+    try {
+        const alreadyChecked = await checkinService.hasCheckedIn(people_id, eventId);
+        return res.json({ alreadyChecked });
+    } catch (error) {
+        console.error("Erro ao verificar check-in:", error);
+        return res.status(500).json({ error: "Erro interno ao verificar check-in." });
+    }
+};
+
+exports.checkin = async (req, res) => {
+    const people_id = req.people_id;
     const eventId = req.params.event_id;
 
-    const result = await checkinService.registerCheckin(userId, eventId);
-    return res.status(201).json(result);
-}
+    if (!people_id) {
+        return res.status(403).json({
+            error: "Usuário atual não está vinculado a uma pessoa (people_id).",
+        });
+    }
+
+    try {
+        const result = await checkinService.registerCheckin(people_id, eventId);
+        return res.status(201).json(result);
+    } catch (error) {
+        console.error("Erro ao registrar check-in:", error);
+        return res.status(500).json({
+            error: "Erro interno ao registrar presença no evento.",
+        });
+    }
+};

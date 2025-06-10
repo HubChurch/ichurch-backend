@@ -49,7 +49,7 @@ router.delete("/:id", authMiddleware, deleteMinistry);
 
 router.patch("/:id/members", authMiddleware, updateMinistryMembers );
 
-router.get("/:id/members", authMiddleware, getMembersByMinistry );
+router.get("/:ministry_id/members", authMiddleware, getMembersByMinistry );
 
 
 module.exports = router;

@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.22 -Ajuste na listagem de ministerio">
-      <change beforePath="$PROJECT_DIR$/src/controllers/ministry/ministryController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ministry/ministryController.js" afterDir="false" />
+    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.25 - ajuste rota de eventos">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/ministry/ministryRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/ministry/ministryRoutes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,30 +175,8 @@
       <workItem from="1749564601809" duration="3028000" />
       <workItem from="1749569242757" duration="2747000" />
       <workItem from="1749572991824" duration="901000" />
-    </task>
-    <task id="LOCAL-00044" summary="Ajuste bug de eventos">
-      <option name="closed" value="true" />
-      <created>1740080254603</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1740080254604</updated>
-    </task>
-    <task id="LOCAL-00045" summary="ajuste bug backend">
-      <option name="closed" value="true" />
-      <created>1740080614409</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1740080614409</updated>
-    </task>
-    <task id="LOCAL-00046" summary="ajuste bug backend">
-      <option name="closed" value="true" />
-      <created>1740081014035</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1740081014035</updated>
+      <workItem from="1749579379646" duration="707000" />
+      <workItem from="1749580120363" duration="377000" />
     </task>
     <task id="LOCAL-00047" summary="sistema de ministerios">
       <option name="closed" value="true" />
@@ -567,7 +546,31 @@
       <option name="project" value="LOCAL" />
       <updated>1749573615016</updated>
     </task>
-    <option name="localTasksCounter" value="93" />
+    <task id="LOCAL-00093" summary="versao 0.8.23 - rota de membros de ministerio">
+      <option name="closed" value="true" />
+      <created>1749579525837</created>
+      <option name="number" value="00093" />
+      <option name="presentableId" value="LOCAL-00093" />
+      <option name="project" value="LOCAL" />
+      <updated>1749579525838</updated>
+    </task>
+    <task id="LOCAL-00094" summary="versao 0.8.24 - ajuste na rota de membro">
+      <option name="closed" value="true" />
+      <created>1749580064596</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1749580064596</updated>
+    </task>
+    <task id="LOCAL-00095" summary="versao 0.8.25 - ajuste rota de eventos">
+      <option name="closed" value="true" />
+      <created>1749580217315</created>
+      <option name="number" value="00095" />
+      <option name="presentableId" value="LOCAL-00095" />
+      <option name="project" value="LOCAL" />
+      <updated>1749580217315</updated>
+    </task>
+    <option name="localTasksCounter" value="96" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -585,9 +588,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="versao 0.7.12 - Serviço de criacao de usuario" />
-    <MESSAGE value="versao 0.7.13 - Melhorias na listagem de pessoas" />
-    <MESSAGE value="versao 0.8.0 - Cadastro, ministerio padrao, usuario master." />
     <MESSAGE value="versao 0.8.1 - Cadastro de novos ministerios" />
     <MESSAGE value="versao 0.8.2 - ordem ministerio" />
     <MESSAGE value="versao 0.8.3 - Adiciona endereço no cadastro de pessoa" />
@@ -610,7 +610,10 @@
     <MESSAGE value="versao 0.8.20 - salvando o id de pessoa no  token" />
     <MESSAGE value="versao 0.8.21 - Ajuste no checkin" />
     <MESSAGE value="versao 0.8.22 -Ajuste na listagem de ministerio" />
-    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.22 -Ajuste na listagem de ministerio" />
+    <MESSAGE value="versao 0.8.23 - rota de membros de ministerio" />
+    <MESSAGE value="versao 0.8.24 - ajuste na rota de membro" />
+    <MESSAGE value="versao 0.8.25 - ajuste rota de eventos" />
+    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.25 - ajuste rota de eventos" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

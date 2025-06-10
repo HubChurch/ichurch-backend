@@ -8,14 +8,16 @@ const {People} = require("../../models/community");
  */
 const createCellGroup = async (req, res) => {
     try {
-        const { name, description, ministry_id } = req.body;
+        const { name, description, ministry_id, members } = req.body;
 
         const ministry = await Ministry.findOne({
             where: { id: ministry_id, company_id: req.company_id },
         });
 
         if (!ministry) {
-            return res.status(404).json({ error: "Ministério não encontrado ou não pertence a você" });
+            return res
+                .status(404)
+                .json({ error: "Ministério não encontrado ou não pertence a você" });
         }
 
         const cellGroup = await CellGroup.create({
@@ -24,6 +26,17 @@ const createCellGroup = async (req, res) => {
             name,
             description,
         });
+
+        // Verifica se membros foram enviados e cria as relações
+        if (Array.isArray(members) && members.length > 0) {
+            const cellMembersData = members.map((person_id) => ({
+                cell_group_id: cellGroup.id,
+                person_id,
+                company_id: req.company_id,
+            }));
+
+            await CellMember.bulkCreate(cellMembersData);
+        }
 
         return res.status(201).json(cellGroup);
     } catch (error) {

@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.33">
-      <change beforePath="$PROJECT_DIR$/src/controllers/ministry/ministryMemberController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ministry/ministryMemberController.js" afterDir="false" />
+    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.34 - GET CELULAS DE MINISTERIO">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,14 +178,7 @@
       <workItem from="1749580120363" duration="1241000" />
       <workItem from="1749581404393" duration="1175000" />
       <workItem from="1749583945199" duration="3952000" />
-    </task>
-    <task id="LOCAL-00054" summary="versao 0.7.0 - Endpoints de celula">
-      <option name="closed" value="true" />
-      <created>1748992342615</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1748992342616</updated>
+      <workItem from="1749591137093" duration="1301000" />
     </task>
     <task id="LOCAL-00055" summary="versao 0.7.1 - Endpoints de celula">
       <option name="closed" value="true" />
@@ -571,7 +564,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749586320915</updated>
     </task>
-    <option name="localTasksCounter" value="103" />
+    <task id="LOCAL-00103" summary="versao 0.8.34 - GET CELULAS DE MINISTERIO">
+      <option name="closed" value="true" />
+      <created>1749591222523</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1749591222523</updated>
+    </task>
+    <option name="localTasksCounter" value="104" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -589,7 +590,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="versao 0.8.9 - Tela de dados de um ministerio trazendo todos seus membros" />
     <MESSAGE value="versao 0.8.10 - Ajuste no get id ministerio" />
     <MESSAGE value="versao 0.8.11 - Ajuste na edicao de membros de ministerio" />
     <MESSAGE value="versao 0.8.12 - Ajuste no update de usuarios do ministerio" />
@@ -614,7 +614,8 @@
     <MESSAGE value="versao 0.8.31" />
     <MESSAGE value="versao 0.8.32" />
     <MESSAGE value="versao 0.8.33" />
-    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.33" />
+    <MESSAGE value="versao 0.8.34 - GET CELULAS DE MINISTERIO" />
+    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.34 - GET CELULAS DE MINISTERIO" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -632,7 +633,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/controllers/community/reportsController.js</url>
           <line>33</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>

@@ -29,12 +29,11 @@ exports.markMultipleAttendance = async (req, res) => {
             return res.status(404).json({ message: 'Evento não encontrado.' });
         }
 
-        // 2. Busca todas as pessoas informadas
+        // 2. Verifica se as pessoas existem
         const people = await People.findAll({ where: { id: person_ids } });
         const foundIds = people.map(p => p.id);
         const missingIds = person_ids.filter(id => !foundIds.includes(id));
 
-        console.log(person_ids)
         if (missingIds.length > 0) {
             return res.status(400).json({
                 message: 'Algumas pessoas não foram encontradas.',
@@ -42,42 +41,52 @@ exports.markMultipleAttendance = async (req, res) => {
             });
         }
 
-        // 3. Busca presenças já registradas
-        const existing = await Attendance.findAll({
-            where: {
-                event_id,
-                person_id: person_ids,
-            },
+        // 3. Busca todas as presenças existentes para o evento
+        const existingAttendances = await Attendance.findAll({
+            where: { event_id },
         });
 
-        const alreadyMarked = existing.map((a) => a.person_id);
-        const newIds = person_ids.filter(id => !alreadyMarked.includes(id));
+        const existingIds = existingAttendances.map(a => a.person_id);
 
-        // 4. Cria somente as que ainda não existem
-        const attendanceRecords = newIds.map(person_id => ({
+        // 4. Identifica o que precisa ser adicionado e removido
+        const toAdd = person_ids.filter(id => !existingIds.includes(id));
+        const toRemove = existingIds.filter(id => !person_ids.includes(id));
+
+        // 5. Remove presenças que não estão mais na lista
+        if (toRemove.length > 0) {
+            await Attendance.destroy({
+                where: {
+                    event_id,
+                    person_id: toRemove,
+                },
+            });
+        }
+
+        // 6. Adiciona novas presenças
+        const newRecords = toAdd.map(person_id => ({
             event_id,
             person_id,
             company_id: req.user.company_id,
         }));
 
-        if (attendanceRecords.length > 0) {
-            await Attendance.bulkCreate(attendanceRecords);
+        if (newRecords.length > 0) {
+            await Attendance.bulkCreate(newRecords);
         }
 
-        // 5. Retorno completo
-        res.status(201).json({
-            message: 'Presença registrada com sucesso.',
-            newMarked: newIds,
-            alreadyMarked,
-            totalRequested: person_ids.length,
-            totalSaved: attendanceRecords.length,
+        // 7. Retorna status
+        res.status(200).json({
+            message: 'Presenças sincronizadas com sucesso.',
+            added: toAdd,
+            removed: toRemove,
+            totalNow: person_ids.length,
         });
 
     } catch (err) {
-        console.error('Erro ao marcar presença:', err);
-        res.status(500).json({ error: 'Erro ao marcar presença.' });
+        console.error('Erro ao sincronizar presenças:', err);
+        res.status(500).json({ error: 'Erro ao sincronizar presenças.' });
     }
 };
+
 
 
 // 📌 Listar presenças por evento

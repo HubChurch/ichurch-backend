@@ -8,6 +8,7 @@ const {
 } = require("../../controllers/ministry/ministryController");
 const authMiddleware = require("../../middlewares/authMiddleware");
 const {getMembersByMinistry} = require("../../controllers/ministry/ministryMemberController");
+const {getCellGroupsByMinistry} = require("../../controllers/ministry/cellGroupController");
 
 const router = express.Router();
 
@@ -50,6 +51,8 @@ router.delete("/:id", authMiddleware, deleteMinistry);
 router.patch("/:id/members", authMiddleware, updateMinistryMembers );
 
 router.get("/:ministry_id/members", authMiddleware, getMembersByMinistry );
+
+router.get("/:ministry_id/cell_groups", authMiddleware, getCellGroupsByMinistry );
 
 
 module.exports = router;

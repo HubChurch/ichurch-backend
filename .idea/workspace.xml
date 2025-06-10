@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.29 - Ajuste ao trazer membros de um minsterio">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/community/attendanceController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/community/attendanceController.js" afterDir="false" />
+    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.33">
       <change beforePath="$PROJECT_DIR$/src/controllers/ministry/ministryMemberController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ministry/ministryMemberController.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -179,39 +177,7 @@
       <workItem from="1749579379646" duration="707000" />
       <workItem from="1749580120363" duration="1241000" />
       <workItem from="1749581404393" duration="1175000" />
-      <workItem from="1749583945199" duration="790000" />
-    </task>
-    <task id="LOCAL-00050" summary="versao 0.6.0 - Reconhecimento facial inicio">
-      <option name="closed" value="true" />
-      <created>1742139088945</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1742139088947</updated>
-    </task>
-    <task id="LOCAL-00051" summary="versao 0.6.1 - salvando 5 imagens para cada pessoa">
-      <option name="closed" value="true" />
-      <created>1742146325178</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1742146325178</updated>
-    </task>
-    <task id="LOCAL-00052" summary="versao 0.6.2 - verificando se a pessoa ja tem reconhecimento facial">
-      <option name="closed" value="true" />
-      <created>1742147968440</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1742147968440</updated>
-    </task>
-    <task id="LOCAL-00053" summary="versao 0.6.3 - verificando se a pessoa ja tem reconhecimento facial - Ajuste de bug">
-      <option name="closed" value="true" />
-      <created>1742148143040</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1742148143040</updated>
+      <workItem from="1749583945199" duration="3952000" />
     </task>
     <task id="LOCAL-00054" summary="versao 0.7.0 - Endpoints de celula">
       <option name="closed" value="true" />
@@ -573,7 +539,39 @@
       <option name="project" value="LOCAL" />
       <updated>1749582186290</updated>
     </task>
-    <option name="localTasksCounter" value="99" />
+    <task id="LOCAL-00099" summary="versao 0.8.30">
+      <option name="closed" value="true" />
+      <created>1749584751795</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1749584751795</updated>
+    </task>
+    <task id="LOCAL-00100" summary="versao 0.8.31">
+      <option name="closed" value="true" />
+      <created>1749585334994</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1749585334994</updated>
+    </task>
+    <task id="LOCAL-00101" summary="versao 0.8.32">
+      <option name="closed" value="true" />
+      <created>1749586153343</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1749586153343</updated>
+    </task>
+    <task id="LOCAL-00102" summary="versao 0.8.33">
+      <option name="closed" value="true" />
+      <created>1749586320915</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1749586320915</updated>
+    </task>
+    <option name="localTasksCounter" value="103" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -591,10 +589,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="versao 0.8.4 - get detalhe da pessoa" />
-    <MESSAGE value="versao 0.8.6 - erro na edicao" />
-    <MESSAGE value="versao 0.8.7 - listagem de ministerios" />
-    <MESSAGE value="versao 0.8.8 - corrigindo a listagem de ministerio" />
     <MESSAGE value="versao 0.8.9 - Tela de dados de um ministerio trazendo todos seus membros" />
     <MESSAGE value="versao 0.8.10 - Ajuste no get id ministerio" />
     <MESSAGE value="versao 0.8.11 - Ajuste na edicao de membros de ministerio" />
@@ -616,7 +610,11 @@
     <MESSAGE value="versao 0.8.26 - Ajuste ao trazer membros de um minsterio" />
     <MESSAGE value="versao 0.8.28 - Ajuste ao trazer membros de um minsterio" />
     <MESSAGE value="versao 0.8.29 - Ajuste ao trazer membros de um minsterio" />
-    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.29 - Ajuste ao trazer membros de um minsterio" />
+    <MESSAGE value="versao 0.8.30" />
+    <MESSAGE value="versao 0.8.31" />
+    <MESSAGE value="versao 0.8.32" />
+    <MESSAGE value="versao 0.8.33" />
+    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.33" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -630,6 +628,12 @@
           <url>file://$PROJECT_DIR$/src/controllers/ministry/ministryController.js</url>
           <line>9</line>
           <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/controllers/community/reportsController.js</url>
+          <line>33</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="7" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

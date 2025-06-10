@@ -62,13 +62,16 @@ exports.markMultipleAttendance = async (req, res) => {
 // 📌 Listar presenças por evento
 exports.getAttendanceByEvent = async (req, res) => {
     const { event_id } = req.params;
+    console.log(req.params);
     try {
         const attendance = await Attendance.findAll({
             where: { event_id, company_id: req.user.company_id },
             include: [{ model: People, as: 'person' }],
         });
+
         res.json(attendance);
     } catch (err) {
+        console.log(err)
         res.status(500).json({ error: 'Erro ao listar presenças.' });
     }
 };

@@ -15,7 +15,7 @@ router.get("/event/:event_id", authMiddleware, attendanceController.getAttendanc
 // 📌 Atualizar presença de uma pessoa em um evento
 router.put("/:id", authMiddleware, attendanceController.updateAttendance);
 
-router.get('/by-event',authMiddleware, attendanceController.getAttendanceByEvent);
+router.get('/:event_id/by-event',authMiddleware, attendanceController.getAttendanceByEvent);
 router.get('/by-person',authMiddleware, attendanceController.getAttendanceByPerson);
 
 router.post('/toggle',authMiddleware, attendanceController.toggleAttendance);

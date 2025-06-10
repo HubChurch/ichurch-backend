@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.25 - ajuste rota de eventos">
+    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.28 - Ajuste ao trazer membros de um minsterio">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/ministry/ministryRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/ministry/ministryRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/community/attendanceController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/community/attendanceController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/community/AttendanceRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/community/AttendanceRoutes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -176,23 +177,8 @@
       <workItem from="1749569242757" duration="2747000" />
       <workItem from="1749572991824" duration="901000" />
       <workItem from="1749579379646" duration="707000" />
-      <workItem from="1749580120363" duration="377000" />
-    </task>
-    <task id="LOCAL-00047" summary="sistema de ministerios">
-      <option name="closed" value="true" />
-      <created>1740100539941</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1740100539941</updated>
-    </task>
-    <task id="LOCAL-00048" summary="Sistema de salvar fotos no s3">
-      <option name="closed" value="true" />
-      <created>1742051741780</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1742051741780</updated>
+      <workItem from="1749580120363" duration="1241000" />
+      <workItem from="1749581404393" duration="766000" />
     </task>
     <task id="LOCAL-00049" summary="versao 0.5.0 - edicao de usuar com imagem">
       <option name="closed" value="true" />
@@ -570,7 +556,23 @@
       <option name="project" value="LOCAL" />
       <updated>1749580217315</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="versao 0.8.26 - Ajuste ao trazer membros de um minsterio">
+      <option name="closed" value="true" />
+      <created>1749580518294</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1749580518294</updated>
+    </task>
+    <task id="LOCAL-00097" summary="versao 0.8.28 - Ajuste ao trazer membros de um minsterio">
+      <option name="closed" value="true" />
+      <created>1749581327296</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1749581327296</updated>
+    </task>
+    <option name="localTasksCounter" value="98" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -588,8 +590,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="versao 0.8.1 - Cadastro de novos ministerios" />
-    <MESSAGE value="versao 0.8.2 - ordem ministerio" />
     <MESSAGE value="versao 0.8.3 - Adiciona endereço no cadastro de pessoa" />
     <MESSAGE value="versao 0.8.4 - get detalhe da pessoa" />
     <MESSAGE value="versao 0.8.6 - erro na edicao" />
@@ -613,7 +613,9 @@
     <MESSAGE value="versao 0.8.23 - rota de membros de ministerio" />
     <MESSAGE value="versao 0.8.24 - ajuste na rota de membro" />
     <MESSAGE value="versao 0.8.25 - ajuste rota de eventos" />
-    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.25 - ajuste rota de eventos" />
+    <MESSAGE value="versao 0.8.26 - Ajuste ao trazer membros de um minsterio" />
+    <MESSAGE value="versao 0.8.28 - Ajuste ao trazer membros de um minsterio" />
+    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.28 - Ajuste ao trazer membros de um minsterio" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

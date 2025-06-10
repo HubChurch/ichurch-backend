@@ -207,6 +207,7 @@ exports.getCheckinStatus = async (req, res) => {
 exports.checkin = async (req, res) => {
     const people_id = req.people_id;
     const eventId = req.params.event_id;
+    const company_id = req.user.company_id;
 
     if (!people_id) {
         return res.status(403).json({
@@ -215,7 +216,7 @@ exports.checkin = async (req, res) => {
     }
 
     try {
-        const result = await checkinService.registerCheckin(people_id, eventId);
+        const result = await checkinService.registerCheckin(people_id, eventId,company_id);
         return res.status(201).json(result);
     } catch (error) {
         console.error("Erro ao registrar check-in:", error);

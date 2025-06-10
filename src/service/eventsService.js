@@ -40,15 +40,16 @@ const eventService = {
     },
 
     // ✅ Check-in: registrar presença
-    async registerCheckin(peopleId, eventId) {
+    async registerCheckin(peopleId, eventId,company_id) {
         const alreadyChecked = await this.hasCheckedIn(peopleId, eventId);
         if (alreadyChecked) {
             throw new Error("Usuário já fez check-in neste evento.");
         }
 
         return Attendance.create({
-            people_id: peopleId,
+            person_id: peopleId,
             event_id: eventId,
+            company_id: company_id,
             attendance_date: dayjs().toDate(),
         });
     },

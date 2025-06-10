@@ -2,6 +2,7 @@ const { Events } = require("../../models/community");
 const { Attendance, People } = require("../../models/community");
 const { Op } = require("sequelize");
 const {communityDB} = require("../../config/db");
+const checkinService = require("../../service/eventsService");
 
 // 📌 Criar um novo evento
 exports.createEvent = async (req, res) => {
@@ -176,4 +177,21 @@ exports.getEventPeople = async (req, res) => {
         console.error("Erro ao buscar pessoas do evento:", err);
         res.status(500).json({ error: "Erro ao buscar participantes do evento." });
     }
+
+    exports.getCheckinStatus = async (req, res) =>{
+        const userId = req.user.id;
+        const eventId = req.params.event_id;
+
+        const alreadyChecked = await checkinService.hasCheckedIn(userId, eventId);
+        return res.json({ alreadyChecked });
+    }
+
+    exports.checkin = async (req, res) =>{
+        const userId = req.user.id;
+        const eventId = req.params.event_id;
+
+        const result = await checkinService.registerCheckin(userId, eventId);
+        return res.status(201).json(result);
+    }
+
 };

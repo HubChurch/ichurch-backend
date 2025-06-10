@@ -21,4 +21,11 @@ router.delete("/:id", authMiddleware, eventController.deleteEvent);
 // 🔹 Listar todas as pessoas relacionadas a um evento
 router.get("/:event_id/people", authMiddleware, eventController.getEventPeople);
 
+// 📌 Verificar status de check-in do usuário logado para o evento
+router.get("/:event_id/check-status", authMiddleware, eventController.getCheckinStatus);
+
+// 📌 Confirmar presença no evento
+router.post("/:event_id/checkin", authMiddleware, eventController.checkin);
+
+
 module.exports = router;

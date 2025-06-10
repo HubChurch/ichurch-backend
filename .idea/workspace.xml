@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.14 - Ajuste listagem de evento" />
+    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.15 -correcao de bug">
+      <change afterPath="$PROJECT_DIR$/src/service/eventsService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/community/eventsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/community/eventsController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/community/EventsRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/community/EventsRoutes.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -168,14 +173,8 @@
       <workItem from="1749504048030" duration="1227000" />
       <workItem from="1749506291770" duration="1513000" />
       <workItem from="1749508864716" duration="446000" />
-    </task>
-    <task id="LOCAL-00036" summary="Pessoas ativas ou inativas via parametro">
-      <option name="closed" value="true" />
-      <created>1740069407041</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1740069407041</updated>
+      <workItem from="1749509443562" duration="1937000" />
+      <workItem from="1749564601809" duration="301000" />
     </task>
     <task id="LOCAL-00037" summary="Ajuste bug de propriedade no evento">
       <option name="closed" value="true" />
@@ -561,7 +560,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749509231510</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <task id="LOCAL-00085" summary="versao 0.8.15 -correcao de bug">
+      <option name="closed" value="true" />
+      <created>1749509635742</created>
+      <option name="number" value="00085" />
+      <option name="presentableId" value="LOCAL-00085" />
+      <option name="project" value="LOCAL" />
+      <updated>1749509635742</updated>
+    </task>
+    <option name="localTasksCounter" value="86" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -579,7 +586,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="versao 0.7.4 - Listagem de membros de celula" />
     <MESSAGE value="versao 0.7.5 - Listagem de membros de celula" />
     <MESSAGE value="versao 0.7.6- Listagem de membros de celula" />
     <MESSAGE value="versao 0.7.7- Listagem de membros de celula" />
@@ -604,7 +610,8 @@
     <MESSAGE value="versao 0.8.12 - Ajuste de evento" />
     <MESSAGE value="versao 0.8.13 - Ajuste de evento" />
     <MESSAGE value="versao 0.8.14 - Ajuste listagem de evento" />
-    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.14 - Ajuste listagem de evento" />
+    <MESSAGE value="versao 0.8.15 -correcao de bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.15 -correcao de bug" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -613,6 +620,11 @@
           <url>file://$PROJECT_DIR$/src/controllers/ministry/cellGroupController.js</url>
           <line>121</line>
           <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/controllers/ministry/ministryController.js</url>
+          <line>9</line>
+          <option name="timeStamp" value="6" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

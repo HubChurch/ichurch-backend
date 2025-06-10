@@ -72,6 +72,7 @@ const getMembersByMinistry = async (req, res) => {
             ...member.toJSON(),
             "email": peopleMap[member.person_id]?.email || null,
             "name": peopleMap[member.person_id]?.name || "Usuário não encontrado",
+            "photo": peopleMap[member.person_id]?.photo || null,
         }));
 
         return res.json(enriched);

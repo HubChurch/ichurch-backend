@@ -7,6 +7,7 @@ const {
     deleteMinistry, updateMinistryMembers,
 } = require("../../controllers/ministry/ministryController");
 const authMiddleware = require("../../middlewares/authMiddleware");
+const {getMembersByMinistry} = require("../../controllers/ministry/ministryMemberController");
 
 const router = express.Router();
 
@@ -47,6 +48,8 @@ router.delete("/:id", authMiddleware, deleteMinistry);
 
 
 router.patch("/:id/members", authMiddleware, updateMinistryMembers );
+
+router.get("/:id/members", authMiddleware, getMembersByMinistry );
 
 
 module.exports = router;

@@ -1,5 +1,6 @@
 const MinistryMember = require("../../models/ministry/MinistryMember");
 const Ministry = require("../../models/ministry/Ministries");
+const {People} = require("../../models/community");
 
 /**
  * Adiciona uma pessoa a um ministério da empresa autenticada
@@ -33,24 +34,49 @@ const addMemberToMinistry = async (req, res) => {
 /**
  * Lista todos os membros de um ministério da empresa autenticada
  */
+// Supondo que você tenha dois Sequelize instances:
+
 const getMembersByMinistry = async (req, res) => {
     try {
         const { ministry_id } = req.params;
 
-        // Verifica se o ministério pertence ao usuário autenticado
+        // Verifica se o ministério pertence à empresa
         const ministry = await Ministry.findOne({
             where: { id: ministry_id, company_id: req.company_id },
         });
 
         if (!ministry) {
-            return res.status(404).json({ error: "Ministério não encontrado ou não pertence a você" });
+            return res.status(404).json({ error: 'Ministério não encontrado ou não pertence a você' });
         }
 
-        const members = await MinistryMember.findAll({ where: { ministry_id } });
-        return res.json(members);
+        // 1. Busca membros do ministério
+        const members = await MinistryMember.findAll({
+            where: { ministry_id, status: 'ativo' },
+            attributes: ['id', 'person_id', 'role', 'status'],
+        });
+
+        const personIds = members.map((m) => m.person_id);
+
+        if (personIds.length === 0) return res.json([]);
+
+        // 2. Busca os dados das pessoas no outro banco
+        const people = await People.findAll({
+            where: { id: personIds },
+            attributes: ['id', 'name', 'email'], // personalize conforme necessário
+        });
+
+        const peopleMap = Object.fromEntries(people.map((p) => [p.id, p]));
+
+        // 3. Merge manual: junta membros com dados das pessoas
+        const enriched = members.map((member) => ({
+            ...member.toJSON(),
+            person: peopleMap[member.person_id] || null,
+        }));
+
+        return res.json(enriched);
     } catch (error) {
-        console.error("Erro ao buscar membros do ministério:", error);
-        return res.status(500).json({ error: "Erro interno do servidor" });
+        console.error('Erro ao buscar membros do ministério:', error);
+        return res.status(500).json({ error: 'Erro interno do servidor' });
     }
 };
 

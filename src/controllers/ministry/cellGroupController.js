@@ -167,17 +167,16 @@ const updateCellGroup = async (req, res) => {
         await cellGroup.save();
 
         if (Array.isArray(members)) {
-            // Remove todos os membros atuais
+            // Remove membros antigos
             await CellMember.destroy({
                 where: { cell_group_id: id, company_id: req.company_id },
             });
 
-            // Adiciona os novos membros
-            const newMembers = members.map(({ id: person_id, role }) => ({
+            // Cria novas relações com os membros
+            const newMembers = members.map((person_id) => ({
                 company_id: req.company_id,
                 cell_group_id: id,
                 person_id,
-                role,
             }));
 
             await CellMember.bulkCreate(newMembers);
@@ -189,6 +188,7 @@ const updateCellGroup = async (req, res) => {
         return res.status(500).json({ error: "Erro interno do servidor" });
     }
 };
+
 
 module.exports = {
     createCellGroup,

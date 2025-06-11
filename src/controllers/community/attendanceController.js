@@ -1,4 +1,5 @@
 const { Attendance, People, Events } = require("../../models/community");
+const {CellMember} = require("../../models/ministry");
 
 // 📌 Registrar presença individual
 exports.markAttendance = async (req, res) => {
@@ -154,5 +155,80 @@ exports.toggleAttendance = async (req, res) => {
     } catch (err) {
         console.error("Erro ao alternar presença:", err);
         res.status(500).json({ error: "Erro ao alternar presença." });
+    }
+};
+
+// Controller para sincronizar presenças dos membros ativos da célula no evento
+exports.markCellGroupAttendance = async (req, res) => {
+    const { event_id, cell_group_id, person_ids } = req.body;
+
+    if (!event_id || !cell_group_id || !Array.isArray(person_ids)) {
+        return res.status(400).json({ message: 'Parâmetros inválidos' });
+    }
+
+    try {
+
+
+        // 1) Buscar IDs dos membros ativos da célula
+        const cellMembers = await CellMember.findAll({
+            where: {
+                cell_group_id,
+                status: 'ativo',
+                company_id: req.user.company_id,
+            },
+            attributes: ['person_id'],
+        });
+        const cellMemberIds = cellMembers.map(m => m.person_id);
+
+        // 2) Buscar presenças atuais no evento apenas dos membros da célula
+        const existingAttendances = await Attendance.findAll({
+            where: {
+                event_id,
+                person_id: cellMemberIds,
+                company_id: req.user.company_id,
+            }
+        });
+        const existingPersonIds = existingAttendances.map(a => a.person_id);
+
+        // 3) Calcular quem remover (presentes antes, mas não selecionados agora)
+        const toRemove = existingPersonIds.filter(id => !person_ids.includes(id));
+
+        // 4) Calcular quem adicionar (selecionados agora, mas não marcados antes)
+        const toAdd = person_ids.filter(id => !existingPersonIds.includes(id));
+
+        // 5) Remover presenças
+        if (toRemove.length > 0) {
+            await Attendance.destroy({
+                where: {
+                    event_id,
+                    person_id: toRemove,
+                    company_id: req.user.company_id,
+                }
+            });
+        }
+
+        // 6) Adicionar novas presenças
+        if (toAdd.length > 0) {
+            const now = new Date();
+            const newRecords = toAdd.map(person_id => ({
+                event_id,
+                person_id,
+                company_id: req.user.company_id,
+                attendanceDate: now,
+                createdAt: now,
+                updatedAt: now,
+            }));
+            await Attendance.bulkCreate(newRecords);
+        }
+
+        return res.status(200).json({
+            message: 'Presenças da célula atualizadas com sucesso',
+            added: toAdd,
+            removed: toRemove,
+            totalNow: person_ids.length,
+        });
+    } catch (error) {
+        console.error('Erro ao atualizar presenças da célula:', error);
+        return res.status(500).json({ message: 'Erro interno ao atualizar presenças da célula' });
     }
 };

@@ -9,6 +9,9 @@ router.post("/", authMiddleware, attendanceController.markAttendance);
 // 📌 Registrar presença para múltiplas pessoas
 router.post("/mark-multiple", authMiddleware, attendanceController.markMultipleAttendance);
 
+// Nova rota para marcar presenças da célula
+router.post('/cell-groups', authMiddleware, attendanceController.markCellGroupAttendance);
+
 // 📌 Listar presenças por evento
 router.get("/event/:event_id", authMiddleware, attendanceController.getAttendanceByEvent);
 

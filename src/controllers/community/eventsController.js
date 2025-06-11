@@ -1,6 +1,6 @@
-const { Events } = require("../../models/community");
-const { Attendance, People } = require("../../models/community");
-const { Op } = require("sequelize");
+const {Events} = require("../../models/community");
+const {Attendance, People} = require("../../models/community");
+const {Op} = require("sequelize");
 const {communityDB} = require("../../config/db");
 const checkinService = require("../../service/eventsService");
 
@@ -24,10 +24,10 @@ exports.createEvent = async (req, res) => {
 
 exports.getEvents = async (req, res) => {
     try {
-        const { ministry_id, start_date, end_date, fields } = req.query;
+        const {ministry_id, start_date, end_date, fields} = req.query;
 
         const where = [`e.company_id = :company_id`];
-        const replacements = { company_id: req.user.company_id };
+        const replacements = {company_id: req.user.company_id};
 
         if (ministry_id) {
             where.push(`e.ministry_id = :ministry_id`);
@@ -83,7 +83,7 @@ exports.getEvents = async (req, res) => {
         return res.status(200).json(events);
     } catch (error) {
         console.error("Erro ao buscar eventos:", error);
-        return res.status(500).json({ message: "Erro interno no servidor." });
+        return res.status(500).json({message: "Erro interno no servidor."});
     }
 };
 
@@ -114,13 +114,13 @@ exports.getEventById = async (req, res) => {
 exports.updateEvent = async (req, res) => {
     try {
         const [updatedCount] = await Events.update(req.body, {
-            where: { id: req.params.id, company_id: req.user.company_id },
+            where: {id: req.params.id, company_id: req.user.company_id},
         });
         if (!updatedCount)
             return res.status(404).json({ error: "Evento não encontrado." });
         res.json({ message: "Evento atualizado com sucesso." });
     } catch (err) {
-        res.status(500).json({ error: "Erro ao atualizar evento." });
+        res.status(500).json({error: "Erro ao atualizar evento."});
     }
 };
 
@@ -128,7 +128,7 @@ exports.updateEvent = async (req, res) => {
 exports.deleteEvent = async (req, res) => {
     try {
         const [updatedCount] = await Events.update(
-            { status: "cancelled" },
+            {status: "cancelled"},
             {
                 where: {
                     id: req.params.id,
@@ -140,17 +140,17 @@ exports.deleteEvent = async (req, res) => {
             return res.status(404).json({ error: "Evento não encontrado." });
         res.json({ message: "Evento cancelado com sucesso." });
     } catch (err) {
-        res.status(500).json({ error: "Erro ao cancelar evento." });
+        res.status(500).json({error: "Erro ao cancelar evento."});
     }
 };
 
 // 📌 Listar todas as pessoas de um evento (com presença ou não)
 exports.getEventPeople = async (req, res) => {
-    const { event_id } = req.params;
+    const {event_id} = req.params;
 
     try {
         const event = await Events.findOne({
-            where: { id: event_id, company_id: req.user.company_id },
+            where: {id: event_id, company_id: req.user.company_id},
         });
 
         if (!event) {
@@ -158,12 +158,12 @@ exports.getEventPeople = async (req, res) => {
         }
 
         const allPeople = await People.findAll({
-            where: { company_id: req.user.company_id, status: "active" },
+            where: {company_id: req.user.company_id, status: "active"},
             attributes: ["id", "name", "type", "photo"],
         });
 
         const attendanceList = await Attendance.findAll({
-            where: { event_id },
+            where: {event_id},
             attributes: ["person_id"],
         });
 
@@ -180,7 +180,7 @@ exports.getEventPeople = async (req, res) => {
         res.json(formattedPeople);
     } catch (err) {
         console.error("Erro ao buscar pessoas do evento:", err);
-        res.status(500).json({ error: "Erro ao buscar participantes do evento." });
+        res.status(500).json({error: "Erro ao buscar participantes do evento."});
     }
 };
 
@@ -197,10 +197,10 @@ exports.getCheckinStatus = async (req, res) => {
 
     try {
         const alreadyChecked = await checkinService.hasCheckedIn(people_id, eventId);
-        return res.json({ alreadyChecked });
+        return res.json({alreadyChecked});
     } catch (error) {
         console.error("Erro ao verificar check-in:", error);
-        return res.status(500).json({ error: "Erro interno ao verificar check-in." });
+        return res.status(500).json({error: "Erro interno ao verificar check-in."});
     }
 };
 
@@ -216,7 +216,7 @@ exports.checkin = async (req, res) => {
     }
 
     try {
-        const result = await checkinService.registerCheckin(people_id, eventId,company_id);
+        const result = await checkinService.registerCheckin(people_id, eventId, company_id);
         return res.status(201).json(result);
     } catch (error) {
         console.error("Erro ao registrar check-in:", error);
@@ -232,27 +232,28 @@ exports.checkin = async (req, res) => {
  * @desc    Lista os próximos eventos de um ministério
  * @access  Protegido
  */
+
 exports.getUpcomingEventsByMinistry = async (req, res) => {
     try {
-        const { ministryId } = req.query;
+        const {ministry_id} = req.params;
 
-        if (!ministryId) {
-            return res.status(400).json({ error: "ministryId é obrigatório." });
+        if (!ministry_id) {
+            return res.status(400).json({error: "ministry_id é obrigatório."});
         }
 
-        const events = await Event.findAll({
+        const events = await Events.findAll({
             where: {
                 company_id: req.company_id,
-                ministry_id: ministryId,
-                date: { [Op.gt]: new Date() }, // Somente eventos futuros
+                ministry_id,
+                event_date: {[Op.gt]: new Date()}, // Somente eventos futuros
             },
-            order: [["date", "ASC"]],
+            order: [["event_date", "ASC"]],
             limit: 5,
         });
 
         return res.status(200).json(events);
     } catch (error) {
         console.error("Erro ao buscar eventos futuros:", error);
-        return res.status(500).json({ error: "Erro interno do servidor" });
+        return res.status(500).json({error: "Erro interno do servidor"});
     }
 };

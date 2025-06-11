@@ -225,3 +225,34 @@ exports.checkin = async (req, res) => {
         });
     }
 };
+
+
+/**
+ * @route   GET /community/events/upcoming?ministryId=...
+ * @desc    Lista os próximos eventos de um ministério
+ * @access  Protegido
+ */
+exports.getUpcomingEventsByMinistry = async (req, res) => {
+    try {
+        const { ministryId } = req.query;
+
+        if (!ministryId) {
+            return res.status(400).json({ error: "ministryId é obrigatório." });
+        }
+
+        const events = await Event.findAll({
+            where: {
+                company_id: req.company_id,
+                ministry_id: ministryId,
+                date: { [Op.gt]: new Date() }, // Somente eventos futuros
+            },
+            order: [["date", "ASC"]],
+            limit: 5,
+        });
+
+        return res.status(200).json(events);
+    } catch (error) {
+        console.error("Erro ao buscar eventos futuros:", error);
+        return res.status(500).json({ error: "Erro interno do servidor" });
+    }
+};

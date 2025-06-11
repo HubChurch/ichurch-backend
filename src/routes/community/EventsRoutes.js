@@ -27,5 +27,8 @@ router.get("/:event_id/check-status", authMiddleware, eventController.getCheckin
 // 📌 Confirmar presença no evento
 router.post("/:event_id/checkin", authMiddleware, eventController.checkin);
 
+router.get("/upcoming", authMiddleware, eventController.getUpcomingEventsByMinistry);
+
+
 
 module.exports = router;

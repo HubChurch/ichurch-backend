@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.41 - Rota de eventos">
+    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.42 -rota de event">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/community/eventsController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/community/eventsController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/community/EventsRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/community/EventsRoutes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -180,15 +178,7 @@
       <workItem from="1749580120363" duration="1241000" />
       <workItem from="1749581404393" duration="1175000" />
       <workItem from="1749583945199" duration="3952000" />
-      <workItem from="1749591137093" duration="9701000" />
-    </task>
-    <task id="LOCAL-00063" summary="versao 0.7.8- Listagem de membros de celula">
-      <option name="closed" value="true" />
-      <created>1749031896376</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1749031896376</updated>
+      <workItem from="1749591137093" duration="10582000" />
     </task>
     <task id="LOCAL-00064" summary="versao 0.7.9- Listagem de membros de celula">
       <option name="closed" value="true" />
@@ -574,7 +564,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749606276788</updated>
     </task>
-    <option name="localTasksCounter" value="112" />
+    <task id="LOCAL-00112" summary="versao 0.8.42 -rota de event">
+      <option name="closed" value="true" />
+      <created>1749607011583</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1749607011583</updated>
+    </task>
+    <option name="localTasksCounter" value="113" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -592,7 +590,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="versao 0.8.16 - Tela de checkin para eventos" />
     <MESSAGE value="versao 0.8.17 - bug de importacao" />
     <MESSAGE value="versao 0.8.18 -Ajuste retorno get event" />
     <MESSAGE value="versao 0.8.19 - passando user_id do cara logado" />
@@ -617,7 +614,8 @@
     <MESSAGE value="versao 0.8.39" />
     <MESSAGE value="versao 0.8.40" />
     <MESSAGE value="versao 0.8.41 - Rota de eventos" />
-    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.41 - Rota de eventos" />
+    <MESSAGE value="versao 0.8.42 -rota de event" />
+    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.42 -rota de event" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -86,7 +86,7 @@ const getAllMinistries = async (req, res) => {
               SELECT COUNT(*) 
               FROM ministry.ministry_members AS mm 
               WHERE 
-                mm.ministry_id = "Ministry"."id" 
+                mm.ministry_id = ministry.id
                 AND mm.status = 'ativo'
             )`),
                         "peopleCount",

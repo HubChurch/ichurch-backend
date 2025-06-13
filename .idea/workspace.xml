@@ -4,11 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.42 -rota de event">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.43 - nova rota de presenca de celula">
       <change beforePath="$PROJECT_DIR$/src/controllers/community/attendanceController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/community/attendanceController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/community/AttendanceRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/community/AttendanceRoutes.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -40,7 +37,7 @@
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
     &quot;url&quot;: &quot;https://github.com/gabrieldsvr/ichurch-backend.git&quot;,
-    &quot;accountId&quot;: &quot;b6179a0c-b8be-40ef-b41d-594afd2cb607&quot;
+    &quot;accountId&quot;: &quot;3aa75339-d037-4e33-b761-2fe640a5e5f6&quot;
   }
 }</component>
   <component name="ProjectColorInfo">{
@@ -52,33 +49,33 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Jest.🔹 Testes no módulo Ministério.executor": "Run",
-    "Node.js.reportsRoutes.js.executor": "Debug",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "database.data.extractors.current.export.id": "SQL Inserts",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/gabrielvargas/Documents/Projetos/ichurch-backend",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs.jest.jest_package": "C:/projetos/ichurch-backend/node_modules/jest",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "reference.settings.ide.settings.uml",
-    "ts.external.directory.path": "/Applications/IntelliJ IDEA.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Jest.🔹 Testes no módulo Ministério.executor&quot;: &quot;Run&quot;,
+    &quot;Node.js.reportsRoutes.js.executor&quot;: &quot;Debug&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;database.data.extractors.current.export.id&quot;: &quot;SQL Inserts&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/gabrielvargas/Documents/Projetos/ichurch-backend&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs.jest.jest_package&quot;: &quot;C:/projetos/ichurch-backend/node_modules/jest&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.uml&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Applications/IntelliJ IDEA.app/Contents/plugins/javascript-plugin/jsLanguageServicesImpl/external&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Projeto\ichurch-backend\src\models\ministry" />
@@ -184,15 +181,7 @@
       <workItem from="1749583945199" duration="3952000" />
       <workItem from="1749591137093" duration="10582000" />
       <workItem from="1749664174916" duration="851000" />
-      <workItem from="1749670895888" duration="853000" />
-    </task>
-    <task id="LOCAL-00064" summary="versao 0.7.9- Listagem de membros de celula">
-      <option name="closed" value="true" />
-      <created>1749032013262</created>
-      <option name="number" value="00064" />
-      <option name="presentableId" value="LOCAL-00064" />
-      <option name="project" value="LOCAL" />
-      <updated>1749032013262</updated>
+      <workItem from="1749670895888" duration="1945000" />
     </task>
     <task id="LOCAL-00065" summary="versao 0.7.10- Listagem de membros de celula">
       <option name="closed" value="true" />
@@ -578,7 +567,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749607011583</updated>
     </task>
-    <option name="localTasksCounter" value="113" />
+    <task id="LOCAL-00113" summary="versao 0.8.43 - nova rota de presenca de celula">
+      <option name="closed" value="true" />
+      <created>1749672027790</created>
+      <option name="number" value="00113" />
+      <option name="presentableId" value="LOCAL-00113" />
+      <option name="project" value="LOCAL" />
+      <updated>1749672027790</updated>
+    </task>
+    <option name="localTasksCounter" value="114" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -596,7 +593,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="versao 0.8.17 - bug de importacao" />
     <MESSAGE value="versao 0.8.18 -Ajuste retorno get event" />
     <MESSAGE value="versao 0.8.19 - passando user_id do cara logado" />
     <MESSAGE value="versao 0.8.20 - salvando o id de pessoa no  token" />
@@ -621,7 +617,8 @@
     <MESSAGE value="versao 0.8.40" />
     <MESSAGE value="versao 0.8.41 - Rota de eventos" />
     <MESSAGE value="versao 0.8.42 -rota de event" />
-    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.42 -rota de event" />
+    <MESSAGE value="versao 0.8.43 - nova rota de presenca de celula" />
+    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.43 - nova rota de presenca de celula" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -49,17 +49,15 @@ const createMinistry = async (req, res) => {
 const getAllMinistries = async (req, res) => {
     const { company_id, people_id } = req;
     const { ministry_id } = req.query;
-    const is_master = req.user.is_master; // Verifica se o usuário é master
+    const is_master = req.user.is_master;
 
     try {
         let where = { company_id };
 
-        // 🔍 Filtro por ID de ministério (tem prioridade)
         if (ministry_id) {
             where.id = ministry_id;
         }
 
-        // 👤 Se NÃO for master ou se houve filtro por user_id, forçar os ministérios do usuário
         if (!is_master) {
             const userMinistries = await MinistryMember.findAll({
                 where: {
@@ -71,18 +69,30 @@ const getAllMinistries = async (req, res) => {
 
             const ministryIds = userMinistries.map((m) => m.ministry_id);
             if (ministryIds.length === 0) {
-                return res.json([]); // não participa de nenhum
+                return res.json([]);
             }
 
             where.id = ministry_id
-                ? ministry_id // já filtrado anteriormente
+                ? ministry_id
                 : { [Op.in]: ministryIds };
         }
 
-        // 🔄 Consulta
         const ministries = await Ministry.findAll({
             where,
-            attributes: ["id", "name", "type", "description", "visibility", "code"],
+            attributes: {
+                include: [
+                    [
+                        Sequelize.literal(`(
+              SELECT COUNT(*) 
+              FROM ministry.ministry_members AS mm 
+              WHERE 
+                mm.ministry_id = "Ministry"."id" 
+                AND mm.status = 'ativo'
+            )`),
+                        "peopleCount",
+                    ],
+                ],
+            },
             order: [
                 [Sequelize.literal(`type = 'core'`), "DESC"],
                 ["name", "ASC"],
@@ -95,7 +105,6 @@ const getAllMinistries = async (req, res) => {
         return res.status(500).json({ error: "Erro ao buscar ministérios" });
     }
 };
-
 
 const getMinistryById = async (req, res) => {
     try {

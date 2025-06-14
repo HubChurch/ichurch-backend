@@ -3,6 +3,7 @@ const {
     createMinistry,
     getAllMinistries,
     getMinistryById,
+    getAvailablePeopleToAdd,
     updateMinistry,
     deleteMinistry, updateMinistryMembers,
 } = require("../../controllers/ministry/ministryController");
@@ -53,6 +54,7 @@ router.patch("/:id/members", authMiddleware, updateMinistryMembers );
 router.get("/:ministry_id/members", authMiddleware, getMembersByMinistry );
 
 router.get("/:ministry_id/cell_groups", authMiddleware, getCellGroupsByMinistry );
+router.get("/:ministry_id/available-people", authMiddleware, getAvailablePeopleToAdd );
 
 
 module.exports = router;

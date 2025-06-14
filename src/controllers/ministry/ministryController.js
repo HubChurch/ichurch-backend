@@ -242,6 +242,34 @@ const updateMinistryMembers = async (req, res) => {
     }
 };
 
+const getAvailablePeopleToAdd = async (req, res) => {
+    const { ministry_id } = req.query;
+
+    if (!ministry_id) {
+        return res.status(400).json({ error: "ID do ministério é obrigatório." });
+    }
+
+    try {
+        // Busca os membros atuais do ministério
+        const currentMembers = await MinistryMember.findAll({
+            where: {
+                ministry_id,
+                status: "ativo",
+            },
+            attributes: ["person_id"],
+        });
+
+        const currentMemberIds = currentMembers.map(m => m.person_id);
+
+        // Busca pessoas ativas que não estão no ministério
+        const availablePeople = await getPeopleByIds(currentMemberIds, req.company_id, true);
+
+        return res.json(availablePeople);
+    } catch (error) {
+        console.error("Erro ao buscar pessoas disponíveis:", error);
+        return res.status(500).json({ error: "Erro ao buscar pessoas disponíveis." });
+    }
+}
 
 module.exports = {
     createMinistry,
@@ -249,5 +277,6 @@ module.exports = {
     getMinistryById,
     updateMinistry,
     deleteMinistry,
-    updateMinistryMembers
+    updateMinistryMembers,
+    getAvailablePeopleToAdd
 };

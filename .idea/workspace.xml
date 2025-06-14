@@ -4,8 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.45 - incluir numero de membros na consuklta de ministerios">
+    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.46 - bug na consulta">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/ministry/cellGroupController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ministry/cellGroupController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/ministry/ministryController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ministry/ministryController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/ministry/ministryRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/ministry/ministryRoutes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,15 +185,7 @@
       <workItem from="1749591137093" duration="10582000" />
       <workItem from="1749664174916" duration="851000" />
       <workItem from="1749670895888" duration="1945000" />
-      <workItem from="1749822457834" duration="868000" />
-    </task>
-    <task id="LOCAL-00067" summary="versao 0.7.12 - Serviço de criacao de usuario">
-      <option name="closed" value="true" />
-      <created>1749127094457</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1749127094458</updated>
+      <workItem from="1749822457834" duration="5315000" />
     </task>
     <task id="LOCAL-00068" summary="versao 0.7.13 - Melhorias na listagem de pessoas">
       <option name="closed" value="true" />
@@ -576,7 +571,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749825830670</updated>
     </task>
-    <option name="localTasksCounter" value="116" />
+    <task id="LOCAL-00116" summary="versao 0.8.46 - bug na consulta">
+      <option name="closed" value="true" />
+      <created>1749826095314</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1749826095314</updated>
+    </task>
+    <option name="localTasksCounter" value="117" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -594,7 +597,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="versao 0.8.20 - salvando o id de pessoa no  token" />
     <MESSAGE value="versao 0.8.21 - Ajuste no checkin" />
     <MESSAGE value="versao 0.8.22 -Ajuste na listagem de ministerio" />
     <MESSAGE value="versao 0.8.23 - rota de membros de ministerio" />
@@ -619,7 +621,8 @@
     <MESSAGE value="versao 0.8.43 - nova rota de presenca de celula" />
     <MESSAGE value="versao 0.8.44 - tras atributo de type para get d epessoas" />
     <MESSAGE value="versao 0.8.45 - incluir numero de membros na consuklta de ministerios" />
-    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.45 - incluir numero de membros na consuklta de ministerios" />
+    <MESSAGE value="versao 0.8.46 - bug na consulta" />
+    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.46 - bug na consulta" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

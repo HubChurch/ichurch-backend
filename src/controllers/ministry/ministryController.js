@@ -2,7 +2,7 @@ const Ministry = require("../../models/ministry/Ministries");
 const {Sequelize, Op} = require("sequelize");
 const {MinistryMember} = require("../../models/ministry");
 const {getPeopleByIds} = require("../community/peopleController");
-const {fetchPeopleByIds} = require("../../service/peopleService");
+const {fetchPeopleByIds, fetchPeopleNotInIds} = require("../../service/peopleService");
 
 /**
  * Cria um novo ministério vinculado ao usuário autenticado
@@ -243,7 +243,8 @@ const updateMinistryMembers = async (req, res) => {
 };
 
 const getAvailablePeopleToAdd = async (req, res) => {
-    const { ministry_id } = req.query;
+    const { ministry_id } = req.params;
+    const company_id = req.user.company_id; // Pegue sempre do user autenticado
 
     if (!ministry_id) {
         return res.status(400).json({ error: "ID do ministério é obrigatório." });
@@ -254,15 +255,15 @@ const getAvailablePeopleToAdd = async (req, res) => {
         const currentMembers = await MinistryMember.findAll({
             where: {
                 ministry_id,
-                status: "ativo",
+                status: "ativo", // ou "active" conforme seu padrão
             },
             attributes: ["person_id"],
         });
 
         const currentMemberIds = currentMembers.map(m => m.person_id);
 
-        // Busca pessoas ativas que não estão no ministério
-        const availablePeople = await getPeopleByIds(currentMemberIds, req.company_id, true);
+        // Busca pessoas ativas que NÃO estão no ministério
+        const availablePeople = await fetchPeopleNotInIds(currentMemberIds, company_id);
 
         return res.json(availablePeople);
     } catch (error) {

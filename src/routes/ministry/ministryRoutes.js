@@ -50,9 +50,7 @@ router.delete("/:id", authMiddleware, deleteMinistry);
 
 
 router.patch("/:id/members", authMiddleware, updateMinistryMembers );
-
 router.get("/:ministry_id/members", authMiddleware, getMembersByMinistry );
-
 router.get("/:ministry_id/cell_groups", authMiddleware, getCellGroupsByMinistry );
 router.get("/:ministry_id/available-people", authMiddleware, getAvailablePeopleToAdd );
 

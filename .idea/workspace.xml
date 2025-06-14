@@ -4,11 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.46 - bug na consulta">
+    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.47 - endpoint de membros validos para entrar no ministerio">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/ministry/cellGroupController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ministry/cellGroupController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/controllers/ministry/ministryController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ministry/ministryController.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/ministry/ministryRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/ministry/ministryRoutes.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/peopleService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/peopleService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,15 +185,7 @@
       <workItem from="1749591137093" duration="10582000" />
       <workItem from="1749664174916" duration="851000" />
       <workItem from="1749670895888" duration="1945000" />
-      <workItem from="1749822457834" duration="5315000" />
-    </task>
-    <task id="LOCAL-00068" summary="versao 0.7.13 - Melhorias na listagem de pessoas">
-      <option name="closed" value="true" />
-      <created>1749128139118</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1749128139118</updated>
+      <workItem from="1749822457834" duration="6341000" />
     </task>
     <task id="LOCAL-00069" summary="versao 0.8.0 - Cadastro, ministerio padrao, usuario master.">
       <option name="closed" value="true" />
@@ -579,7 +571,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749826095314</updated>
     </task>
-    <option name="localTasksCounter" value="117" />
+    <task id="LOCAL-00117" summary="versao 0.8.47 - endpoint de membros validos para entrar no ministerio">
+      <option name="closed" value="true" />
+      <created>1749907362168</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1749907362168</updated>
+    </task>
+    <option name="localTasksCounter" value="118" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -597,7 +597,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="versao 0.8.21 - Ajuste no checkin" />
     <MESSAGE value="versao 0.8.22 -Ajuste na listagem de ministerio" />
     <MESSAGE value="versao 0.8.23 - rota de membros de ministerio" />
     <MESSAGE value="versao 0.8.24 - ajuste na rota de membro" />
@@ -622,7 +621,8 @@
     <MESSAGE value="versao 0.8.44 - tras atributo de type para get d epessoas" />
     <MESSAGE value="versao 0.8.45 - incluir numero de membros na consuklta de ministerios" />
     <MESSAGE value="versao 0.8.46 - bug na consulta" />
-    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.46 - bug na consulta" />
+    <MESSAGE value="versao 0.8.47 - endpoint de membros validos para entrar no ministerio" />
+    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.47 - endpoint de membros validos para entrar no ministerio" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -641,6 +641,12 @@
           <url>file://$PROJECT_DIR$/src/controllers/ministry/cellGroupController.js</url>
           <line>8</line>
           <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/controllers/ministry/ministryController.js</url>
+          <line>244</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

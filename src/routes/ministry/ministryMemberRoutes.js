@@ -4,6 +4,7 @@ const {
     getMembersByMinistry,
     updateMemberRole,
     removeMemberFromMinistry,
+    addMembersToMinistryBulk
 } = require("../../controllers/ministry/ministryMemberController");
 const authMiddleware  = require("../../middlewares/authMiddleware");
 
@@ -37,4 +38,6 @@ router.patch("/:id",authMiddleware, updateMemberRole);
  */
 router.delete("/:id",authMiddleware, removeMemberFromMinistry);
 
+
+router.post("/bulk", authMiddleware, addMembersToMinistryBulk);
 module.exports = router;

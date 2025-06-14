@@ -144,9 +144,39 @@ const removeMemberFromMinistry = async (req, res) => {
     }
 };
 
+
+const addMembersToMinistryBulk = async (req, res) => {
+    const { ministry_id, members } = req.body;
+
+    if (!ministry_id || !Array.isArray(members) || members.length === 0) {
+        return res.status(400).json({ error: "Dados obrigatórios faltando." });
+    }
+
+    try {
+        // Se usar Sequelize:
+        const createdMembers = await Promise.all(
+            members.map((m) =>
+                MinistryMember.create({
+                    ministry_id,
+                    person_id: m.person_id,
+                    role: m.role || "MEMBER",
+                    status: "ativo",
+                })
+            )
+        );
+
+        return res.status(201).json(createdMembers);
+    } catch (error) {
+        console.error("Erro ao adicionar membros em lote:", error);
+        return res.status(500).json({ error: "Erro ao adicionar membros em lote." });
+    }
+};
+
+
 module.exports = {
     addMemberToMinistry,
     getMembersByMinistry,
     updateMemberRole,
     removeMemberFromMinistry,
+    addMembersToMinistryBulk
 };

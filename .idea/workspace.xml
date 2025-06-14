@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.48 - endpoint de membros validos para entrar no ministerio">
+    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.49 - enpoint para cadastrar membro em massa no minsterio">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/service/peopleService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/peopleService.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -182,15 +183,7 @@
       <workItem from="1749591137093" duration="10582000" />
       <workItem from="1749664174916" duration="851000" />
       <workItem from="1749670895888" duration="1945000" />
-      <workItem from="1749822457834" duration="7212000" />
-    </task>
-    <task id="LOCAL-00070" summary="versao 0.8.1 - Cadastro de novos ministerios">
-      <option name="closed" value="true" />
-      <created>1749139736024</created>
-      <option name="number" value="00070" />
-      <option name="presentableId" value="LOCAL-00070" />
-      <option name="project" value="LOCAL" />
-      <updated>1749139736024</updated>
+      <workItem from="1749822457834" duration="8535000" />
     </task>
     <task id="LOCAL-00071" summary="versao 0.8.2 - ordem ministerio">
       <option name="closed" value="true" />
@@ -576,7 +569,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749908581336</updated>
     </task>
-    <option name="localTasksCounter" value="119" />
+    <task id="LOCAL-00119" summary="versao 0.8.49 - enpoint para cadastrar membro em massa no minsterio">
+      <option name="closed" value="true" />
+      <created>1749910649771</created>
+      <option name="number" value="00119" />
+      <option name="presentableId" value="LOCAL-00119" />
+      <option name="project" value="LOCAL" />
+      <updated>1749910649771</updated>
+    </task>
+    <option name="localTasksCounter" value="120" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -594,7 +595,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="versao 0.8.23 - rota de membros de ministerio" />
     <MESSAGE value="versao 0.8.24 - ajuste na rota de membro" />
     <MESSAGE value="versao 0.8.25 - ajuste rota de eventos" />
     <MESSAGE value="versao 0.8.26 - Ajuste ao trazer membros de um minsterio" />
@@ -619,7 +619,8 @@
     <MESSAGE value="versao 0.8.46 - bug na consulta" />
     <MESSAGE value="versao 0.8.47 - endpoint de membros validos para entrar no ministerio" />
     <MESSAGE value="versao 0.8.48 - endpoint de membros validos para entrar no ministerio" />
-    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.48 - endpoint de membros validos para entrar no ministerio" />
+    <MESSAGE value="versao 0.8.49 - enpoint para cadastrar membro em massa no minsterio" />
+    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.49 - enpoint para cadastrar membro em massa no minsterio" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -638,12 +639,6 @@
           <url>file://$PROJECT_DIR$/src/controllers/ministry/cellGroupController.js</url>
           <line>8</line>
           <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/controllers/ministry/ministryController.js</url>
-          <line>244</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

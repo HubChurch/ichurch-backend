@@ -1,4 +1,5 @@
 const People = require("../models/community/People");
+const {Op} = require("sequelize");
 
 async function fetchPeopleByIds(ids, companyId) {
     return await People.findAll({

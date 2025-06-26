@@ -71,6 +71,7 @@ const getMembersByMinistry = async (req, res) => {
         const enriched = members.map((member) => ({
             ...member.toJSON(),
             "id": member.person_id,
+            "member_id": member.id,
             "email": peopleMap[member.person_id]?.email || null,
             "name": peopleMap[member.person_id]?.name || "Usuário não encontrado",
             "photo": peopleMap[member.person_id]?.photo || null,

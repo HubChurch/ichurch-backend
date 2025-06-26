@@ -10,7 +10,7 @@ const {communityDB} = require("../../models");
  */
 const createCellGroup = async (req, res) => {
     try {
-        const { name, description, ministry_id, members } = req.body;
+        const { name, description, ministry_id, members ,config} = req.body;
 
         if (!name?.trim()) {
             return res.status(400).json({ error: "O nome da célula é obrigatório." });
@@ -31,6 +31,7 @@ const createCellGroup = async (req, res) => {
             ministry_id,
             name,
             description,
+            config: config || null,
         });
 
         // Criar relações com membros se fornecidos
@@ -126,8 +127,6 @@ const getCellGroupsByMinistry = async (req, res) => {
     }
 };
 
-
-
 /**
  * @route   GET /ministry/cell-groups/:id/details
  * @desc    Retorna os dados de uma célula específica
@@ -200,7 +199,7 @@ const getCellGroupById = async (req, res) => {
 const updateCellGroup = async (req, res) => {
     try {
         const { id } = req.params;
-        const { name, description, members } = req.body;
+        const { name, description, members,config } = req.body;
 
         const cellGroup = await CellGroup.findOne({
             where: { id, company_id: req.company_id },
@@ -213,6 +212,7 @@ const updateCellGroup = async (req, res) => {
         // Atualiza nome e descrição
         cellGroup.name = name;
         cellGroup.description = description;
+        if (config) cellGroup.config = config;
         await cellGroup.save();
 
         if (Array.isArray(members)) {

@@ -4,8 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.53 - enpoint para remover membro de ministerio">
+    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.55 - ajuste endpoint de celulas de ministerio">
       <change beforePath="$PROJECT_DIR$/src/controllers/ministry/cellGroupController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ministry/cellGroupController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/ministry/CellGroups.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/ministry/CellGroups.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,23 +184,7 @@
       <workItem from="1749664174916" duration="851000" />
       <workItem from="1749670895888" duration="1945000" />
       <workItem from="1749822457834" duration="9271000" />
-      <workItem from="1750947044226" duration="2680000" />
-    </task>
-    <task id="LOCAL-00075" summary="versao 0.8.7 - listagem de ministerios">
-      <option name="closed" value="true" />
-      <created>1749215587793</created>
-      <option name="number" value="00075" />
-      <option name="presentableId" value="LOCAL-00075" />
-      <option name="project" value="LOCAL" />
-      <updated>1749215587793</updated>
-    </task>
-    <task id="LOCAL-00076" summary="versao 0.8.8 - corrigindo a listagem de ministerio">
-      <option name="closed" value="true" />
-      <created>1749215851624</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1749215851624</updated>
+      <workItem from="1750947044226" duration="4202000" />
     </task>
     <task id="LOCAL-00077" summary="versao 0.8.9 - Tela de dados de um ministerio trazendo todos seus membros">
       <option name="closed" value="true" />
@@ -577,7 +562,23 @@
       <option name="project" value="LOCAL" />
       <updated>1750948772071</updated>
     </task>
-    <option name="localTasksCounter" value="124" />
+    <task id="LOCAL-00124" summary="versao 0.8.54 - ajuste endpoint de celulas de ministerio">
+      <option name="closed" value="true" />
+      <created>1750950939237</created>
+      <option name="number" value="00124" />
+      <option name="presentableId" value="LOCAL-00124" />
+      <option name="project" value="LOCAL" />
+      <updated>1750950939237</updated>
+    </task>
+    <task id="LOCAL-00125" summary="versao 0.8.55 - ajuste endpoint de celulas de ministerio">
+      <option name="closed" value="true" />
+      <created>1750951348828</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1750951348828</updated>
+    </task>
+    <option name="localTasksCounter" value="126" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -595,8 +596,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="versao 0.8.29 - Ajuste ao trazer membros de um minsterio" />
-    <MESSAGE value="versao 0.8.30" />
     <MESSAGE value="versao 0.8.31" />
     <MESSAGE value="versao 0.8.32" />
     <MESSAGE value="versao 0.8.33" />
@@ -620,7 +619,9 @@
     <MESSAGE value="versao 0.8.51 - enpoint para editar membro role do ministerio" />
     <MESSAGE value="versao 0.8.52 - enpoint para remover membro de ministerio" />
     <MESSAGE value="versao 0.8.53 - enpoint para remover membro de ministerio" />
-    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.53 - enpoint para remover membro de ministerio" />
+    <MESSAGE value="versao 0.8.54 - ajuste endpoint de celulas de ministerio" />
+    <MESSAGE value="versao 0.8.55 - ajuste endpoint de celulas de ministerio" />
+    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.55 - ajuste endpoint de celulas de ministerio" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -634,11 +635,6 @@
           <url>file://$PROJECT_DIR$/src/controllers/community/reportsController.js</url>
           <line>33</line>
           <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/controllers/ministry/cellGroupController.js</url>
-          <line>9</line>
-          <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/controllers/ministry/ministryMemberController.js</url>

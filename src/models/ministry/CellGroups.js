@@ -25,6 +25,11 @@ const Ministries = ministryDB.define(
             type: DataTypes.TEXT,
             allowNull: true,
         },
+        config: {
+            type: DataTypes.JSON,
+            allowNull: true,
+            comment: "Armazena configurações visuais: ícone, cor, etc.",
+        },
         status: {
             type: DataTypes.ENUM("ativo", "inativo"),
             allowNull: false,

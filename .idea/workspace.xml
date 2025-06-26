@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.50 - enpoint para cadastrar membro em massa no minsterio">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/controllers/ministry/ministryMemberController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ministry/ministryMemberController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/ministry/ministryMemberRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/ministry/ministryMemberRoutes.js" afterDir="false" />
+    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.53 - enpoint para remover membro de ministerio">
+      <change beforePath="$PROJECT_DIR$/src/controllers/ministry/cellGroupController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ministry/cellGroupController.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -185,31 +183,7 @@
       <workItem from="1749664174916" duration="851000" />
       <workItem from="1749670895888" duration="1945000" />
       <workItem from="1749822457834" duration="9271000" />
-      <workItem from="1750947044226" duration="929000" />
-    </task>
-    <task id="LOCAL-00072" summary="versao 0.8.3 - Adiciona endereço no cadastro de pessoa">
-      <option name="closed" value="true" />
-      <created>1749162787337</created>
-      <option name="number" value="00072" />
-      <option name="presentableId" value="LOCAL-00072" />
-      <option name="project" value="LOCAL" />
-      <updated>1749162787337</updated>
-    </task>
-    <task id="LOCAL-00073" summary="versao 0.8.4 - get detalhe da pessoa">
-      <option name="closed" value="true" />
-      <created>1749168711023</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1749168711023</updated>
-    </task>
-    <task id="LOCAL-00074" summary="versao 0.8.6 - erro na edicao">
-      <option name="closed" value="true" />
-      <created>1749211328735</created>
-      <option name="number" value="00074" />
-      <option name="presentableId" value="LOCAL-00074" />
-      <option name="project" value="LOCAL" />
-      <updated>1749211328735</updated>
+      <workItem from="1750947044226" duration="2680000" />
     </task>
     <task id="LOCAL-00075" summary="versao 0.8.7 - listagem de ministerios">
       <option name="closed" value="true" />
@@ -579,7 +553,31 @@
       <option name="project" value="LOCAL" />
       <updated>1749911805935</updated>
     </task>
-    <option name="localTasksCounter" value="121" />
+    <task id="LOCAL-00121" summary="versao 0.8.51 - enpoint para editar membro role do ministerio">
+      <option name="closed" value="true" />
+      <created>1750947992129</created>
+      <option name="number" value="00121" />
+      <option name="presentableId" value="LOCAL-00121" />
+      <option name="project" value="LOCAL" />
+      <updated>1750947992129</updated>
+    </task>
+    <task id="LOCAL-00122" summary="versao 0.8.52 - enpoint para remover membro de ministerio">
+      <option name="closed" value="true" />
+      <created>1750948385672</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1750948385672</updated>
+    </task>
+    <task id="LOCAL-00123" summary="versao 0.8.53 - enpoint para remover membro de ministerio">
+      <option name="closed" value="true" />
+      <created>1750948772071</created>
+      <option name="number" value="00123" />
+      <option name="presentableId" value="LOCAL-00123" />
+      <option name="project" value="LOCAL" />
+      <updated>1750948772071</updated>
+    </task>
+    <option name="localTasksCounter" value="124" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -597,9 +595,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="versao 0.8.25 - ajuste rota de eventos" />
-    <MESSAGE value="versao 0.8.26 - Ajuste ao trazer membros de um minsterio" />
-    <MESSAGE value="versao 0.8.28 - Ajuste ao trazer membros de um minsterio" />
     <MESSAGE value="versao 0.8.29 - Ajuste ao trazer membros de um minsterio" />
     <MESSAGE value="versao 0.8.30" />
     <MESSAGE value="versao 0.8.31" />
@@ -622,7 +617,10 @@
     <MESSAGE value="versao 0.8.48 - endpoint de membros validos para entrar no ministerio" />
     <MESSAGE value="versao 0.8.49 - enpoint para cadastrar membro em massa no minsterio" />
     <MESSAGE value="versao 0.8.50 - enpoint para cadastrar membro em massa no minsterio" />
-    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.50 - enpoint para cadastrar membro em massa no minsterio" />
+    <MESSAGE value="versao 0.8.51 - enpoint para editar membro role do ministerio" />
+    <MESSAGE value="versao 0.8.52 - enpoint para remover membro de ministerio" />
+    <MESSAGE value="versao 0.8.53 - enpoint para remover membro de ministerio" />
+    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.53 - enpoint para remover membro de ministerio" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -639,12 +637,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/controllers/ministry/cellGroupController.js</url>
-          <line>8</line>
+          <line>9</line>
           <option name="timeStamp" value="9" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/controllers/ministry/ministryMemberController.js</url>
-          <line>88</line>
+          <line>89</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="10" />
         </line-breakpoint>

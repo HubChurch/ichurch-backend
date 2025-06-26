@@ -2,6 +2,7 @@ const CellGroup = require("../../models/ministry/CellGroups");
 const Ministry = require("../../models/ministry/Ministries");
 const {CellMember, MinistryMember} = require("../../models/ministry");
 const {People} = require("../../models/community");
+const { Op } = require("sequelize");
 
 /**
  * Cria uma nova célula vinculada a um ministério
@@ -51,9 +52,7 @@ const createCellGroup = async (req, res) => {
     }
 };
 
-/**
- * Lista todas as células de um ministério
- */
+
 const getCellGroupsByMinistry = async (req, res) => {
     try {
         const { ministry_id } = req.params;
@@ -66,11 +65,60 @@ const getCellGroupsByMinistry = async (req, res) => {
             return res.status(404).json({ error: "Ministério não encontrado ou não pertence a você" });
         }
 
+        // 1. Busca todas as células
         const cells = await CellGroup.findAll({
             where: { ministry_id },
+            raw: true,
         });
 
-        return res.json(cells);
+        const cellGroupIds = cells.map((c) => c.id);
+        if (cellGroupIds.length === 0) return res.json([]);
+
+        // 2. Busca todos os membros dessas células
+        const members = await CellMember.findAll({
+            where: { cell_group_id: { [Op.in]: cellGroupIds } },
+            raw: true,
+        });
+
+        // 3. Coleta todos os person_ids únicos
+        const personIds = [...new Set(members.map((m) => m.person_id))];
+        if (personIds.length === 0) {
+            return res.json(cells.map((cell) => ({
+                ...cell,
+                totalMembers: 0,
+                leader: null,
+            })));
+        }
+
+        // 4. Consulta manual na outra base (schema `community`, por exemplo)
+        const [people] = await db.query(
+            `
+      SELECT id, name, photo
+      FROM community.people
+      WHERE id IN (:ids)
+    `,
+            {
+                replacements: { ids: personIds },
+                type: db.QueryTypes.SELECT,
+            }
+        );
+
+        const peopleMap = Object.fromEntries(people.map((p) => [p.id, p]));
+
+        // 5. Organiza os dados finais
+        const response = cells.map((cell) => {
+            const cellMembers = members.filter((m) => m.cell_group_id === cell.id);
+            const leader = cellMembers.find((m) => m.role === "LEADER" || m.role === "AUX");
+            const leaderInfo = leader ? peopleMap[leader.person_id] || null : null;
+
+            return {
+                ...cell,
+                totalMembers: cellMembers.length,
+                leader: leaderInfo,
+            };
+        });
+
+        return res.json(response);
     } catch (error) {
         console.error("Erro ao buscar células:", error);
         return res.status(500).json({ error: "Erro interno do servidor" });

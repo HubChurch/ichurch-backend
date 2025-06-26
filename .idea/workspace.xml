@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.55 - ajuste endpoint de celulas de ministerio">
-      <change beforePath="$PROJECT_DIR$/src/controllers/ministry/cellGroupController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ministry/cellGroupController.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/models/ministry/CellGroups.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/ministry/CellGroups.js" afterDir="false" />
+    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="0.9.1 - retorna a config da celula">
+      <change beforePath="$PROJECT_DIR$/src/controllers/sca/userController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/sca/userController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/sca/usersRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/sca/usersRoutes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -184,23 +184,7 @@
       <workItem from="1749664174916" duration="851000" />
       <workItem from="1749670895888" duration="1945000" />
       <workItem from="1749822457834" duration="9271000" />
-      <workItem from="1750947044226" duration="4202000" />
-    </task>
-    <task id="LOCAL-00077" summary="versao 0.8.9 - Tela de dados de um ministerio trazendo todos seus membros">
-      <option name="closed" value="true" />
-      <created>1749217416012</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1749217416012</updated>
-    </task>
-    <task id="LOCAL-00078" summary="versao 0.8.10 - Ajuste no get id ministerio">
-      <option name="closed" value="true" />
-      <created>1749233237119</created>
-      <option name="number" value="00078" />
-      <option name="presentableId" value="LOCAL-00078" />
-      <option name="project" value="LOCAL" />
-      <updated>1749233237119</updated>
+      <workItem from="1750947044226" duration="5460000" />
     </task>
     <task id="LOCAL-00079" summary="versao 0.8.11 - Ajuste na edicao de membros de ministerio">
       <option name="closed" value="true" />
@@ -578,7 +562,23 @@
       <option name="project" value="LOCAL" />
       <updated>1750951348828</updated>
     </task>
-    <option name="localTasksCounter" value="126" />
+    <task id="LOCAL-00126" summary="0.9.0 - add coluna de config para celulas">
+      <option name="closed" value="true" />
+      <created>1750953762572</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1750953762572</updated>
+    </task>
+    <task id="LOCAL-00127" summary="0.9.1 - retorna a config da celula">
+      <option name="closed" value="true" />
+      <created>1750954291087</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1750954291087</updated>
+    </task>
+    <option name="localTasksCounter" value="128" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -596,8 +596,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="versao 0.8.31" />
-    <MESSAGE value="versao 0.8.32" />
     <MESSAGE value="versao 0.8.33" />
     <MESSAGE value="versao 0.8.34 - GET CELULAS DE MINISTERIO" />
     <MESSAGE value="versao 0.8.35 - Create cell group" />
@@ -621,7 +619,9 @@
     <MESSAGE value="versao 0.8.53 - enpoint para remover membro de ministerio" />
     <MESSAGE value="versao 0.8.54 - ajuste endpoint de celulas de ministerio" />
     <MESSAGE value="versao 0.8.55 - ajuste endpoint de celulas de ministerio" />
-    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.55 - ajuste endpoint de celulas de ministerio" />
+    <MESSAGE value="0.9.0 - add coluna de config para celulas" />
+    <MESSAGE value="0.9.1 - retorna a config da celula" />
+    <option name="LAST_COMMIT_MESSAGE" value="0.9.1 - retorna a config da celula" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

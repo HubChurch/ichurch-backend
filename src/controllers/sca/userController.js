@@ -53,3 +53,37 @@ exports.getUsersByCompany = async (req, res) => {
         res.status(500).json({ error: "Erro ao listar usuários." });
     }
 };
+
+exports.changePassword = async (req, res) => {
+    try {
+        const { current_password, new_password } = req.body;
+
+        if (!current_password || !new_password) {
+            return res.status(400).json({ error: "Senha atual e nova senha são obrigatórias." });
+        }
+
+        const user = await Users.findOne({
+            where: { id: req.user.id, company_id: req.user.company_id },
+        });
+
+        if (!user) {
+            return res.status(404).json({ error: "Usuário não encontrado." });
+        }
+
+        const passwordMatch = await bcrypt.compare(current_password, user.password);
+        if (!passwordMatch) {
+            return res.status(401).json({ error: "Senha atual incorreta." });
+        }
+
+        const hashedNewPassword = await bcrypt.hash(new_password, 10);
+        user.password = hashedNewPassword;
+        await user.save();
+
+        await Logger(req.user.id, "PUT", "/sca/users/change-password", 200, "Senha alterada com sucesso");
+        return res.status(200).json({ message: "Senha alterada com sucesso." });
+    } catch (error) {
+        console.error("Erro ao trocar senha:", error);
+        return res.status(500).json({ error: "Erro ao trocar senha." });
+    }
+};
+

@@ -178,6 +178,7 @@ const getCellGroupById = async (req, res) => {
         const formatted = {
             id: cellGroup.id,
             name: cellGroup.name,
+            config: cellGroup.config,
             description: cellGroup.description,
             members: memberData,
         };

@@ -3,6 +3,7 @@ const Ministry = require("../../models/ministry/Ministries");
 const {CellMember, MinistryMember} = require("../../models/ministry");
 const {People} = require("../../models/community");
 const { Op } = require("sequelize");
+const {communityDB} = require("../../models");
 
 /**
  * Cria uma nova célula vinculada a um ministério
@@ -91,15 +92,15 @@ const getCellGroupsByMinistry = async (req, res) => {
         }
 
         // 4. Consulta manual na outra base (schema `community`, por exemplo)
-        const [people] = await db.query(
+        const people = await communityDB.query(
             `
-      SELECT id, name, photo
-      FROM community.people
-      WHERE id IN (:ids)
-    `,
+    SELECT id, name, photo
+    FROM community.people
+    WHERE id IN (:ids)
+  `,
             {
                 replacements: { ids: personIds },
-                type: db.QueryTypes.SELECT,
+                type: communityDB.QueryTypes.SELECT,
             }
         );
 

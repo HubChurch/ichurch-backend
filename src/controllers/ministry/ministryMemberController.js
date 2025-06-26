@@ -88,25 +88,54 @@ const getMembersByMinistry = async (req, res) => {
  */
 const updateMemberRole = async (req, res) => {
     try {
-        const { id } = req.params;
-        const { role, status } = req.body;
+        const { person_id, ministry_id, role, status } = req.body;
 
-        const member = await MinistryMember.findByPk(id);
+        const allowedRoles = ["LEADER", "AUX", "MEMBER"];
+        const allowedStatus = ["ativo", "inativo"];
+
+        if (!person_id || !ministry_id) {
+            return res.status(400).json({ error: "person_id e ministry_id são obrigatórios" });
+        }
+
+        const member = await MinistryMember.findOne({
+            where: { person_id, ministry_id },
+        });
 
         if (!member) {
             return res.status(404).json({ error: "Membro não encontrado" });
         }
 
-        // Verifica se o ministério pertence à empresa do usuário autenticado
         const ministry = await Ministry.findOne({
-            where: { id: member.ministry_id, company_id: req.company_id },
+            where: {
+                id: ministry_id,
+                company_id: req.company_id,
+            },
         });
 
         if (!ministry) {
             return res.status(403).json({ error: "Acesso negado" });
         }
 
-        await member.update({ role, status });
+        const updateData = {};
+        if (role) {
+            if (!allowedRoles.includes(role)) {
+                return res.status(400).json({ error: "Papel inválido" });
+            }
+            updateData.role = role;
+        }
+
+        if (status) {
+            if (!allowedStatus.includes(status)) {
+                return res.status(400).json({ error: "Status inválido" });
+            }
+            updateData.status = status;
+        }
+
+        if (Object.keys(updateData).length === 0) {
+            return res.status(400).json({ error: "Nenhum campo para atualizar" });
+        }
+
+        await member.update(updateData);
         return res.json(member);
     } catch (error) {
         console.error("Erro ao atualizar membro:", error);

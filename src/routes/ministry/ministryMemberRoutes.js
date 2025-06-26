@@ -24,12 +24,7 @@ router.post("/",authMiddleware, addMemberToMinistry);
  */
 router.get("/:ministry_id",authMiddleware, getMembersByMinistry);
 
-/**
- * @route   PATCH /ministry/members/:id
- * @desc    Atualiza o papel ou status de um membro
- * @access  Público (ou pode ser restrito a administradores)
- */
-router.patch("/:id",authMiddleware, updateMemberRole);
+router.patch("/", authMiddleware, updateMemberRole);
 
 /**
  * @route   DELETE /ministry/members/:id

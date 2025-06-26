@@ -4,9 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.49 - enpoint para cadastrar membro em massa no minsterio">
+    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="versao 0.8.50 - enpoint para cadastrar membro em massa no minsterio">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/service/peopleService.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/service/peopleService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/controllers/ministry/ministryMemberController.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/controllers/ministry/ministryMemberController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/routes/ministry/ministryMemberRoutes.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/ministry/ministryMemberRoutes.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,15 +184,8 @@
       <workItem from="1749591137093" duration="10582000" />
       <workItem from="1749664174916" duration="851000" />
       <workItem from="1749670895888" duration="1945000" />
-      <workItem from="1749822457834" duration="8535000" />
-    </task>
-    <task id="LOCAL-00071" summary="versao 0.8.2 - ordem ministerio">
-      <option name="closed" value="true" />
-      <created>1749152777379</created>
-      <option name="number" value="00071" />
-      <option name="presentableId" value="LOCAL-00071" />
-      <option name="project" value="LOCAL" />
-      <updated>1749152777380</updated>
+      <workItem from="1749822457834" duration="9271000" />
+      <workItem from="1750947044226" duration="929000" />
     </task>
     <task id="LOCAL-00072" summary="versao 0.8.3 - Adiciona endereço no cadastro de pessoa">
       <option name="closed" value="true" />
@@ -577,7 +571,15 @@
       <option name="project" value="LOCAL" />
       <updated>1749910649771</updated>
     </task>
-    <option name="localTasksCounter" value="120" />
+    <task id="LOCAL-00120" summary="versao 0.8.50 - enpoint para cadastrar membro em massa no minsterio">
+      <option name="closed" value="true" />
+      <created>1749911805935</created>
+      <option name="number" value="00120" />
+      <option name="presentableId" value="LOCAL-00120" />
+      <option name="project" value="LOCAL" />
+      <updated>1749911805935</updated>
+    </task>
+    <option name="localTasksCounter" value="121" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -595,7 +597,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="versao 0.8.24 - ajuste na rota de membro" />
     <MESSAGE value="versao 0.8.25 - ajuste rota de eventos" />
     <MESSAGE value="versao 0.8.26 - Ajuste ao trazer membros de um minsterio" />
     <MESSAGE value="versao 0.8.28 - Ajuste ao trazer membros de um minsterio" />
@@ -620,7 +621,8 @@
     <MESSAGE value="versao 0.8.47 - endpoint de membros validos para entrar no ministerio" />
     <MESSAGE value="versao 0.8.48 - endpoint de membros validos para entrar no ministerio" />
     <MESSAGE value="versao 0.8.49 - enpoint para cadastrar membro em massa no minsterio" />
-    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.49 - enpoint para cadastrar membro em massa no minsterio" />
+    <MESSAGE value="versao 0.8.50 - enpoint para cadastrar membro em massa no minsterio" />
+    <option name="LAST_COMMIT_MESSAGE" value="versao 0.8.50 - enpoint para cadastrar membro em massa no minsterio" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -639,6 +641,12 @@
           <url>file://$PROJECT_DIR$/src/controllers/ministry/cellGroupController.js</url>
           <line>8</line>
           <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/controllers/ministry/ministryMemberController.js</url>
+          <line>88</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

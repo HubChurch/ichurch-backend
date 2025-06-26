@@ -148,7 +148,7 @@ const updateMemberRole = async (req, res) => {
  */
 const removeMemberFromMinistry = async (req, res) => {
     try {
-        const { id } = req.params;
+        const { id } = req.params; // id do registro na tabela ministry_members
 
         const member = await MinistryMember.findByPk(id);
 
@@ -156,19 +156,22 @@ const removeMemberFromMinistry = async (req, res) => {
             return res.status(404).json({ error: "Membro não encontrado" });
         }
 
-        // Verifica se o ministério pertence à empresa do usuário autenticado
+        // Verifica se o ministério está vinculado à empresa do usuário
         const ministry = await Ministry.findOne({
-            where: { id: member.ministry_id, company_id: req.company_id },
+            where: {
+                id: member.ministry_id,
+                company_id: req.company_id,
+            },
         });
 
         if (!ministry) {
-            return res.status(403).json({ error: "Acesso negado" });
+            return res.status(403).json({ error: "Acesso negado ao ministério" });
         }
 
         await member.destroy();
-        return res.status(204).send();
+        return res.status(204).send(); // No Content (sem body)
     } catch (error) {
-        console.error("Erro ao remover membro:", error);
+        console.error("Erro ao remover membro do ministério:", error);
         return res.status(500).json({ error: "Erro interno do servidor" });
     }
 };

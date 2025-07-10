@@ -79,7 +79,7 @@ exports.getAllPeople = async (req, res) => {
 
         const peopleRaw = await People.findAll({
             where: whereCondition,
-            attributes: ['id', 'name', 'email', 'status', 'photo', 'user_id', 'type'],
+            attributes: ['id', 'name', 'email', 'status', 'photo', 'user_id', 'type', 'birth_date', 'phone'],
         });
 
         const people = peopleRaw.map(person => ({

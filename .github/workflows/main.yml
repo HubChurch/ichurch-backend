@@ -39,4 +39,4 @@ jobs:
           script: |
             cd /var/www/ichurch-backend
             yarn install
-            pm2 restart ichurch-backend
+            pm2 restart backend

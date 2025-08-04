@@ -28,6 +28,7 @@ app.use('/community/people', peopleRoutes);
 app.use('/community/events', eventsRoutes);
 app.use('/community/attendance', attendanceRoutes);
 
+app.use("/auth", authRoutes);
 app.use("/sca/auth", authRoutes);
 app.use("/sca/users", usersRoutes);
 app.use("/sca/companies", companiesRoutes);

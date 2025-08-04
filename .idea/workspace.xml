@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="0.9.1 - retorna a config da celula" />
+    <list default="true" id="82191ecd-7a21-4e74-903d-6a2fac62f60f" name="Changes" comment="0.9.2 - Ajuste nos atributos da listagem de pessoas">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/app.js" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -182,14 +185,10 @@
       <workItem from="1749670895888" duration="1945000" />
       <workItem from="1749822457834" duration="9271000" />
       <workItem from="1750947044226" duration="6143000" />
-    </task>
-    <task id="LOCAL-00080" summary="versao 0.8.11 - Ajuste na edicao de membros de ministerio">
-      <option name="closed" value="true" />
-      <created>1749401622841</created>
-      <option name="number" value="00080" />
-      <option name="presentableId" value="LOCAL-00080" />
-      <option name="project" value="LOCAL" />
-      <updated>1749401622842</updated>
+      <workItem from="1752159132462" duration="135000" />
+      <workItem from="1752598801865" duration="21000" />
+      <workItem from="1752678423596" duration="1244000" />
+      <workItem from="1754338058191" duration="974000" />
     </task>
     <task id="LOCAL-00081" summary="versao 0.8.12 - Ajuste no update de usuarios do ministerio">
       <option name="closed" value="true" />
@@ -575,7 +574,15 @@
       <option name="project" value="LOCAL" />
       <updated>1750956686509</updated>
     </task>
-    <option name="localTasksCounter" value="129" />
+    <task id="LOCAL-00129" summary="0.9.2 - Ajuste nos atributos da listagem de pessoas">
+      <option name="closed" value="true" />
+      <created>1752159249216</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1752159249216</updated>
+    </task>
+    <option name="localTasksCounter" value="130" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -593,7 +600,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="versao 0.8.34 - GET CELULAS DE MINISTERIO" />
     <MESSAGE value="versao 0.8.35 - Create cell group" />
     <MESSAGE value="versao 0.8.36 -" />
     <MESSAGE value="versao 0.8.37" />
@@ -618,7 +624,8 @@
     <MESSAGE value="0.9.0 - add coluna de config para celulas" />
     <MESSAGE value="0.9.2- serviço de troca de senha" />
     <MESSAGE value="0.9.1 - retorna a config da celula" />
-    <option name="LAST_COMMIT_MESSAGE" value="0.9.1 - retorna a config da celula" />
+    <MESSAGE value="0.9.2 - Ajuste nos atributos da listagem de pessoas" />
+    <option name="LAST_COMMIT_MESSAGE" value="0.9.2 - Ajuste nos atributos da listagem de pessoas" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -636,7 +643,6 @@
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/src/controllers/ministry/ministryMemberController.js</url>
           <line>89</line>
-          <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="10" />
         </line-breakpoint>
       </breakpoints>

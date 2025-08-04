@@ -1,3 +1,4 @@
+require('dotenv').config(); // Carrega o .env ANTES de tudo
 const app = require("./app"); // Importa a instância do Express
 
 if (require.main === module) {
